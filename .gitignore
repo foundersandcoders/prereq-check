@@ -1,6 +1,7 @@
 #Custom
 config.env
 .DS_Store
+public/main.css
 
 # Logs
 logs

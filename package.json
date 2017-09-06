@@ -6,7 +6,9 @@
     "test": "tape tests/*.js | tap-spec",
     "devStart": "nodemon ./bin/www -e scss -x \"npm run build-css\"",
     "start": "node ./bin/www",
-    "build-css": "node-sass --include-path scss scss/main.scss   public/main.css"
+    "build-css": "node-sass --include-path scss scss/main.scss   public/main.css",
+    "postinstall": "-e scss -x \"npm run build-css\"",
+    "heroku-postinstall": "-e scss -x \"npm run build-css\""
   },
   "dependencies": {
     "body-parser": "~1.17.1",
