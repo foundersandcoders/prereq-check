@@ -1,3 +1,7 @@
+#Custom
+config.env
+.DS_Store
+
 # Logs
 logs
 *.log

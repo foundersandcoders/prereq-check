@@ -1,0 +1,34 @@
+{
+  "name": "prereq-check",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "tape tests/*.js | tap-spec",
+    "devStart": "nodemon ./bin/www",
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "codecov": "^2.3.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "env2": "^2.2.0",
+    "express": "~4.15.2",
+    "github-calendar": "^1.1.12",
+    "hbs": "~4.0.1",
+    "morgan": "~1.8.1",
+    "pg": "^7.3.0",
+    "pg-promise": "^6.5.1",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "istanbul": "^0.4.5",
+    "nodemon": "^1.12.0",
+    "supertest": "^3.0.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  }
+}
