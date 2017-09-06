@@ -6,9 +6,14 @@ const getKyu = (username, cb) => {
         if (error) {
             cb(error);
         } else if (!error && response.statusCode === 200) {
-            cb(null, JSON.parse(body).ranks.languages.javascript.rank);
+            const codewarsSuccess = {};
+            const codewarsRank = JSON.parse(body).ranks.languages.javascript.rank;
+            codewarsSuccess.success= true;
+            codewarsSuccess.rank = Math.abs(codewarsRank);
+            cb(null, codewarsSuccess);
         } else {
             const codewarsError = {};
+            codewarsError.success = false;
             codewarsError.statusCode = response.statusCode;
             codewarsError.body = JSON.parse(body);
             cb(null, codewarsError);
