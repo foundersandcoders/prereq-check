@@ -1,8 +1,12 @@
+$badass: #bada55;
+$fontsize: 20px;
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: $fontsize "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: $badass;
 }
 
 a {
-  color: #00B7FF;
+  color: $badass;
 }
