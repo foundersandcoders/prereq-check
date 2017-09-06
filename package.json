@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test": "tape tests/*.js | tap-spec",
-    "devStart": "nodemon ./bin/www -e scss -x \"npm run build-css\"",
+    "devStart": "nodemon bin/www \"-e scss -x \"npm run build-css\"\"",
     "start": "node ./bin/www",
     "build-css": "node-sass --include-path scss scss/main.scss   public/main.css",
     "heroku-postinstall": "-e scss -x \"npm run build-css\""
@@ -16,6 +16,7 @@
     "debug": "~2.6.3",
     "env2": "^2.2.0",
     "express": "~4.15.2",
+    "express-handlebars": "^3.0.0",
     "github-calendar": "^1.1.12",
     "hbs": "~4.0.1",
     "morgan": "~1.8.1",
