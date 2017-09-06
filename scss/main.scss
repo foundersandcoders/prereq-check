@@ -1,12 +1,11 @@
-$badass: #bada55;
-$fontsize: 20px;
+@import 'variables';
 
 body {
   padding: 50px;
-  font: $fontsize "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: $badass;
+  font: $main-font;
+  background-color: $main-color;
 }
 
-a {
-  color: $badass;
+h1 {
+  font-size: $report-title-size;
 }
