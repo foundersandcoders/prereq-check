@@ -3,7 +3,7 @@ const getKyu = require('../model/codewars-api');
 
 tape('Codewars API: getKyu', (t) => {
     getKyu('astroash', (error, actualRank) => {
-        t.equal(typeof actualRank, 'number', 'Kyu rank should be a number');
+        t.equal(typeof actualRank.rank, 'number', 'Kyu rank should be a number');
         t.end(); 
    });
 });
