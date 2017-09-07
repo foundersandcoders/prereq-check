@@ -1,12 +1,12 @@
 const getKyu = require("../model/codewars-api");
 
-const createSummaryObject = () => {
+const displayReport = (req, res) => {
     const summaryObject = {};
-    getKyu("astroash", (err, res) => {
-        summaryObject.codewarsKyu = res.success && res.rank >= 5;
+    getKyu("astroash", (error, apiResponse) => {
+        summaryObject.codewarsKyu = apiResponse.success && apiResponse.rank >= 5;
+        res.render('report', summaryObject);
+        console.log(summaryObject)
     });
 };
 
-module.exports = displayReport = (req, res) => {
-  res.render('report', createSummaryObject());
-};
+module.exports = displayReport;
