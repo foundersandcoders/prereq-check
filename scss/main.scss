@@ -1,11 +1,101 @@
 @import 'variables';
 
+/***********************************************
+  reset
+***********************************************/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/***********************************************
+  page layout
+***********************************************/
+
 body {
-  padding: 50px;
+  margin: 5vh 4vw;
   font: $main-font;
   background-color: $main-color;
+  text-align: center;
 }
 
 h1 {
-  font-size: $report-title-size;
+  font-size: $report-title-fontsize;
+}
+
+/***********************************************
+  main
+***********************************************/
+
+/***********************************************
+  login page
+***********************************************/
+
+.login__logo {
+  width: 60vw;
+}
+
+/***********************************************
+  links page
+***********************************************/
+
+.links__form, .links__submit, .links__input {
+  font-size: $links-form-fontsize;
+}
+
+.links__submit, .links__input {
+  display: block;
+  width: 100%;
+  height: 10vh;
+}
+
+/***********************************************
+  report page
+***********************************************/
+
+.report-section {
+  height: 100vh;
+}
+
+.report-section__summary-logo {
+  width: 60vw;
+}
+
+.report-section__title {
+  padding: 2.5vh 0;
+}
+
+.report-section__prereq {
+  font-size: 1.5rem;
+  display: inline;
+}
+
+.report-section__list {
+  list-style: none;
+  text-align: left;
+}
+
+.report-section__list-item {
+  padding: 2vh 0;
+}
+
+.report-section__icon {
+  display: inline;
+  margin-right: 2vw;
+}
+
+.report-section__fcc-subtitle {
+  font-style: italic;
 }
