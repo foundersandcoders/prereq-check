@@ -6,7 +6,13 @@
         <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Website on GitHub Pages</p>
       </li>
       <li class="report-section__list-item">
-        <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">freeCodeCamp: 4 sections</p>
+        <img class="report-section__icon"
+        {{#if freeCodeCamp.complete}}
+        src="/images/check-mark.svg" alt="Completed"
+        {{else}}
+        src="/images/x-mark.svg" alt="Not completed"
+        {{/if}}
+        ><p class="report-section__prereq">freeCodeCamp: 4 sections</p>
       </li>
       <li class="report-section__list-item">
         <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Codewars: 5 Kyu or better</p>

@@ -39,15 +39,29 @@ const basicScriptingValidator = (htmlString) => {
   return true;
 };
 
-rp('https://www.freecodecamp.org/fcce3abbd74-b40e-4e5d-96a8-c7e1992dcfe1')
-  .then()
-  .catch(function (err) {
-    console.log("failed");
+const getFreeCodeCamp = () => {
+  return rp('https://www.freecodecamp.org/astroash')
+    .then((htmlString) => {
+      const freeCodeCampObj = {};
+      freeCodeCampObj.htmlCss = htmlCssValidator(htmlString);
+      freeCodeCampObj.basicJavaScript = basicJavaScriptValidator(htmlString);
+      freeCodeCampObj.oOFunctionalProgramming = oOFunctionalProgrammingValidator(htmlString);
+      freeCodeCampObj.basicScripting = basicScriptingValidator(htmlString);
+      freeCodeCampObj.complete = freeCodeCampObj.htmlCss && freeCodeCampObj.basicJavaScript && freeCodeCampObj.oOFunctionalProgramming && freeCodeCampObj.basicScripting
+      return freeCodeCampObj;
+    })
+    .catch((err) => {
+      console.error('Fetching FreeCodeCamp crawl failed');
+      console.error(err);
+      return err;
     });
+}
+
 
 module.exports = {
   htmlCssValidator,
   basicJavaScriptValidator,
   oOFunctionalProgrammingValidator,
   basicScriptingValidator,
+  getFreeCodeCamp,
 }
