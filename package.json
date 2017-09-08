@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test": "tape tests/*.js | tap-spec",
-    "devStart": "nodemon bin/www \"-e scss -x \"npm run build-css\"\"",
+    "devStart": "nodemon -e scss,js -x \"npm run build-css && node bin/www\"",
     "start": "node ./bin/www",
     "build-css": "node-sass --include-path scss scss/main.scss   public/main.css",
     "heroku-postinstall": "-e scss -x \"npm run build-css\""
