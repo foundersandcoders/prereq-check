@@ -11,26 +11,32 @@ tape('Codewars API: getKyu', (t) => {
 });
 
 tape('Codewars API: getCodewars valid username', (t) => {
-  nock('https://www.codewars.com/') 
-  .get('/api/v1/users/astroash')
-  .replyWithFile(200, path.join(__dirname, 'dummy-data', 'codewars-response-success.json'));
+  nock('https://www.codewars.com/')
+    .get('/api/v1/users/astroash')
+    .replyWithFile(200, path.join(__dirname, 'dummy-data', 'codewars-response-success.json'));
   getCodewars('astroash')
-  .then((kyu) => {
-    t.equal(kyu, 5, 'getCodewars for valid username returns correct kyu (5)');
-    t.end();
-  });
+    .then((actual) => {
+      t.deepEqual(actual, {
+        success: true,
+        kyu: 5,
+        achieved5Kyu: true,
+      }, 'getCodewars for valid username returns correct object');
+      t.end();
+    });
 });
 
 tape('Codewars API: getCodewars invalid username', (t) => {
   const username = 'astroashaaa';
-  nock('https://www.codewars.com/') 
-  .get('/api/v1/users/' + username)
-  .replyWithFile(404, path.join(__dirname, 'dummy-data', 'codewars-response-fail.json'));
+  nock('https://www.codewars.com/')
+    .get('/api/v1/users/' + username)
+    .replyWithFile(404, path.join(__dirname, 'dummy-data', 'codewars-response-fail.json'));
   getCodewars(username)
-  .then((response) => {
-    t.equal(response.toString(),
-    'StatusCodeError: 404 - "{ success: false, reason: \'not found\' }"',
-    'Returns 404 error');
-    t.end();
+    .then((response) => {
+      t.deepEqual(response,
+        {success: false,
+          statusCode: 404,
+          message: 'User not found',
+        }, 'getCodewars for invalid username returns correct object');
+      t.end();
   });
 });

@@ -8,7 +8,7 @@ const displayReport = (req, res) => {
   Promise.all([getCodewars(), getFreeCodeCamp()])
     .then((values) => {
       const summaryObject = {};
-      summaryObject.codewarsKyu = values[0] <= 5;
+      summaryObject.codewars = values[0];
       summaryObject.freeCodeCamp = values[1];
       console.log(values);
       console.log(summaryObject);
