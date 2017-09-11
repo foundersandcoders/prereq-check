@@ -21,10 +21,12 @@ const scrapeLinks = (req, res) => {
   return rp(url)
     .then((htmlString) => {
       const githubScrape = {
-        gitHubHandle: getGithubLink(htmlString),
+        githubPageLink: url,
+        githubHandle: getGithubLink(htmlString),
         fccHandle: getFccLink(htmlString),
         codewarsHandle: getCodewarsLink(htmlString),
       };
+      console.log(githubScrape);
       res.render('links', githubScrape)
     })
     .catch((err) => {
