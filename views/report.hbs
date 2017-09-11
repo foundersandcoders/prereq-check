@@ -33,6 +33,9 @@
         {{/if}}
       </li>
     <li class="report-section__list-item">
+      {{#unless codewars.success}}
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Codewars: {{codewars.message}}</p>
+      {{/unless}}
       {{#if codewars.hasAuthored}}
         <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed">
       {{else}}
