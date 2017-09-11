@@ -23,4 +23,6 @@ const getCodewars = () => {
 };
 
 module.exports = {
-  getCodewars};
+  getKyu,
+  getCodewars,
+};
