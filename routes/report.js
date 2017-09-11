@@ -6,12 +6,13 @@ const { getFreeCodeCamp } = require("../model/freecodecamp-crawl");
 const { getGithubPage } = require('../model/github-page');
 
 const displayReport = (req, res) => {
-  Promise.all([getCodewars('astroash'), getFreeCodeCamp('astroash'), getGithubPage('http://www.astroash.com/')])
+  Promise.all([getCodewars('astroash'), getFreeCodeCamp('fcce3abbd74-b40e-4e5d-96a8-c7e1992dcfe1'), getGithubPage('http://www.astroash.com/')])
     .then((values) => {
       const summaryObject = {};
       summaryObject.codewars = values[0];
       summaryObject.freeCodeCamp = values[1];
       summaryObject.githubPage = values[2];
+      console.log(summaryObject);
       // and now render the page
       res.render('report', summaryObject);
     });

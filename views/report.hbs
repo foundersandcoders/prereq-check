@@ -62,18 +62,58 @@
   <h1 class="report-section__title">freeCodeCamp</h1>
   <h3 class="report-section__fcc-subtitle">freeCodeCamp: 4 sections</h3>
   <ul class="report-section__list">
+    {{#unless freeCodeCamp.success}}
     <li class="report-section__list-item">
-  <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">HTML5 & CSS</p>
-</li>
-<li class="report-section__list-item">
-  <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Basic JavaScript</p>
-</li>
-<li class="report-section__list-item">
-  <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Object Oriented & Functional Programming</p>
-</li>
-<li class="report-section__list-item">
-  <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Basic Algorithm Scripting</p>
-</li>
+      <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">User not found</p>
+    </li>
+    <!-- <li class="report-section__list-item">
+      <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Basic JavaScript</p>
+    </li>
+    <li class="report-section__list-item">
+      <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Object Oriented & Functional Programming</p>
+    </li>
+    <li class="report-section__list-item">
+      <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Basic Algorithm Scripting</p>
+    </li> -->
+    {{/unless}}
+    {{#if freeCodeCamp.success}}
+      {{#if freeCodeCamp.htmlCss}}
+      <li class="report-section__list-item">
+        <img class="report-section__icon" src="/images/check-mark.svg" alt="Complete"><p class="report-section__prereq">HTML5 & CSS</p>
+      </li>
+      {{else}}
+      <li class="report-section__list-item">
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Incomplete"><p class="report-section__prereq">HTML5 & CSS</p>
+      </li>
+      {{/if}}
+      {{#if freeCodeCamp.basicJavaScript}}
+      <li class="report-section__list-item">
+        <img class="report-section__icon" src="/images/check-mark.svg" alt="Complete"><p class="report-section__prereq">Basic JavaScript</p>
+      </li>
+      {{else}}
+      <li class="report-section__list-item">
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Incomplete"><p class="report-section__prereq">Basic JavaScript</p>
+      </li>
+      {{/if}}
+      {{#if freeCodeCamp.oOFunctionalProgramming}}
+      <li class="report-section__list-item">
+        <img class="report-section__icon" src="/images/check-mark.svg" alt="Complete"><p class="report-section__prereq">Object Oriented & Functional Programming</p>
+      </li>
+      {{else}}
+      <li class="report-section__list-item">
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Incomplete"><p class="report-section__prereq">Object Oriented & Functional Programming</p>
+      </li>
+      {{/if}}
+      {{#if freeCodeCamp.basicScripting}}
+      <li class="report-section__list-item">
+        <img class="report-section__icon" src="/images/check-mark.svg" alt="Complete"><p class="report-section__prereq">Basic Algorithm Scripting</p>
+      </li>
+      {{else}}
+      <li class="report-section__list-item">
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Incomplete"><p class="report-section__prereq">Basic Algorithm Scripting</p>
+      </li>
+      {{/if}}
+    {{/if}}
 </ul>
 </section>
 
