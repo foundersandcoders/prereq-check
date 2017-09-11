@@ -28,15 +28,15 @@ tape('Codewars API: getCodewars valid username', (t) => {
 tape('Codewars API: getCodewars invalid username', (t) => {
   const username = 'astroashaaa';
   nock('https://www.codewars.com/')
-    .get('/api/v1/users/' + username)
+    .get(`/api/v1/users/${username}`)
     .replyWithFile(404, path.join(__dirname, 'dummy-data', 'codewars-response-fail.json'));
   getCodewars(username)
     .then((response) => {
-      t.deepEqual(response,
-        {success: false,
-          statusCode: 404,
-          message: 'User not found',
-        }, 'getCodewars for invalid username returns correct object');
+      t.deepEqual(response, {
+        success: false,
+        statusCode: 404,
+        message: 'User not found',
+      }, 'getCodewars for invalid username returns correct object');
       t.end();
-  });
+    });
 });
