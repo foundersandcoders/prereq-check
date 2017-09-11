@@ -22,6 +22,7 @@ const scrapeLinks = (req, res) => {
     .then((htmlString) => {
       const githubScrape = {
         githubPageLink: url,
+        success: true,
         githubHandle: getGithubLink(htmlString),
         fccHandle: getFccLink(htmlString),
         codewarsHandle: getCodewarsLink(htmlString),

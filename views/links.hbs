@@ -1,6 +1,9 @@
 <section class="links">
     <form class="links__form" action="scrape-links" method="get">
         <p>Enter your GitHub page url</p>
+        {{#unless success}}
+        <p>Sorry this URL could not be found</p>
+        {{/unless}}
         <input class="links__input" type="text" name="githubPage" value="{{githubPageLink}}">
         <input class="links__submit" type="submit" name="submit" value="Submit">
     </form>
