@@ -38,24 +38,35 @@ const basicScriptingValidator = (htmlString) => {
   return true;
 };
 
-const getFreeCodeCamp = () => {
-  return rp('https://www.freecodecamp.org/astroash')
+const getFreeCodeCamp = (username) => {
+  const options = {
+    uri: `https://www.freecodecamp.org/${username}`,
+  }
+  return rp(options)
     .then((htmlString) => {
+      const reg = new RegExp(username, 'gi');
+      if (!htmlString.match(reg)) {
+        throw Error('User not found');
+      } else {
       const freeCodeCampObj = {};
+      freeCodeCampObj.success = true;
       freeCodeCampObj.htmlCss = htmlCssValidator(htmlString);
       freeCodeCampObj.basicJavaScript = basicJavaScriptValidator(htmlString);
       freeCodeCampObj.oOFunctionalProgramming = oOFunctionalProgrammingValidator(htmlString);
       freeCodeCampObj.basicScripting = basicScriptingValidator(htmlString);
-      freeCodeCampObj.complete = freeCodeCampObj.htmlCss && freeCodeCampObj.basicJavaScript && freeCodeCampObj.oOFunctionalProgramming && freeCodeCampObj.basicScripting
+      freeCodeCampObj.complete = freeCodeCampObj.htmlCss && freeCodeCampObj.basicJavaScript && freeCodeCampObj.oOFunctionalProgramming && freeCodeCampObj.basicScripting;
       return freeCodeCampObj;
+      }
     })
     .catch((err) => {
       console.error('Fetching FreeCodeCamp crawl failed');
       console.error(err);
-      return err;
+      const freeCodeCampObj = {};
+      freeCodeCampObj.success = false;
+      freeCodeCampObj.message = 'User not found';
+      return freeCodeCampObj;
     });
 }
-
 
 module.exports = {
   htmlCssValidator,

@@ -12,13 +12,16 @@
         {{/if}}
       </li>
       <li class="report-section__list-item">
-        <img class="report-section__icon"
-        {{#if freeCodeCamp.complete}}
-        src="/images/check-mark.svg" alt="Completed"
+        {{#unless freeCodeCamp.success}}
+          <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">freeCodeCamp: {{freeCodeCamp.message}}</p>
+        {{/unless}}
+        {{#if freeCodeCamp.success}}
+          {{#if freeCodeCamp.complete}}
+          <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed"><p class="report-section__prereq">freeCodeCamp: 4 sections</p>
         {{else}}
-        src="/images/x-mark.svg" alt="Not completed"
+          <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed"><p class="report-section__prereq">freeCodeCamp: 4 sections</p>
+          {{/if}}
         {{/if}}
-        ><p class="report-section__prereq">freeCodeCamp: 4 sections</p>
       </li>
       <li class="report-section__list-item">
         {{#unless codewars.success}}
