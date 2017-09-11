@@ -16,7 +16,7 @@
       </li>
       <li class="report-section__list-item">
         {{#unless codewars.success}}
-          <img class="report-section__icon" src="/images/x-mark.svg" alt="Completed"><p class="report-section__prereq">Codewars: {{codewars.message}}</p>
+          <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Codewars: {{codewars.message}}</p>
         {{/unless}}
         {{#if codewars.success}}
           {{#if codewars.achieved5Kyu}}
