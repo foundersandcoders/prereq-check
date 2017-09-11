@@ -1,22 +1,21 @@
 const request = require('request');
 const rp = require('request-promise-native')
 
-const options = {
-  uri: 'https://www.codewars.com/api/v1/users/astroash',
-  json: true, // Automatically parses the JSON string in the response
-  resolveWithFullResponse: true,
-};
-
-const getKyu = (response) => {
-  const codewarsRank = response.body.ranks.languages.javascript.rank;
+const getKyu = (body) => {
+  const codewarsRank = body.ranks.languages.javascript.rank;
   return Math.abs(codewarsRank);
 };
 
-const getCodewars = () => {
+const getCodewars = (username) => {
+  const options = {
+    uri: 'https://www.codewars.com/api/v1/users/',
+    json: true, // Automatically parses the JSON string in the response
+  };
+  options.uri += username;
   return rp(options)
     .then(getKyu)
     .catch((err) => {
-      throw err;
+      return err;
     });
 };
 
