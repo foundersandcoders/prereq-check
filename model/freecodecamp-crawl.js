@@ -40,14 +40,13 @@ const basicScriptingValidator = (htmlString) => {
 };
 
 const getFreeCodeCamp = (username) => {
-  username = 'astroashaaaa';
   const options = {
     uri: `https://www.freecodecamp.org/${username}`,
   }
   return rp(options)
     .then((htmlString) => {
       const reg = new RegExp(username, 'gi');
-      if (htmlString.indexOf(reg) === -1) {
+      if (!htmlString.match(reg)) {
         throw Error('User not found');
       } else {
       const freeCodeCampObj = {};
@@ -65,22 +64,15 @@ const getFreeCodeCamp = (username) => {
       console.error(err);
       const freeCodeCampObj = {};
       freeCodeCampObj.success = false;
-      freeCodeCampObj.statusCode = err.statusCode;
-      if (err.statusCode === 404) {
-        freeCodeCampObj.message = 'User not found';
-      } else {
-        freeCodeCampObj.message = 'Error retrieving data';
-      }
-      console.log(freeCodeCampObj)
+      freeCodeCampObj.message = 'User not found';
       return freeCodeCampObj;
     });
 }
 
-
 module.exports = {
-  // htmlCssValidator,
-  // basicJavaScriptValidator,
-  // oOFunctionalProgrammingValidator,
-  // basicScriptingValidator,
+  htmlCssValidator,
+  basicJavaScriptValidator,
+  oOFunctionalProgrammingValidator,
+  basicScriptingValidator,
   getFreeCodeCamp,
 }
