@@ -1,5 +1,5 @@
 const tape = require("tape");
-const { getKyu, getCodewars } = require('../model/codewars-api');
+const { getKyu, hasAuthored, getCodewars } = require('../model/codewars-api');
 const codewarsSuccessData = require("./dummy-data/codewars-response-success.json");
 const nock = require('nock');
 const path = require('path');
@@ -7,6 +7,17 @@ const path = require('path');
 tape('Codewars API: getKyu', (t) => {
   const actual = typeof getKyu(codewarsSuccessData);
   t.equal(actual, 'number', 'Kyu rank should be a number');
+  t.end();
+});
+
+tape('Codewars API: hasAuthored', (t) => {
+  const noKata = {
+    "codeChallenges": {
+      "totalAuthored": 0
+    }
+  };
+  t.ok(hasAuthored(codewarsSuccessData), 'hasAuthored returns true if user has authored 1 kata');
+  t.notOk(hasAuthored(noKata), 'hasAuthored returns false if user has authored 0 kata');
   t.end();
 });
 
@@ -20,6 +31,7 @@ tape('Codewars API: getCodewars valid username', (t) => {
         success: true,
         kyu: 5,
         achieved5Kyu: true,
+        hasAuthored: true,
       }, 'getCodewars for valid username returns correct object');
       t.end();
     });

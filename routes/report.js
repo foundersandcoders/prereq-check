@@ -6,7 +6,7 @@ const { getFreeCodeCamp } = require("../model/freecodecamp-crawl");
 const { getGithubPage } = require('../model/github-page');
 
 const displayReport = (req, res) => {
-  Promise.all([getCodewars(), getFreeCodeCamp(), getGithubPage(url)])
+  Promise.all([getCodewars(username), getFreeCodeCamp(), getGithubPage(url)])
     .then((values) => {
       const summaryObject = {};
       summaryObject.codewars = values[0];

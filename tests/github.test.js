@@ -1,7 +1,6 @@
 const tape = require('tape');
 const nock = require('nock');
 
-const githubPageSuccess = require('./dummy-data/githubpage-success');
 const { getGithubPage } = require('../model/github-page');
 
 tape('getGithubPage with status code 404', (t) => {
