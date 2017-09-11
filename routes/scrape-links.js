@@ -27,7 +27,6 @@ const scrapeLinks = (req, res) => {
         fccHandle: getFccLink(htmlString),
         codewarsHandle: getCodewarsLink(htmlString),
       };
-      console.log(githubScrape);
       res.render('links', githubScrape)
     })
     .catch((err) => {
