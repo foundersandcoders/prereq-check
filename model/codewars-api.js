@@ -12,11 +12,25 @@ const getCodewars = (username) => {
   };
   options.uri += username;
   return rp(options)
-    .then(getKyu)
+    .then((apiRes) => {
+      const codewarsObj = {};
+      codewarsObj.success = true;
+      codewarsObj.kyu = getKyu(apiRes);
+      codewarsObj.achieved5Kyu = getKyu(apiRes) <= 5;
+      return codewarsObj;
+    })
     .catch((err) => {
       console.error('Fetching codewars kyu failed');
       console.error(err);
-      return err;
+      const codewarsObj = {};
+      codewarsObj.success = false;
+      codewarsObj.statusCode = err.statusCode;
+      if (err.statusCode === 404) {
+        codewarsObj.message = 'User not found';
+      } else {
+        codewarsObj.message = 'Error retrieving data';
+      }
+      return codewarsObj;
     });
 };
 
