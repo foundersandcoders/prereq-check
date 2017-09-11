@@ -15,8 +15,13 @@ const getCodewars = (username) => {
   return rp(options)
     .then(getKyu)
     .catch((err) => {
+      console.error('Fetching codewars kyu failed');
+      console.error(err);
       return err;
     });
 };
 
-module.exports = { getKyu, getCodewars };
+module.exports = {
+  getKyu,
+  getCodewars,
+};
