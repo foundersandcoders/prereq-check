@@ -3,7 +3,13 @@
   <h1 class="report-section__title">Summary</h1>
     <ul class="report-section__list">
       <li class="report-section__list-item">
-        <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Website on GitHub Pages</p>
+        {{#if githubPage.success}}
+        <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed">
+        <p class="report-section__prereq">Website on GitHub Pages</p>
+        {{else}}
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed">
+        <p class="report-section__prereq">GitHub Page: {{githubPage.message}}</p>
+        {{/if}}
       </li>
       <li class="report-section__list-item">
         {{#unless freeCodeCamp.success}}
@@ -30,7 +36,15 @@
         {{/if}}
       </li>
     <li class="report-section__list-item">
-      <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Codewars: authored 1+ Kata</p>
+      {{#unless codewars.success}}
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Codewars: {{codewars.message}}</p>
+      {{/unless}}
+      {{#if codewars.hasAuthored}}
+        <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed">
+      {{else}}
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed">
+      {{/if}}
+      <p class="report-section__prereq">Codewars: authored 1+ Kata</p>
     </li>
   </ul>
 </section>

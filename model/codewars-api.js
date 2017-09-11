@@ -1,9 +1,12 @@
-const request = require('request');
 const rp = require('request-promise-native')
 
 const getKyu = (body) => {
   const codewarsRank = body.ranks.languages.javascript.rank;
   return Math.abs(codewarsRank);
+};
+
+const hasAuthored = (body) => {
+  return body.codeChallenges.totalAuthored >= 1;
 };
 
 const getCodewars = (username) => {
@@ -18,11 +21,12 @@ const getCodewars = (username) => {
       codewarsObj.success = true;
       codewarsObj.kyu = getKyu(apiRes);
       codewarsObj.achieved5Kyu = getKyu(apiRes) <= 5;
+      codewarsObj.hasAuthored = hasAuthored(apiRes);
       return codewarsObj;
     })
     .catch((err) => {
-      console.error('Fetching codewars kyu failed');
-      console.error(err);
+      console.error('Fetching codewars info failed');
+      //console.error(err);
       const codewarsObj = {};
       codewarsObj.success = false;
       codewarsObj.statusCode = err.statusCode;
@@ -36,6 +40,7 @@ const getCodewars = (username) => {
 };
 
 module.exports = {
+  hasAuthored,
   getKyu,
   getCodewars,
 };

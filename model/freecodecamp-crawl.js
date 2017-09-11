@@ -1,4 +1,3 @@
-const request = require('request');
 const rp = require('request-promise-native');
 
 const fccArrays = require('./freecodecamp-arrays');
