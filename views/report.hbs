@@ -58,8 +58,13 @@
 </ul>
 
   <ul>
+    {{#unless w3Validation.success}}
+    <li>{{w3Validation.message}}</li>
+    {{/unless}}
+    {{#if w3Validation.success}}
     <li>{{w3Validation.errors}} Errors</li>
     <li>and {{w3Validation.other}} other messages at <a href='{{w3Validation.url}}'>W3C HTML Validation</a></li>
+    {{/if}}
   </ul>
 </section>
 

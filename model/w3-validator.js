@@ -9,13 +9,15 @@ const getNumberOfErrors = array => array.reduce((sum, item) => {
 }, 0);
 
 const getW3Validator = (url) => {
+  const w3Url = `http://validator.w3.org/nu/?doc=${url}`; 
   const options = {
-    uri: `http://validator.w3.org/nu/?doc=${url}/&out=json`,
+    uri: `${w3Url}/&out=json`,
     headers: {
       'User-Agent': 'Request-Promise',
     },
     json: true,
   };
+  console.log('uuuuuuuuuuuuuuuuuu', options.uri)
   return rp(options)
     .then((apiRes) => {
       const errors = getNumberOfErrors(apiRes.messages);
@@ -23,7 +25,7 @@ const getW3Validator = (url) => {
         success: true,
         errors,
         other: apiRes.messages.length - errors,
-        url: options.uri,
+        url: w3Url,
       };
     })
     .catch((err) => {
@@ -31,7 +33,7 @@ const getW3Validator = (url) => {
       console.error(err);
       return {
         success: false,
-        message: 'Error retrieving data',
+        message: 'Error retrieving data from W3 Validator',
       };
     });
 };
