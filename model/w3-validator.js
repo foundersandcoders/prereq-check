@@ -17,7 +17,6 @@ const getW3Validator = (url) => {
     },
     json: true,
   };
-  console.log('uuuuuuuuuuuuuuuuuu', options.uri)
   return rp(options)
     .then((apiRes) => {
       const errors = getNumberOfErrors(apiRes.messages);
