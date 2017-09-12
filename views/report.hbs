@@ -64,17 +64,8 @@
   <ul class="report-section__list">
     {{#unless freeCodeCamp.success}}
     <li class="report-section__list-item">
-      <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">User not found</p>
+      <p class="report-section__prereq">User not found</p>
     </li>
-    <!-- <li class="report-section__list-item">
-      <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Basic JavaScript</p>
-    </li>
-    <li class="report-section__list-item">
-      <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Object Oriented & Functional Programming</p>
-    </li>
-    <li class="report-section__list-item">
-      <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Basic Algorithm Scripting</p>
-    </li> -->
     {{/unless}}
     {{#if freeCodeCamp.success}}
       {{#if freeCodeCamp.htmlCss}}

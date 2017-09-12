@@ -12,7 +12,6 @@ const displayReport = (req, res) => {
       summaryObject.codewars = values[0];
       summaryObject.freeCodeCamp = values[1];
       summaryObject.githubPage = values[2];
-      console.log(summaryObject);
       // and now render the page
       res.render('report', summaryObject);
     });
