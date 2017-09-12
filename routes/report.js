@@ -14,7 +14,9 @@ const displayReport = (req, res) => {
       summaryObject.freeCodeCamp = values[1];
       summaryObject.githubPage = values[2];
       summaryObject.w3Validation = values[3];
-      // and now render the page
+      summaryObject.githubHandle = 'astroash';
+      console.log(typeof summaryObject.githubHandle);
+
       res.render('report', summaryObject);
     });
 };
