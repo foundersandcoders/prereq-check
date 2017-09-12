@@ -49,20 +49,19 @@ const getFreeCodeCamp = (username) => {
   }
   return rp(options)
     .then((htmlString) => {
-      // console.log(htmlString);
       const reg = new RegExp(username, 'gi');
       if (!htmlString.match(reg)) {
         throw Error('User not found');
       } else {
-      const freeCodeCampObj = {};
-      freeCodeCampObj.success = true;
-      freeCodeCampObj.score = getFccScore(htmlString);
-      freeCodeCampObj.htmlCss = htmlCssValidator(htmlString);
-      freeCodeCampObj.basicJavaScript = basicJavaScriptValidator(htmlString);
-      freeCodeCampObj.oOFunctionalProgramming = oOFunctionalProgrammingValidator(htmlString);
-      freeCodeCampObj.basicScripting = basicScriptingValidator(htmlString);
-      freeCodeCampObj.complete = freeCodeCampObj.htmlCss && freeCodeCampObj.basicJavaScript && freeCodeCampObj.oOFunctionalProgramming && freeCodeCampObj.basicScripting;
-      return freeCodeCampObj;
+        const freeCodeCampObj = {};
+        freeCodeCampObj.success = true;
+        freeCodeCampObj.score = getFccScore(htmlString);
+        freeCodeCampObj.htmlCss = htmlCssValidator(htmlString);
+        freeCodeCampObj.basicJavaScript = basicJavaScriptValidator(htmlString);
+        freeCodeCampObj.oOFunctionalProgramming = oOFunctionalProgrammingValidator(htmlString);
+        freeCodeCampObj.basicScripting = basicScriptingValidator(htmlString);
+        freeCodeCampObj.complete = freeCodeCampObj.htmlCss && freeCodeCampObj.basicJavaScript && freeCodeCampObj.oOFunctionalProgramming && freeCodeCampObj.basicScripting;
+        return freeCodeCampObj;
       }
     })
     .catch((err) => {
@@ -73,14 +72,12 @@ const getFreeCodeCamp = (username) => {
       freeCodeCampObj.message = 'User not found';
       return freeCodeCampObj;
     });
-}
-
+};
 getFreeCodeCamp('astroash');
-
 module.exports = {
   htmlCssValidator,
   basicJavaScriptValidator,
   oOFunctionalProgrammingValidator,
   basicScriptingValidator,
   getFreeCodeCamp,
-}
+};
