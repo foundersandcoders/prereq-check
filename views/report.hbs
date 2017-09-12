@@ -65,6 +65,11 @@
     <li>{{w3Validation.errors}} Errors</li>
     <li>and {{w3Validation.other}} other messages at <a href='{{w3Validation.url}}'>W3C HTML Validation</a></li>
     {{/if}}
+    {{#if githubRepos.success }}
+    <li>{{ githubRepos.repos }} repos on this account</li>
+    {{else}}
+    <li>{{ githubRepos.message }}</li>
+    {{/if}}
   </ul>
   {{>githubCalendar}}
 </section>
