@@ -20,7 +20,7 @@ const getGithubCommits = (githubHandle, url) => {
     .then((apiRes) => {
       return {
         success: true,
-        repos: apiRes.length,
+        commits: apiRes.length,
       };
     })
     .catch((err) => {

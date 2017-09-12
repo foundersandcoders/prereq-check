@@ -17,7 +17,7 @@ tape('getGithubCommits success', (t) => {
     .reply(200, githubResponseSuccess);
   getGithubCommits('bartbucknill', 'https://bartbucknill.github.io/fac-application/')
     .then((actual) => {
-      t.deepEqual(actual, { success: true, repos: 30 }, 'should return correct object');
+      t.deepEqual(actual, { success: true, commits: 30 }, 'should return correct object');
       t.end();
     });
 });

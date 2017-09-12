@@ -58,6 +58,11 @@
 </ul>
 
   <ul>
+     {{#if githubCommits.success }}
+    <li>{{githubCommits.commits }} commits on this project</li>
+    {{else}}
+    <li>{{githubCommits.message}}</li>
+    {{/if}}
     {{#unless w3Validation.success}}
     <li>{{w3Validation.message}}</li>
     {{/unless}}
