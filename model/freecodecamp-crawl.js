@@ -38,18 +38,25 @@ const basicScriptingValidator = (htmlString) => {
   return true;
 };
 
+const getFccScore = (htmlString) => {
+  const regEx = /text-primary\">\[ (\d+)/;
+  return regEx.exec(htmlString)[1];
+};
+
 const getFreeCodeCamp = (username) => {
   const options = {
     uri: `https://www.freecodecamp.org/${username}`,
   }
   return rp(options)
     .then((htmlString) => {
+      // console.log(htmlString);
       const reg = new RegExp(username, 'gi');
       if (!htmlString.match(reg)) {
         throw Error('User not found');
       } else {
       const freeCodeCampObj = {};
       freeCodeCampObj.success = true;
+      freeCodeCampObj.score = getFccScore(htmlString);
       freeCodeCampObj.htmlCss = htmlCssValidator(htmlString);
       freeCodeCampObj.basicJavaScript = basicJavaScriptValidator(htmlString);
       freeCodeCampObj.oOFunctionalProgramming = oOFunctionalProgrammingValidator(htmlString);
@@ -67,6 +74,8 @@ const getFreeCodeCamp = (username) => {
       return freeCodeCampObj;
     });
 }
+
+getFreeCodeCamp('astroash');
 
 module.exports = {
   htmlCssValidator,
