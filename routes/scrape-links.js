@@ -30,7 +30,7 @@ const scrapeLinks = (req, res) => {
       res.render('links', githubScrape)
     })
     .catch((err) => {
-      console.error('Fetching FreeCodeCamp crawl failed');
+      console.error('Fetching Github Pages URL failed');
       console.error(err);
       const githubScrape = {
         success: false,
