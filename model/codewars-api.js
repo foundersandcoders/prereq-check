@@ -9,6 +9,19 @@ const hasAuthored = (body) => {
   return body.codeChallenges.totalAuthored >= 1;
 };
 
+const getAuthoredIds = (username) => {
+  const options = {
+    uri: `https://www.codewars.com/api/v1/${username}/code-challenges/authored/`,
+    json: true, // Automatically parses the JSON string in the response
+  };
+  return rp(options)
+    .then((apiRes) => {
+      return apiRes.data.reduce((ids, kata) => {
+        return [...ids, kata.id];
+      }, []);
+    });
+};
+
 const getCodewars = (username) => {
   const options = {
     uri: 'https://www.codewars.com/api/v1/users/',
@@ -41,6 +54,7 @@ const getCodewars = (username) => {
 
 module.exports = {
   hasAuthored,
+  getAuthoredIds,
   getKyu,
   getCodewars,
 };
