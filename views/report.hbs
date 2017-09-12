@@ -105,7 +105,7 @@
         {{/if}}
         <p class="report-section__prereq">Basic Algorithm Scripting</p>
       </li>
-      
+
     {{/if}}
 </ul>
 </section>
@@ -121,9 +121,9 @@
   </li>
   </ul>
   <ul>
-    {{#each codewars.authoredKatas}}
+    {{#each codewarsKatas}}
     <li>
-      Kata Name: {{this.name}}
+      Kata Name: <a href="{{this.link}}">{{this.name}}</a>
       {{#unless this.beta}}
       Kata Rank: {{this.rank}}
       {{else}}

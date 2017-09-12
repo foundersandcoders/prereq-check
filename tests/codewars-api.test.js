@@ -33,11 +33,13 @@ tape('Codewars API: getAuthoredKatas', (t) => {
     name: "Organise duplicate numbers in list",
     rank: 6,
     beta: false,
+    link: 'https://www.codewars.com/kata/5884b6550785f7c58f000047'
   }, {
     id: "58d64c8d14286ca558000083",
     name: "Join command (simplified)",
     rank: 0,
     beta: true,
+    link: 'https://www.codewars.com/kata/58d64c8d14286ca558000083',
   }];
   const username = 'testuser';
   nock('https://www.codewars.com/')
@@ -58,17 +60,6 @@ tape('Codewars API: getCodewars valid username', (t) => {
     achieved5Kyu: true,
     hasAuthored: true,
     honor: 352,
-    authoredKatas: [{
-      id: "5884b6550785f7c58f000047",
-      name: "Organise duplicate numbers in list",
-      rank: 6,
-      beta: false,
-    }, {
-      id: "58d64c8d14286ca558000083",
-      name: "Join command (simplified)",
-      rank: 0,
-      beta: true,
-    }]
   };
   nock('https://www.codewars.com/')
     .get(`/api/v1/users/${username}`)

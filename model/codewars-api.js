@@ -16,11 +16,11 @@ const getAuthoredKatas = (username) => {
   };
   return rp(options)
     .then((apiRes) => {
-      console.log(apiRes);
       return apiRes.data.reduce((ourKataArray, responseKataArray) => {
         const data = {
           id: responseKataArray.id,
           name: responseKataArray.name,
+          link: 'https://www.codewars.com/kata/' + responseKataArray.id,
           rank: Math.abs(responseKataArray.rank),
           beta: responseKataArray.rank === null,
         };
@@ -43,10 +43,6 @@ const getCodewars = (username) => {
       codewarsObj.achieved5Kyu = getKyu(apiRes) <= 5;
       codewarsObj.hasAuthored = hasAuthored(apiRes);
       codewarsObj.honor = apiRes.honor;
-      return codewarsObj;
-    })
-    .then((codewarsObj) => {
-      codewarsObj.authoredKatas = getAuthoredKatas(username);
       return codewarsObj;
     })
     .catch((err) => {
