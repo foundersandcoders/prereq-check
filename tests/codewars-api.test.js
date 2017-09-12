@@ -7,7 +7,7 @@ const {
   getKyu,
   hasAuthored,
   getCodewars,
-  getAuthoredIds,
+  getAuthoredKatas,
 } = require('../model/codewars-api');
 
 tape('Codewars API: getKyu', (t) => {
@@ -27,31 +27,59 @@ tape('Codewars API: hasAuthored', (t) => {
   t.end();
 });
 
-tape('Codewars API: getAuthoredIds', (t) => {
-  const expected = ['5884b6550785f7c58f000047', '58d64c8d14286ca558000083'];
+tape('Codewars API: getAuthoredKatas', (t) => {
+  const expected = [{
+    id: "5884b6550785f7c58f000047",
+    name: "Organise duplicate numbers in list",
+    rank: 6,
+    beta: false,
+  }, {
+    id: "58d64c8d14286ca558000083",
+    name: "Join command (simplified)",
+    rank: 0,
+    beta: true,
+  }];
   const username = 'testuser';
   nock('https://www.codewars.com/')
-    .get(`/api/v1/${username}/code-challenges/authored/`)
+    .get(`/api/v1/users/${username}/code-challenges/authored/`)
     .replyWithFile(200, path.join(__dirname, 'dummy-data', 'authored-kata-overview.json'));
-  getAuthoredIds(username)
-    .then((ids) => {
-      t.deepEqual(ids, expected, 'Returns array of kata ids from api response');
+  getAuthoredKatas(username)
+    .then((katas) => {
+      t.deepEqual(katas, expected, 'Returns array of relevant kata data from api response');
       t.end();
     });
 });
 
 tape('Codewars API: getCodewars valid username', (t) => {
+  const username = 'astroash';
+  const expected = {
+    success: true,
+    kyu: 5,
+    achieved5Kyu: true,
+    hasAuthored: true,
+    honor: 352,
+    authoredKatas: [{
+      id: "5884b6550785f7c58f000047",
+      name: "Organise duplicate numbers in list",
+      rank: 6,
+      beta: false,
+    }, {
+      id: "58d64c8d14286ca558000083",
+      name: "Join command (simplified)",
+      rank: 0,
+      beta: true,
+    }]
+  };
   nock('https://www.codewars.com/')
-    .get('/api/v1/users/astroash')
-    .replyWithFile(200, path.join(__dirname, 'dummy-data', 'codewars-response-success.json'));
-  getCodewars('astroash')
+    .get(`/api/v1/users/${username}`)
+    .replyWithFile(200, path.join(__dirname, 'dummy-data', 'codewars-response-success.json'))
+    .get(`/api/v1/users/${username}/code-challenges/authored/`)
+    .replyWithFile(200, path.join(__dirname, 'dummy-data', 'authored-kata-overview.json'));
+  getCodewars(username)
     .then((actual) => {
-      t.deepEqual(actual, {
-        success: true,
-        kyu: 5,
-        achieved5Kyu: true,
-        hasAuthored: true,
-      }, 'getCodewars for valid username returns correct object');
+      console.log(actual);
+      console.log(expected);
+      t.deepEqual(actual, expected, 'getCodewars for valid username returns correct object');
       t.end();
     });
 });

@@ -1,4 +1,4 @@
-const rp = require('request-promise-native')
+const rp = require('request-promise-native');
 
 const getKyu = (body) => {
   const codewarsRank = body.ranks.languages.javascript.rank;
@@ -9,15 +9,22 @@ const hasAuthored = (body) => {
   return body.codeChallenges.totalAuthored >= 1;
 };
 
-const getAuthoredIds = (username) => {
+const getAuthoredKatas = (username) => {
   const options = {
-    uri: `https://www.codewars.com/api/v1/${username}/code-challenges/authored/`,
+    uri: `https://www.codewars.com/api/v1/users/${username}/code-challenges/authored/`,
     json: true, // Automatically parses the JSON string in the response
   };
   return rp(options)
     .then((apiRes) => {
-      return apiRes.data.reduce((ids, kata) => {
-        return [...ids, kata.id];
+      console.log(apiRes);
+      return apiRes.data.reduce((ourKataArray, responseKataArray) => {
+        const data = {
+          id: responseKataArray.id,
+          name: responseKataArray.name,
+          rank: Math.abs(responseKataArray.rank),
+          beta: responseKataArray.rank === null,
+        };
+        return [...ourKataArray, data];
       }, []);
     });
 };
@@ -35,6 +42,11 @@ const getCodewars = (username) => {
       codewarsObj.kyu = getKyu(apiRes);
       codewarsObj.achieved5Kyu = getKyu(apiRes) <= 5;
       codewarsObj.hasAuthored = hasAuthored(apiRes);
+      codewarsObj.honor = apiRes.honor;
+      return codewarsObj;
+    })
+    .then((codewarsObj) => {
+      codewarsObj.authoredKatas = getAuthoredKatas(username);
       return codewarsObj;
     })
     .catch((err) => {
@@ -54,7 +66,7 @@ const getCodewars = (username) => {
 
 module.exports = {
   hasAuthored,
-  getAuthoredIds,
+  getAuthoredKatas,
   getKyu,
   getCodewars,
 };

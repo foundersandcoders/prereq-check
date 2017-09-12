@@ -115,11 +115,31 @@
   <ul class="report-section__list">
     <li class="report-section__list-item">
   <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Codewars: 5 Kyu or better</p>
-</li>
-<li class="report-section__list-item">
-  <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Codewars: authored 1+ Kata</p>
-</li>
-</ul>
+  </li>
+  <li class="report-section__list-item">
+    <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Codewars: authored 1+ Kata</p>
+  </li>
+  </ul>
+  <ul>
+    {{#each codewars.authoredKatas}}
+    <li>
+      Kata Name: {{this.name}}
+      {{#unless this.beta}}
+      Kata Rank: {{this.rank}}
+      {{else}}
+      Kata in Beta
+      {{/unless}}
+    </li>
+    {{/each}}
+  </ul>
+  <ul>
+    <li>
+      Kyu Level: {{codewars.kyu}}
+    </li>
+    <li>
+      Honor: {{codewars.honor}}
+    </li>
+  </ul>
 </section>
 
 <section class="report-section">
