@@ -35,6 +35,21 @@ body {
   background-color: $main-color;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    margin: 5vh 10vw;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  body {
+    margin: 5vh 10vw;
+    transition: all 1s;
+  }
 }
 
 h1 {
@@ -47,6 +62,21 @@ h1 {
 
 .login__logo {
   width: 60vw;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 600px) {
+  .login__logo {
+    width: 50vw;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .login__logo {
+    width: 28vw;
+    transition: all 1s;
+  }
 }
 
 /***********************************************
@@ -74,6 +104,21 @@ h1 {
 
 .report-section__summary-logo {
   width: 60vw;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 600px) {
+  .report-section__summary-logo {
+    width: 50vw;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__summary-logo {
+    width: 18vw;
+    transition: all 1s;
+  }
 }
 
 .report-section__title {
@@ -90,9 +135,38 @@ h1 {
   text-align: left;
 }
 
+@media only screen and (min-width: 600px) {
+  .report-section__list {
+    text-align: center;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__list {
+    text-align: center;
+    transition: all 1s;
+  }
+}
+
 .report-section__list-item {
   padding: 2vh 0;
   margin-left: 4vw;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 600px) {
+  .report-section__list-item {
+    margin: 0;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__list-item {
+    margin: 0;
+    transition: all 1s;
+  }
 }
 
 .report-section__icon {
@@ -103,6 +177,12 @@ h1 {
 .report-section__banner {
   background-color: #ffffff;
   margin: 0 -4vw;
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__banner {
+    margin: 0;
+  }
 }
 
 /***********************************************
@@ -128,11 +208,31 @@ h1 {
   overflow-y: hidden;
 }
 
+@media only screen and (min-width: 600px) {
+  .report-section__calendar {
+    max-width: 80vw;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__calendar {
+    max-width: 80vw;
+    transition: all 1s;
+  }
+}
+
 .report-section__arrows {
   letter-spacing: 5px;
   font-weight: bolder;
   color: slategrey;
   margin-bottom: 3vh;
+}
+
+@media only screen and (min-width: 750px) {
+  .report-section__arrows {
+    display: none;
+  }
 }
 
 .calendar {
@@ -150,6 +250,7 @@ h1 {
 .report-section__freecodecamp-score {
   font-size: 5rem;
   margin-top: 5vh;
+  margin-bottom: 1vh;
   font-weight: 600;
 }
 
@@ -169,11 +270,28 @@ h1 {
   background-color: rgb(231, 250, 251);
   border: black solid 3px;
   border-radius: 2px;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 600px) {
+  .report-section__kata {
+    width: 80vw;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__kata {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 70vw;
+    transition: all 1s;
+  }
 }
 
 .report-section__authored-kata {
   font-size: $report-kata-description-fontsize;
-  margin-top: 2vh;
+  margin: 2vh;
 }
 
 .report-section__kata-name {
@@ -183,8 +301,9 @@ h1 {
 .report-section__kata-item {
   font-size: $report-description-fontsize;
   padding: 3vh 3vw;
-  border: 2px solid black;
   background-color: rgb(231, 250, 251);
+  border: black solid 3px;
+  border-radius: 2px;
   margin: 3vh 2vw;
   display: inline;
 }

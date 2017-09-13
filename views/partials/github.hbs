@@ -10,10 +10,14 @@
       <p class="report-section__info-description">on this project</p>
       </li>
     {{else}}
-    <li>{{githubCommits.message}}</li>
+    <li class="report-section__info-item">
+      <p class="report-section__info-description">{{githubCommits.message}}</p>
+    </li>
     {{/if}}
     {{#unless w3Validation.success}}
-    <li>{{w3Validation.message}}</li>
+    <li class="report-section__info-item">
+      <p class="report-section__info-description">{{w3Validation.message}}</p>
+    </li>
     {{/unless}}
     {{#if w3Validation.success}}
     <li class="report-section__info-item">
@@ -29,7 +33,9 @@
       <p class="report-section__info-description">on this account</p>
     </li>
     {{else}}
-    <li>{{githubRepos.message}}</li>
+    <li class="report-section__info-item">
+      <p class="report-section__info-description">{{githubRepos.message}}</p>
+    </li>
     {{/if}}
   </ul>
   {{>githubCalendar}}
