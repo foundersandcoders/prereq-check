@@ -1,11 +1,14 @@
 <section class="report-section">
   <h1 class="report-section__title">Website & GitHub</h1>
-  <ul class="report-section__list">
+  <ul class="report-section__list report-section__banner">
     {{>githubSummary}}
   </ul>
   <ul>
      {{#if githubCommits.success }}
-    <li>{{githubCommits.commits }} commits on this project</li>
+    <li>
+      <h3 class="report-section__info-title">{{githubCommits.commits }} commits</h3> 
+      <p class="report-section__info-description">on this project</p>
+      </li>
     {{else}}
     <li>{{githubCommits.message}}</li>
     {{/if}}

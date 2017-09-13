@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
 /***********************************************
   page layout
 ***********************************************/
@@ -29,6 +33,8 @@ body {
   font: $main-font;
   background-color: $main-color;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  
 }
 
 h1 {
@@ -75,6 +81,7 @@ h1 {
 
 .report-section__title {
   padding: 2.5vh 0;
+  font-weight: 700;
 }
 
 .report-section__prereq {
@@ -83,12 +90,12 @@ h1 {
 }
 
 .report-section__list {
-  list-style: none;
   text-align: left;
 }
 
 .report-section__list-item {
   padding: 2vh 0;
+  margin-left: 4vw;
 }
 
 .report-section__icon {
@@ -98,6 +105,11 @@ h1 {
 
 .report-section__fcc-subtitle {
   font-style: italic;
+}
+
+.report-section__banner {
+  background-color: #ffffff;
+  margin: 0 -4vw;
 }
 
 /***********************************************
@@ -110,11 +122,23 @@ h1 {
   overflow-y: hidden;
 }
 
+.report-section__info-title {
+  font-size: $report-title-fontsize;
+}
 
+.report-section__info-description {
+  font-size: $links-form-fontsize;
+}
 
 /***********************************************
-  report page
+  freecodecamp section
 ***********************************************/
+.report-section__freecodecamp-score {
+  font-size: 5rem;
+  margin-top: 5vh;
+  font-weight: 600;
+}
+
 /***********************************************
   report page
 ***********************************************/
