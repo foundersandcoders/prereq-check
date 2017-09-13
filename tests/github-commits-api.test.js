@@ -22,7 +22,7 @@ tape('getGithubCommits success', (t) => {
     });
 });
 
-tape('getGithubCommits success', (t) => {
+tape('getGithubCommits failure', (t) => {
   nock('https://api.github.com/repos')
     .get('/bartbucknill/fac-applicationxxx/commits')
     .reply(404);
