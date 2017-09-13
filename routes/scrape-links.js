@@ -21,7 +21,7 @@ const getCodewarsLink = (htmlString) => {
 };
 
 const scrapeLinks = (req, res) => {
-  const url = normalizeUrl(req.query.githubPage);
+  const url = req.query.githubPage ? normalizeUrl(req.query.githubPage) : '';
   return rp(url)
     .then((htmlString) => {
       const githubScrape = {
