@@ -136,12 +136,60 @@
   <h1 class="report-section__title">Codewars</h1>
   <ul class="report-section__list">
     <li class="report-section__list-item">
-  <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Codewars: 5 Kyu or better</p>
-</li>
-<li class="report-section__list-item">
-  <img class="report-section__icon" src="/images/x-mark.svg" alt=""><p class="report-section__prereq">Codewars: authored 1+ Kata</p>
-</li>
-</ul>
+      {{#unless codewars.success}}
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Codewars: {{codewars.message}}</p>
+      {{/unless}}
+      {{#if codewars.success}}
+        {{#if codewars.achieved5Kyu}}
+        <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed"><p class="report-section__prereq">Codewars: 5 Kyu or better</p>
+      {{else}}
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed"><p class="report-section__prereq">Codewars: 5 Kyu or better</p>
+        {{/if}}
+      {{/if}}
+    </li>
+    <li class="report-section__list-item">
+      {{#unless codewars.success}}
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Codewars: {{codewars.message}}</p>
+      {{/unless}}
+      {{#if codewars.hasAuthored}}
+        <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed">
+      {{else}}
+        <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed">
+      {{/if}}
+      <p class="report-section__prereq">Codewars: authored 1+ Kata</p>
+    </li>
+  </ul>
+  <ul>
+    {{#each codewarsKatas}}
+    {{#if this.success}}
+    <li>
+      Kata Name: <a href="{{this.link}}">{{this.name}}</a>
+    </li>
+    <li>
+      {{#unless this.beta}}
+      Kata Rank: {{this.rank}}
+      {{else}}
+      Kata in Beta
+      {{/unless}}
+    </li>
+    <li>
+      Completions: {{this.completions}}
+    </li>
+      {{else}}
+    <li>
+      {{this.message}}
+    </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+  <ul>
+    <li>
+      Kyu Level: {{codewars.kyu}}
+    </li>
+    <li>
+      Honor: {{codewars.honor}}
+    </li>
+  </ul>
 </section>
 
 <section class="report-section">
