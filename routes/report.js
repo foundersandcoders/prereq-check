@@ -1,4 +1,4 @@
-const { getCodewars } = require("../model/codewars-api");
+const { getCodewars, getAuthoredKatas, appendKataCompletions } = require("../model/codewars-api");
 const { getFreeCodeCamp } = require("../model/freecodecamp-crawl");
 const { getGithubPage } = require('../model/github-page');
 const { getW3Validator } = require('../model/w3-validator');
@@ -14,16 +14,18 @@ const displayReport = (req, res) => {
     getGithubPage(githubPage), 
     getW3Validator(githubPage), 
     getGithubRepos(ghHandle), 
-    getGithubCommits(ghHandle, githubPage)])
+    getGithubCommits(ghHandle, githubPage),
+    getAuthoredKatas(ghHandle).then(appendKataCompletions)])
     .then((values) => {
       const summaryObject = {};
-      summaryObject.codewars = values[0];
-      summaryObject.freeCodeCamp = values[1];
-      summaryObject.githubPage = values[2];
-      summaryObject.w3Validation = values[3];
-      summaryObject.githubRepos = values[4];
-      summaryObject.githubCommits = values[5];
-      summaryObject.githubHandle = ghHandle; //need to grab from request object
+      [summaryObject.codewars,
+        summaryObject.freeCodeCamp,
+        summaryObject.githubPage,
+        summaryObject.w3Validation,
+        summaryObject.githubRepos,
+        summaryObject.githubCommits,
+        summaryObject.codewarsKatas] = values;
+      summaryObject.githubHandle = ghHandle;
 
       res.render('report', summaryObject);
     });

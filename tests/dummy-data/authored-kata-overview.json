@@ -1,0 +1,42 @@
+{  
+   "data":[  
+      {  
+         "id":"5884b6550785f7c58f000047",
+         "name":"Organise duplicate numbers in list",
+         "description":"Sam is an avid collector of numbers. Every time he finds a new number he throws it on the top of his number-pile. Help Sam organise his collection so he can take it to the International Number Collectors Conference in Cologne. Given an array of numbers, your function should return an array of arrays, where each subarray contains all the duplicates of a particular number. Subarrays should be in the same order as the first occurence of the number they contain: ```javascript group([3, 2, 6, 2, 1, 3]) >>> [[3, 3], [2, 2], [6], [1]] ``` Assume the input is always going to be an array of numbers. If the input is an empty array, an empty array should be returned.",
+         "rank":-6,
+         "rankName":"6 kyu",
+         "tags":[  
+            "Fundamentals",
+            "Arrays",
+            "Data Types",
+            "Sorting",
+            "Algorithms",
+            "Logic"
+         ],
+         "languages":[  
+            "javascript",
+            "php",
+            "python",
+            "ruby",
+            "crystal"
+         ]
+      },
+      {  
+         "id":"58d64c8d14286ca558000083",
+         "name":"Join command (simplified)",
+         "description":"The [join command](https://shapeshed.com/unix-join/) in Linux joins the lines of two data files on a common field. Your task is to write a function *join* which simulates this, but with some differences: <ul> <li>Can join any number of inputs at a time, not just 2 </li> <li>Lines of input data don't need to be sorted</li> <li>Always joins on the first field</li> <li>Includes unpairable lines in output</li> </ul> Empty cells resulting from unpairable lines should be filled with a substitute value, which is passed as the first argument to *join*. Instead of files, your data sets are contained in arrays. Each row of data is contained in a subarray, and each data value is represented by an element in the subarray: ```javascript dataTable = [ [join1, val1, val2], [join3, val3, val4], ]; dataTable1 = [ [join1, val5, val6], [join2, val7, val8], [join3, val9, val10] ]; join(sub, dataTable, dataTable1); >>> [ [join1, val1, val2, val5, val6], [join2, sub, sub, val7, val8], [join3, val3, val4, val9, val10] ] ``` (This is similar to the data format used by [Google Charts](https://developers.google.com/chart/interactive/docs/datatables_dataviews)). Data tables should be joined in the order in which they appear as arguments. You may assume that the join fields in a given data table will always be unique. Also assume each cell contains only strings or numbers (no need to test for deep equality), and data tables can have different numbers of lines, but all lines across all inputs have the same length.",
+         "rank":null,
+         "rankName":null,
+         "tags":[  
+            "Algorithms",
+            "Arrays",
+            "Data Types",
+            "Data Structures"
+         ],
+         "languages":[  
+            "javascript"
+         ]
+      }
+   ]
+}
