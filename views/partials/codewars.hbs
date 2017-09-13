@@ -1,0 +1,37 @@
+<section class="report-section">
+  <h1 class="report-section__title">Codewars</h1>
+  <ul class="report-section__list">
+    {{>codewarsSummary}}
+  </ul>
+  <ul>
+    {{#each codewarsKatas}}
+    {{#if this.success}}
+    <li>
+      Kata Name: <a href="{{this.link}}">{{this.name}}</a>
+    </li>
+    <li>
+      {{#unless this.beta}}
+      Kata Rank: {{this.rank}}
+      {{else}}
+      Kata in Beta
+      {{/unless}}
+    </li>
+    <li>
+      Completions: {{this.completions}}
+    </li>
+      {{else}}
+    <li>
+      {{this.message}}
+    </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+  <ul>
+    <li>
+      Kyu Level: {{codewars.kyu}}
+    </li>
+    <li>
+      Honor: {{codewars.honor}}
+    </li>
+  </ul>
+</section>
