@@ -4,6 +4,7 @@ const { getGithubPage } = require('../model/github-page');
 const { getW3Validator } = require('../model/w3-validator');
 const { getGithubRepos } = require('../model/github-repo-api');
 const { getGithubCommits } = require('../model/github-commits-api');
+const getMeetupCount = require('../model/meetups');
 
 const displayReport = (req, res) => {
   const { githubPage, fccHandle, cwHandle, ghHandle } = req.query;
@@ -15,7 +16,8 @@ const displayReport = (req, res) => {
     getW3Validator(githubPage), 
     getGithubRepos(ghHandle), 
     getGithubCommits(ghHandle, githubPage),
-    getAuthoredKatas(cwHandle).then(appendKataCompletions)])
+    getAuthoredKatas(cwHandle).then(appendKataCompletions),
+    getMeetupCount(ghHandle)])
     .then((values) => {
       const summaryObject = {};
       [summaryObject.codewars,
@@ -24,9 +26,10 @@ const displayReport = (req, res) => {
         summaryObject.w3Validation,
         summaryObject.githubRepos,
         summaryObject.githubCommits,
-        summaryObject.codewarsKatas] = values;
+        summaryObject.codewarsKatas,
+        summaryObject.meetups] = values;
       summaryObject.githubHandle = ghHandle;
-
+        console.log(summaryObject)
       res.render('report', summaryObject);
     });
 };

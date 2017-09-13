@@ -1,0 +1,9 @@
+<section class="report-section">
+    <h1 class="report-section__title">Meetup</h1>
+    {{#if meetups.success}}
+    <p>{{meetups.count}}</p>
+    <h3>meetups</h3>
+    <p>But don't worry if you've struggled to attend!</p>
+    {{else}}
+    <p>{{meetups.message}}</p>
+</section>
