@@ -15,7 +15,7 @@ const displayReport = (req, res) => {
     getW3Validator(githubPage), 
     getGithubRepos(ghHandle), 
     getGithubCommits(ghHandle, githubPage),
-    getAuthoredKatas(ghHandle).then(appendKataCompletions)])
+    getAuthoredKatas(cwHandle).then(appendKataCompletions)])
     .then((values) => {
       const summaryObject = {};
       [summaryObject.codewars,
