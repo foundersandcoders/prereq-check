@@ -37,6 +37,7 @@ tape('FCC Crawl: getFreeCodeCamp valid username', (t) => {
     .then((actual) => {
       t.deepEqual(actual, {
         success: true,
+        score: '289',
         htmlCss: true,
         basicJavaScript: true,
         oOFunctionalProgramming: true,
@@ -60,4 +61,3 @@ tape('FCC Crawl: getFreeCodeCamp invalid username', (t) => {
       t.end();
     });
 });
-

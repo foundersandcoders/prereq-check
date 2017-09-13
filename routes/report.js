@@ -10,7 +10,13 @@ const { getGithubCommits } = require('../model/github-commits-api');
 
 const displayReport = (req, res) => {
   //args to promises to be grabbed from request object
-  Promise.all([getCodewars('astroash'), getFreeCodeCamp('astroash'), getGithubPage('http://www.astroash.com/'), getW3Validator('http://www.astroash.com/'), getGithubRepos('astroash'), getGithubCommits('bartbucknill', 'https://bartbucknill.github.io/fac-application/')])
+  Promise.all([
+    getCodewars('astroash'), 
+    getFreeCodeCamp('astroash'), 
+    getGithubPage('http://www.astroash.com/'), 
+    getW3Validator('http://www.astroash.com/'), 
+    getGithubRepos('astroash'), 
+    getGithubCommits('bartbucknill', 'https://bartbucknill.github.io/fac-application/')])
     .then((values) => {
       const summaryObject = {};
       summaryObject.codewars = values[0];
