@@ -31,6 +31,8 @@ const scrapeLinks = (req, res) => {
         fccHandle: getFccLink(htmlString),
         codewarsHandle: getCodewarsLink(htmlString),
       };
+      githubScrape.allHandles = githubScrape.githubHandle &&
+        githubScrape.fccHandle && githubScrape.codewarsHandle;
       res.render('validate-form', githubScrape);
     })
     .catch((err) => {
