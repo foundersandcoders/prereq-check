@@ -1,23 +1,27 @@
 const rp = require('request-promise-native');
 const normalizeUrl = require('normalize-url');
 
+
 const getGithubLink = (htmlString) => {
   const regEx = /github.com\/([\w-]*)/;
-  return regEx.exec(htmlString)[1];
+  const ghHandle = regEx.exec(htmlString);
+  return ghHandle ? ghHandle[1] : null;
 };
 
 const getFccLink = (htmlString) => {
   const regEx = /freecodecamp.(org|com)\/([\w-]*)/;
-  return regEx.exec(htmlString)[2];
+  const fccHandle = regEx.exec(htmlString);
+  return fccHandle ? fccHandle[2] : null;
 };
 
 const getCodewarsLink = (htmlString) => {
   const regEx = /codewars.com\/users\/([\w-]*)/;
-  return regEx.exec(htmlString)[1];
+  const cwHandle = regEx.exec(htmlString);
+  return cwHandle ? cwHandle[1] : null;
 };
 
 const scrapeLinks = (req, res) => {
-  const url = normalizeUrl(req.query.githubPage);
+  const url = req.query.githubPage ? normalizeUrl(req.query.githubPage) : '';
   return rp(url)
     .then((htmlString) => {
       const githubScrape = {
@@ -27,11 +31,13 @@ const scrapeLinks = (req, res) => {
         fccHandle: getFccLink(htmlString),
         codewarsHandle: getCodewarsLink(htmlString),
       };
+      githubScrape.allHandles = githubScrape.githubHandle &&
+        githubScrape.fccHandle && githubScrape.codewarsHandle;
       res.render('validate-form', githubScrape);
     })
     .catch((err) => {
       console.error('Fetching Github Pages URL failed');
-      // console.error(err);
+      console.error(err);
       const githubScrape = {
         success: false,
         message:'Page not found',

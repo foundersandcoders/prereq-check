@@ -4,9 +4,12 @@
         {{#unless success}}
         <p>Sorry this URL could not be found</p>
         {{/unless}}
+        
         <input class="links__input" type="text" name="githubPage" value="{{githubPageLink}}">
         <input class="links__submit" type="submit" formaction="scrape-links" name="submit" value="Submit">
-        
+        {{#unless allHandles}}
+        <p>We couldn't find some of your usernames, please enter them below.</p>
+        {{/unless}}
         <p>freeCodeCamp username</p>
         <input class="links__input" type="text" name="fccHandle" value="{{fccHandle}}">
         <p>Codewars username</p>
