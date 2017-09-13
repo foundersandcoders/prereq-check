@@ -18,6 +18,7 @@ const getAuthoredKatas = (username) => {
     .then((apiRes) => {
       return apiRes.data.reduce((ourKataArray, responseKataArray) => {
         const data = {
+          success: true,
           id: responseKataArray.id,
           name: responseKataArray.name,
           link: 'https://www.codewars.com/kata/' + responseKataArray.id,
