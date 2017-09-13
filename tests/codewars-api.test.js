@@ -30,12 +30,14 @@ tape('Codewars API: hasAuthored', (t) => {
 
 tape('Codewars API: getAuthoredKatas', (t) => {
   const expected = [{
+    success: true,
     id: "5884b6550785f7c58f000047",
     name: "Organise duplicate numbers in list",
     rank: 6,
     beta: false,
     link: 'https://www.codewars.com/kata/5884b6550785f7c58f000047'
   }, {
+    success: true,
     id: "58d64c8d14286ca558000083",
     name: "Join command (simplified)",
     rank: 0,
@@ -55,6 +57,7 @@ tape('Codewars API: getAuthoredKatas', (t) => {
 
 tape('Codewars API: appendKataCompletions', (t) => {
   const input = [{
+    success: true,
     id: '5884b6550785f7c58f000047',
     name: 'Organise duplicate numbers in list',
     rank: 6,
@@ -62,6 +65,7 @@ tape('Codewars API: appendKataCompletions', (t) => {
     link: 'https://www.codewars.com/kata/5884b6550785f7c58f000047',
   }];
   const expected = [{
+    success: true,
     id: '5884b6550785f7c58f000047',
     name: 'Organise duplicate numbers in list',
     rank: 6,
