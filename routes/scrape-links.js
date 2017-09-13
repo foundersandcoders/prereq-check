@@ -27,16 +27,16 @@ const scrapeLinks = (req, res) => {
         fccHandle: getFccLink(htmlString),
         codewarsHandle: getCodewarsLink(htmlString),
       };
-      res.render('links', githubScrape)
+      res.render('validate-form', githubScrape);
     })
     .catch((err) => {
       console.error('Fetching Github Pages URL failed');
-      console.error(err);
+      // console.error(err);
       const githubScrape = {
         success: false,
         message:'Page not found',
       };
-      res.render('links', githubScrape)
+      res.render('validate-form', githubScrape);
     });
 };
 module.exports = scrapeLinks;
