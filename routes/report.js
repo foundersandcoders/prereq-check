@@ -6,15 +6,16 @@ const { getGithubRepos } = require('../model/github-repo-api');
 const { getGithubCommits } = require('../model/github-commits-api');
 
 const displayReport = (req, res) => {
+  const { githubPage, fccHandle, cwHandle, ghHandle } = req.query;
   //args to promises to be grabbed from request object
   Promise.all([
-    getCodewars('astroash'),
-    getFreeCodeCamp('astroash'),
-    getGithubPage('http://www.astroash.com/'),
-    getW3Validator('http://www.astroash.com/'),
-    getGithubRepos('astroash'),
-    getGithubCommits('bartbucknill', 'https://bartbucknill.github.io/fac-application/'),
-    getAuthoredKatas('dangerdak').then(appendKataCompletions)])
+    getCodewars(cwHandle), 
+    getFreeCodeCamp(fccHandle), 
+    getGithubPage(githubPage), 
+    getW3Validator(githubPage), 
+    getGithubRepos(ghHandle), 
+    getGithubCommits(ghHandle, githubPage),
+    getAuthoredKatas(cwHandle).then(appendKataCompletions)])
     .then((values) => {
       const summaryObject = {};
       [summaryObject.codewars,
@@ -24,9 +25,8 @@ const displayReport = (req, res) => {
         summaryObject.githubRepos,
         summaryObject.githubCommits,
         summaryObject.codewarsKatas] = values;
-      //need to grab from request object
-      summaryObject.githubHandle = 'astroash';
-      console.log(summaryObject);
+      summaryObject.githubHandle = ghHandle;
+
       res.render('report', summaryObject);
     });
 };
