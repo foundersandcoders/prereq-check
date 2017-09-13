@@ -17,7 +17,8 @@ html {
 }
 
 a {
-  text-decoration: none;
+  color: #0075A2;
+  text-decoration: underline;
 }
 
 li {
@@ -34,16 +35,11 @@ body {
   background-color: $main-color;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  
 }
 
 h1 {
   font-size: $report-title-fontsize;
 }
-
-/***********************************************
-  main
-***********************************************/
 
 /***********************************************
   login page
@@ -85,7 +81,7 @@ h1 {
 }
 
 .report-section__prereq {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: inline;
 }
 
@@ -103,45 +99,62 @@ h1 {
   margin-right: 2vw;
 }
 
-.report-section__fcc-subtitle {
-  font-style: italic;
-}
-
 .report-section__banner {
   background-color: #ffffff;
   margin: 0 -4vw;
 }
 
 /***********************************************
-  github section 
+  github section
 ***********************************************/
 
-.report-section__calendar {
+ .report-section__info-item {
+   margin: 2vh 0;
+ }
+
+ .report-section__info-title {
+   font-size: $report-subtitle-fontsize;
+ }
+
+ .report-section__info-description {
+   font-size: $report-description-fontsize;
+ }
+
+ .report-section__calendar {
   max-width: 92vw;
   overflow: scroll;
   overflow-y: hidden;
 }
 
-.report-section__info-title {
-  font-size: $report-title-fontsize;
-}
-
-.report-section__info-description {
-  font-size: $links-form-fontsize;
-}
-
 /***********************************************
   freecodecamp section
 ***********************************************/
+
 .report-section__freecodecamp-score {
   font-size: 5rem;
   margin-top: 5vh;
   font-weight: 600;
 }
 
+.report-section__fcc-subtitle {
+  margin-bottom: 1vh;
+  font-style: italic;
+}
+
 /***********************************************
-  report page
+  codewars section
 ***********************************************/
-/***********************************************
-  report page
-***********************************************/
+
+.report-section__kata {
+  width: 90vw;
+  margin-bottom: 3vh;
+  padding: 1vh 1vw;
+  background-color: rgb(231, 250, 251);
+  border: black solid 3px;
+  border-radius: 2px;
+}
+
+.report-section__authored-kata {
+  font-size: $report-description-fontsize;
+  margin-top: 2vh;
+}

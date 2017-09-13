@@ -3,24 +3,25 @@
   <ul class="report-section__list report-section__banner">
     {{>codewarsSummary}}
   </ul>
-  <ul>
+  <p class="report-section__authored-kata">Authored kata</p>
+  <ul class="report-section__kata">
     {{#each codewarsKatas}}
     {{#if this.success}}
-    <li>
+    <li class="report-section__kata-name">
       Kata Name: <a href="{{this.link}}">{{this.name}}</a>
     </li>
-    <li>
+    <li class="report-section__kata-item">
       {{#unless this.beta}}
       Kata Rank: {{this.rank}}
       {{else}}
       Kata in Beta
       {{/unless}}
     </li>
-    <li>
+    <li class="report-section__kata-item">
       Completions: {{this.completions}}
     </li>
       {{else}}
-    <li>
+    <li class="report-section__kata-item">
       {{this.message}}
     </li>
       {{/if}}
