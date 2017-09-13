@@ -1,0 +1,48 @@
+{  
+   "id":"5884b6550785f7c58f000047",
+   "name":"Organise duplicate numbers in list",
+   "slug":"organise-duplicate-numbers-in-list",
+   "category":"reference",
+   "publishedAt":"2017-02-22T19:33:08Z",
+   "approvedAt":"2017-02-26T20:32:34Z",
+   "languages":[  
+      "javascript",
+      "php",
+      "python",
+      "ruby",
+      "crystal"
+   ],
+   "url":"https://www.codewars.com/kata/organise-duplicate-numbers-in-list",
+   "rank":{  
+      "id":-6,
+      "name":"6 kyu",
+      "color":"yellow"
+   },
+   "createdAt":"2017-01-22T13:40:37Z",
+   "createdBy":{  
+      "username":"dangerdak",
+      "url":"https://www.codewars.com/users/dangerdak"
+   },
+   "approvedBy":{  
+      "username":"HerrWert",
+      "url":"https://www.codewars.com/users/HerrWert"
+   },
+   "description":"Sam is an avid collector of numbers. Every time he finds a new number he throws it on the top of his number-pile. Help Sam organise his collection so he can take it to the International Number Collectors Conference in Cologne. Given an array of numbers, your function should return an array of arrays, where each subarray contains all the duplicates of a particular number. Subarrays should be in the same order as the first occurence of the number they contain: ```javascript group([3, 2, 6, 2, 1, 3]) >>> [[3, 3], [2, 2], [6], [1]] ``` Assume the input is always going to be an array of numbers. If the input is an empty array, an empty array should be returned.",
+   "totalAttempts":2175,
+   "totalCompleted":434,
+   "totalStars":21,
+   "voteScore":134,
+   "tags":[  
+      "Fundamentals",
+      "Arrays",
+      "Data Types",
+      "Sorting",
+      "Algorithms",
+      "Logic"
+   ],
+   "contributorsWanted":true,
+   "unresolved":{  
+      "issues":2,
+      "suggestions":0
+   }
+}

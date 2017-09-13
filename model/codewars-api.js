@@ -26,6 +26,37 @@ const getAuthoredKatas = (username) => {
         };
         return [...ourKataArray, data];
       }, []);
+    })
+    .catch((err) => {
+      console.error('Fetching authored katas failed');
+      const codewarsObj = {};
+      codewarsObj.success = false;
+      codewarsObj.statusCode = err.statusCode;
+      if (err.statusCode === 404) {
+        codewarsObj.message = 'User not found';
+      } else {
+        codewarsObj.message = 'Error retrieving data';
+      }
+      return codewarsObj;
+    });
+};
+
+const appendKataCompletions = (katas) => {
+  const completionPromises = katas.map((kata) => {
+    const options = {
+      uri: `https://www.codewars.com/api/v1/code-challenges/${kata.id}`,
+      json: true, // Automatically parses the JSON string in the response
+    };
+    return rp(options)
+      .then((kataDetail) => {
+        return kataDetail.totalCompleted;
+      });
+  });
+  return Promise.all(completionPromises)
+    .then((completionsArray) => {
+      return katas.map((kata, index) => {
+        return Object.assign({}, kata, { completions: completionsArray[index] });
+      });
     });
 };
 
@@ -65,4 +96,5 @@ module.exports = {
   getAuthoredKatas,
   getKyu,
   getCodewars,
+  appendKataCompletions,
 };

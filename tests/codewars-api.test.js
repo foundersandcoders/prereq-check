@@ -8,6 +8,7 @@ const {
   hasAuthored,
   getCodewars,
   getAuthoredKatas,
+  appendKataCompletions,
 } = require('../model/codewars-api');
 
 tape('Codewars API: getKyu', (t) => {
@@ -48,6 +49,32 @@ tape('Codewars API: getAuthoredKatas', (t) => {
   getAuthoredKatas(username)
     .then((katas) => {
       t.deepEqual(katas, expected, 'Returns array of relevant kata data from api response');
+      t.end();
+    });
+});
+
+tape('Codewars API: appendKataCompletions', (t) => {
+  const input = [{
+    id: '5884b6550785f7c58f000047',
+    name: 'Organise duplicate numbers in list',
+    rank: 6,
+    beta: false,
+    link: 'https://www.codewars.com/kata/5884b6550785f7c58f000047',
+  }];
+  const expected = [{
+    id: '5884b6550785f7c58f000047',
+    name: 'Organise duplicate numbers in list',
+    rank: 6,
+    beta: false,
+    link: 'https://www.codewars.com/kata/5884b6550785f7c58f000047',
+    completions: 434,
+  }];
+  nock('https://www.codewars.com/')
+    .get('/api/v1/code-challenges/5884b6550785f7c58f000047')
+    .replyWithFile(200, path.join(__dirname, 'dummy-data', 'authored-kata-detail.json'));
+  appendKataCompletions(input)
+    .then((katas) => {
+      t.deepEqual(katas, expected, 'Returns array of kata with completions key');
       t.end();
     });
 });
