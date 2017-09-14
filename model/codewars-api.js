@@ -51,6 +51,11 @@ const appendKataCompletions = (katas) => {
     return rp(options)
       .then((kataDetail) => {
         return kataDetail.totalCompleted;
+      })
+      .catch((err) => {
+        console.error('Fetching codewars kata completions');
+        //console.error(err);
+        return null;
       });
   });
   return Promise.all(completionPromises)
