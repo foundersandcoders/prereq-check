@@ -9,13 +9,16 @@ const displayReport = (req, res) => {
   const { githubPage, fccHandle, cwHandle, ghHandle } = req.query;
   //args to promises to be grabbed from request object
   Promise.all([
-    getCodewars(cwHandle), 
-    getFreeCodeCamp(fccHandle), 
-    getGithubPage(githubPage), 
-    getW3Validator(githubPage), 
-    getGithubRepos(ghHandle), 
+    getCodewars(cwHandle),
+    getFreeCodeCamp(fccHandle),
+    getGithubPage(githubPage),
+    getW3Validator(githubPage),
+    getGithubRepos(ghHandle),
     getGithubCommits(ghHandle, githubPage),
-    getAuthoredKatas(cwHandle).then(appendKataCompletions)])
+    getAuthoredKatas(cwHandle).then(appendKataCompletions)
+      .catch((err) => {
+        console.error('Fetching Promise.all Kata completions');
+      })])
     .then((values) => {
       const summaryObject = {};
       [summaryObject.codewars,
