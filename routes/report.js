@@ -5,9 +5,12 @@ const { getW3Validator } = require('../model/w3-validator');
 const { getGithubRepos } = require('../model/github-repo-api');
 const { getGithubCommits } = require('../model/github-commits-api');
 
+const isEmpty = obj => Object.keys(obj).length === 0;
 const displayReport = (req, res) => {
+  if(isEmpty(req.query)) {
+    return res.redirect('/links');
+  }
   const { githubPage, fccHandle, cwHandle, ghHandle } = req.query;
-  //args to promises to be grabbed from request object
   Promise.all([
     getCodewars(cwHandle),
     getFreeCodeCamp(fccHandle),
@@ -29,7 +32,6 @@ const displayReport = (req, res) => {
         summaryObject.githubCommits,
         summaryObject.codewarsKatas] = values;
       summaryObject.githubHandle = ghHandle;
-console.log(summaryObject);
       res.render('report', summaryObject);
     })
     .catch((err) => {

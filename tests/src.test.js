@@ -57,3 +57,15 @@ test('Test /scrape-links', (t) => {
       t.end();
     });
 });
+
+test('Test /report', (t) => {
+  request(app)
+    .get('/report')
+    .expect(302)
+    .expect('Content-Type', /json/)
+    .end((err, res) => {
+      t.same(res.statusCode, 302, '/report without querystring redirects');
+      t.error(err.Error, 'No error');
+      t.end();
+    });
+});

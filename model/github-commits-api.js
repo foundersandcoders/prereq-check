@@ -8,7 +8,7 @@ const getRepoName = (url) => {
 };
 
 const getGithubCommits = (githubHandle, url) => {
-  const repo = getRepoName(url);
+  const repo = url ? getRepoName(url) : '';
   const options = {
     uri: `https://api.github.com/repos/${githubHandle}/${repo}/commits`,
     headers: {
@@ -25,7 +25,7 @@ const getGithubCommits = (githubHandle, url) => {
     })
     .catch((err) => {
       console.error('Get Github commit count failed');
-      console.error(err);
+      // console.error(err);
       return {
         success: false,
         message: 'Fetching Github commit count failed',

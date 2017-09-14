@@ -9,7 +9,7 @@ const getNumberOfErrors = array => array.reduce((sum, item) => {
 }, 0);
 
 const getW3Validator = (url) => {
-  const w3Url = `http://validator.w3.org/nu/?doc=${url}`; 
+  const w3Url = `http://validator.w3.org/nu/?doc=${url}`;
   const options = {
     uri: `${w3Url}/&out=json`,
     headers: {
@@ -29,7 +29,7 @@ const getW3Validator = (url) => {
     })
     .catch((err) => {
       console.error('Fetching W3 Validator info failed');
-      console.error(err);
+      // console.error(err);
       return {
         success: false,
         message: 'Error retrieving data from W3 Validator',
