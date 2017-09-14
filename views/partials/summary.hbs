@@ -1,11 +1,11 @@
 <section class="report-section">
-  <img class="report-section__summary-logo" src="/images/lightbulb.png">
+  <img class="report-section__summary-logo" src="/images/lightbulb.png" alt="Founders and Coders Logo">
   <h1 class="report-section__title">Summary</h1>
     <ul class="report-section__list">
       {{>githubSummary}}
       <li class="report-section__list-item">
         {{#unless freeCodeCamp.success}}
-          <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">freeCodeCamp: {{freeCodeCamp.message}}</p>
+          <p class="report-section__prereq">freeCodeCamp: {{freeCodeCamp.message}}</p>
         {{/unless}}
         {{#if freeCodeCamp.success}}
           {{#if freeCodeCamp.complete}}

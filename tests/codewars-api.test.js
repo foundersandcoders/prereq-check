@@ -99,8 +99,6 @@ tape('Codewars API: getCodewars valid username', (t) => {
     .replyWithFile(200, path.join(__dirname, 'dummy-data', 'authored-kata-overview.json'));
   getCodewars(username)
     .then((actual) => {
-      console.log(actual);
-      console.log(expected);
       t.deepEqual(actual, expected, 'getCodewars for valid username returns correct object');
       t.end();
     });

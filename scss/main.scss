@@ -17,7 +17,7 @@ html {
 }
 
 a {
-  color: #0075A2;
+  color: $links-color;
   text-decoration: underline;
 }
 
@@ -35,6 +35,21 @@ body {
   background-color: $main-color;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    margin: 5vh 10vw;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  body {
+    margin: 5vh 10vw;
+    transition: all 1s;
+  }
 }
 
 h1 {
@@ -46,7 +61,44 @@ h1 {
 ***********************************************/
 
 .login__logo {
-  width: 60vw;
+  width: 55vw;
+  margin: 2vh;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 600px) {
+  .login__logo {
+    width: 50vw;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .login__logo {
+    width: 28vw;
+    transition: all 1s;
+  }
+}
+
+.login__info {
+  font-size: $report-description-fontsize;
+  margin-bottom: 2vh;
+}
+
+.login__button {
+  font-size: $links-form-fontsize;
+  padding: 2vh 2vw;
+  text-align: center;
+  background-color: $highlight-color;
+  text-align: center;
+  border: black solid 2px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.login__button:hover {
+  background-color: white;
+  cursor: pointer;
 }
 
 /***********************************************
@@ -55,12 +107,46 @@ h1 {
 
 .links__form, .links__submit, .links__input {
   font-size: $links-form-fontsize;
+  padding: 0 2vw;
+  text-align: center;
+}
+
+.links__name {
+  font-weight: 600;
 }
 
 .links__submit, .links__input {
   display: block;
-  width: 100%;
   height: 10vh;
+  margin: 3vh 0;
+  border: black solid 2px;
+  border-radius: 2px;
+}
+
+.links__input {
+  width: 100%;
+}
+
+.links__input:focus {
+  outline: none;
+  border: $links-color solid 2px;
+}
+
+.links__submit {
+  width: 35%;
+  background-color: $highlight-color;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.links__submit:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.links__error-message {
+  color: $error-message-color;
 }
 
 /***********************************************
@@ -69,10 +155,26 @@ h1 {
 
 .report-section {
   min-height: 100vh;
+  border-bottom: white solid 2px;
 }
 
 .report-section__summary-logo {
   width: 60vw;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 600px) {
+  .report-section__summary-logo {
+    width: 50vw;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__summary-logo {
+    width: 18vw;
+    transition: all 1s;
+  }
 }
 
 .report-section__title {
@@ -89,9 +191,38 @@ h1 {
   text-align: left;
 }
 
+@media only screen and (min-width: 600px) {
+  .report-section__list {
+    text-align: center;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__list {
+    text-align: center;
+    transition: all 1s;
+  }
+}
+
 .report-section__list-item {
   padding: 2vh 0;
   margin-left: 4vw;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 600px) {
+  .report-section__list-item {
+    margin: 0;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__list-item {
+    margin: 0;
+    transition: all 1s;
+  }
 }
 
 .report-section__icon {
@@ -103,6 +234,16 @@ h1 {
   background-color: #ffffff;
   margin: 0 -4vw;
 }
+
+@media only screen and (min-width: 769px) {
+  .report-section__banner {
+    margin: 0;
+  }
+}
+
+.report-section__error-message {
+   color: $error-message-color;
+ }
 
 /***********************************************
   github section
@@ -122,14 +263,35 @@ h1 {
 
  .report-section__calendar {
   max-width: 92vw;
-  overflow: scroll;
+  margin: 5vh auto;
+  overflow-x: scroll;
   overflow-y: hidden;
+}
+
+@media only screen and (min-width: 600px) {
+  .report-section__calendar {
+    max-width: 80vw;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__calendar {
+    max-width: 80vw;
+    transition: all 1s;
+  }
 }
 
 .report-section__arrows {
   letter-spacing: 5px;
   font-weight: bolder;
-  color: slategrey;
+  margin-bottom: 3vh;
+}
+
+@media only screen and (min-width: 750px) {
+  .report-section__arrows {
+    display: none;
+  }
 }
 
 .calendar {
@@ -139,6 +301,7 @@ h1 {
 .text-normal {
   font-size: 1.2rem
 }
+
 /***********************************************
   freecodecamp section
 ***********************************************/
@@ -146,6 +309,7 @@ h1 {
 .report-section__freecodecamp-score {
   font-size: 5rem;
   margin-top: 5vh;
+  margin-bottom: 1vh;
   font-weight: 600;
 }
 
@@ -160,23 +324,45 @@ h1 {
 
 .report-section__kata {
   width: 90vw;
-  margin-bottom: 3vh;
-  padding: 1vh 1vw;
-  background-color: rgb(231, 250, 251);
+  margin-bottom: 7vh;
+  padding: 1.5vh 1.5vw;
+  background-color: $highlight-color;;
   border: black solid 3px;
   border-radius: 2px;
+  transition: all 1s;
+}
+
+@media only screen and (min-width: 600px) {
+  .report-section__kata {
+    width: 80vw;
+    transition: all 1s;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .report-section__kata {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 70vw;
+    transition: all 1s;
+  }
 }
 
 .report-section__authored-kata {
   font-size: $report-kata-description-fontsize;
-  margin-top: 2vh;
+  margin: 2vh;
+}
+
+.report-section__kata-name {
+  font-size: $report-description-fontsize;
 }
 
 .report-section__kata-item {
-  width: 10vh;
-  height: 50px;
-  border: 2px solid black;
-  background-color: rgb(231, 250, 251);
-  margin: 2vh;
+  font-size: $report-description-fontsize;
+  padding: 3vh 3vw;
+  background-color: $highlight-color;;
+  border: black solid 3px;
+  border-radius: 2px;
+  margin: 3vh 2vw;
   display: inline;
 }

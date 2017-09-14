@@ -1,7 +1,6 @@
 const rp = require('request-promise-native');
 const normalizeUrl = require('normalize-url');
 
-
 const getGithubLink = (htmlString) => {
   const regEx = /github.com\/([\w-]*)/;
   const ghHandle = regEx.exec(htmlString);
@@ -37,10 +36,10 @@ const scrapeLinks = (req, res) => {
     })
     .catch((err) => {
       console.error('Fetching Github Pages URL failed');
-      console.error(err);
+      // console.error(err);
       const githubScrape = {
         success: false,
-        message:'Page not found',
+        message: 'Page not found',
       };
       res.render('validate-form', githubScrape);
     });

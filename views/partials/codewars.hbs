@@ -10,18 +10,18 @@
     <li class="report-section__kata-name">
       Kata Name: <a href="{{this.link}}">{{this.name}}</a>
     </li>
-    <li>
+    <li class="report-section__kata-name">
       {{#unless this.beta}}
       Kata Rank: {{this.rank}}
       {{else}}
       Kata in Beta
       {{/unless}}
     </li>
-    <li>
+    <li class="report-section__kata-name">
       Completions: {{this.completions}}
     </li>
       {{else}}
-    <li>
+    <li class="report-section__kata-name">
       {{this.message}}
     </li>
       {{/if}}
