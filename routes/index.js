@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const rp = require('request-promise-native');
-require('env2')('config.env');
+require('env2')('config.json');
 
 const report = require('./report');
 const scrapeLinks = require('./scrape-links');
