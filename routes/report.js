@@ -5,10 +5,11 @@ const { getW3Validator } = require('../model/w3-validator');
 const { getGithubRepos } = require('../model/github-repo-api');
 const { getGithubCommits } = require('../model/github-commits-api');
 //const getMeetupCount = require('../model/meetups');
+const hasPermission = require('./has-permission');
 
 const isEmpty = obj => Object.keys(obj).length === 0;
 const displayReport = (req, res) => {
-  if(isEmpty(req.query)) {
+  if(isEmpty(req.query) || !hasPermission(req)) {
     return res.redirect('/links');
   }
   const { githubPage, fccHandle, cwHandle, ghHandle } = req.query;
