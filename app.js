@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const router = require('./routes/index');
+const cookieSession = require('cookie-session');
 
 const app = express();
 
@@ -27,6 +28,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieSession({
+  name: 'session',
+  secret: process.env.SESSION_SECRET,
+  maxAge: 24 * 60 * 60 * 1000, // 24 hours
+}));
 
 app.use(router);
 

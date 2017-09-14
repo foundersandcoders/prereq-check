@@ -4,9 +4,10 @@ const { getGithubPage } = require('../model/github-page');
 const { getW3Validator } = require('../model/w3-validator');
 const { getGithubRepos } = require('../model/github-repo-api');
 const { getGithubCommits } = require('../model/github-commits-api');
-const getMeetupCount = require('../model/meetups');
+//const getMeetupCount = require('../model/meetups');
 
 const displayReport = (req, res) => {
+  console.log('USER: ', req.session.user)
   const { githubPage, fccHandle, cwHandle, ghHandle } = req.query;
   //args to promises to be grabbed from request object
   Promise.all([
@@ -17,7 +18,8 @@ const displayReport = (req, res) => {
     getGithubRepos(ghHandle), 
     getGithubCommits(ghHandle, githubPage),
     getAuthoredKatas(cwHandle).then(appendKataCompletions),
-    getMeetupCount(ghHandle)])
+    // getMeetupCount(ghHandle)
+    ])
     .then((values) => {
       const summaryObject = {};
       [summaryObject.codewars,
@@ -26,8 +28,9 @@ const displayReport = (req, res) => {
         summaryObject.w3Validation,
         summaryObject.githubRepos,
         summaryObject.githubCommits,
-        summaryObject.codewarsKatas,
-        summaryObject.meetups] = values;
+        summaryObject.codewarsKatas
+        //summaryObject.meetups
+        ] = values;
       summaryObject.githubHandle = ghHandle;
         console.log(summaryObject)
       res.render('report', summaryObject);
