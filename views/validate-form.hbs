@@ -1,20 +1,20 @@
 <section class="links">
     <form class="links__form" method="get">
-        <p>Enter your GitHub page url</p>
+        <p class="links__name">Enter your GitHub page url</p>
         {{#unless success}}
         <p>Sorry this URL could not be found</p>
         {{/unless}}
-        
+
         <input class="links__input" type="text" name="githubPage" value="{{githubPageLink}}">
         <input class="links__submit" type="submit" formaction="scrape-links" name="submit" value="Submit">
         {{#unless allHandles}}
         <p>We couldn't find some of your usernames, please enter them below.</p>
         {{/unless}}
-        <p>freeCodeCamp username</p>
+        <p class="links__name">freeCodeCamp username</p>
         <input class="links__input" type="text" name="fccHandle" value="{{fccHandle}}">
-        <p>Codewars username</p>
+        <p class="links__name">Codewars username</p>
         <input class="links__input" type="text" name="cwHandle" value="{{codewarsHandle}}">
-        <p>GitHub username</p>
+        <p class="links__name">GitHub username</p>
         <input class="links__input" type="text" name="ghHandle" value="{{githubHandle}}">
         <input class="links__submit" type="submit" formaction="report" name="submit" value="GO">
     </form>
