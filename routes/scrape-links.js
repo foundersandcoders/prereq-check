@@ -1,7 +1,6 @@
 const rp = require('request-promise-native');
 const normalizeUrl = require('normalize-url');
 
-
 const getGithubLink = (htmlString) => {
   const regEx = /github.com\/([\w-]*)/;
   const ghHandle = regEx.exec(htmlString);

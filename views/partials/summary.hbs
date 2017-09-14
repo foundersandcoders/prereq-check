@@ -5,7 +5,7 @@
       {{>githubSummary}}
       <li class="report-section__list-item">
         {{#unless freeCodeCamp.success}}
-          <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">freeCodeCamp: {{freeCodeCamp.message}}</p>
+          <p class="report-section__prereq">freeCodeCamp: {{freeCodeCamp.message}}</p>
         {{/unless}}
         {{#if freeCodeCamp.success}}
           {{#if freeCodeCamp.complete}}
