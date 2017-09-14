@@ -11,7 +11,7 @@ tape('getGithubPage with status code 404', (t) => {
   getGithubPage(url)
     .then((githubObj) => {
       t.notOk(githubObj.success, 'Returns object with success false');
-      t.equal(githubObj.statusCode, 404, 'Returns object with correct message');
+      t.equal(githubObj.statusCode, 404, 'Returns object with correct statusCode');
       t.end();
     });
 });
@@ -24,6 +24,16 @@ tape('getGithubPage with status code 200', (t) => {
   getGithubPage(url)
     .then((githubObj) => {
       t.ok(githubObj.success, 'Returns object with success true');
+      t.end();
+    });
+});
+
+tape('getGithubPage not entered', (t) => {
+  const url = '';
+  getGithubPage(url)
+    .then((githubObj) => {
+      t.notOk(githubObj.success, 'Returns object with success false');
+      t.equal(githubObj.message, 'No page entered', 'Returns object with correct message');
       t.end();
     });
 });
