@@ -31,6 +31,9 @@ const displayReport = (req, res) => {
       summaryObject.githubHandle = ghHandle;
 
       res.render('report', summaryObject);
+    })
+    .catch((err) => {
+      console.error('Danger, danger: Report Promise.all errored!');
     });
 };
 
