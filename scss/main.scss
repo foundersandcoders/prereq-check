@@ -145,6 +145,10 @@ h1 {
   cursor: pointer;
 }
 
+.links__error-message {
+  color: $error-message-color;
+}
+
 /***********************************************
   report page
 ***********************************************/
@@ -236,6 +240,10 @@ h1 {
     margin: 0;
   }
 }
+
+.report-section__error-message {
+   color: $error-message-color;
+ }
 
 /***********************************************
   github section

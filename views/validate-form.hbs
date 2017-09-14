@@ -2,13 +2,13 @@
     <form class="links__form" method="get">
         <p class="links__name">Enter your GitHub page url</p>
         {{#unless success}}
-        <p>Sorry this URL could not be found</p>
+        <p class="links__error-message">Sorry this URL could not be found</p>
         {{/unless}}
 
         <input class="links__input" type="text" name="githubPage" value="{{githubPageLink}}">
         <input class="links__submit" type="submit" formaction="scrape-links" name="submit" value="Submit">
         {{#unless allHandles}}
-        <p>We couldn't find some of your usernames, please enter them below.</p>
+        <p class="links__error-message">We couldn't find some of your usernames, please enter them below.</p>
         {{/unless}}
         <p class="links__name">freeCodeCamp username</p>
         <input class="links__input" type="text" name="fccHandle" value="{{fccHandle}}">

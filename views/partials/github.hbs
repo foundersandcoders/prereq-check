@@ -11,12 +11,12 @@
       </li>
     {{else}}
     <li class="report-section__info-item">
-      <p class="report-section__info-description">{{githubCommits.message}}</p>
+      <p class="report-section__info-description report-section__error-message">{{githubCommits.message}}</p>
     </li>
     {{/if}}
     {{#unless w3Validation.success}}
     <li class="report-section__info-item">
-      <p class="report-section__info-description">{{w3Validation.message}}</p>
+      <p class="report-section__info-description report-section__error-message">{{w3Validation.message}}</p>
     </li>
     {{/unless}}
     {{#if w3Validation.success}}
@@ -34,7 +34,7 @@
     </li>
     {{else}}
     <li class="report-section__info-item">
-      <p class="report-section__info-description">{{githubRepos.message}}</p>
+      <p class="report-section__info-description report-section__error-message">{{githubRepos.message}}</p>
     </li>
     {{/if}}
   </ul>
