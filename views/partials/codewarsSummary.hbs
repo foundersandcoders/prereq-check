@@ -14,10 +14,13 @@
 {{#unless codewars.success}}
   <img class="report-section__icon" src="/images/x-mark.svg" alt="Error"><p class="report-section__prereq">Codewars: {{codewars.message}}</p>
 {{/unless}}
-{{#if codewars.hasAuthored}}
+{{#if codewars.success}}
+  {{#if codewars.hasAuthored}}
   <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed">
 {{else}}
   <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed">
+  {{/if}}
+  <p class="report-section__prereq">Codewars: authored 1+ Kata</p>
 {{/if}}
-<p class="report-section__prereq">Codewars: authored 1+ Kata</p>
+
 </li>

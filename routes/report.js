@@ -29,7 +29,7 @@ const displayReport = (req, res) => {
         summaryObject.githubCommits,
         summaryObject.codewarsKatas] = values;
       summaryObject.githubHandle = ghHandle;
-
+console.log(summaryObject);
       res.render('report', summaryObject);
     })
     .catch((err) => {
