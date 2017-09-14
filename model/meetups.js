@@ -37,8 +37,8 @@ const getMeetupCount = githubHandle => new Promise((resolve, reject) => {
     ],
     (err) => {
       if (err) {
-        console.log('Error retrieving meetup data');
-        console.log(err);
+        console.error('Error retrieving meetup data');
+        // console.error(err);
         reject({
           success: false,
           message: 'Error retrieving meetup data',

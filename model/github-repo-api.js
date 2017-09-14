@@ -10,7 +10,6 @@ const getGithubRepos = (username) => {
   };
   return rp(options)
     .then((apiRes) => {
-      console.log(apiRes.public_repos);
       return {
         success: true,
         repos: apiRes.public_repos,
@@ -18,7 +17,7 @@ const getGithubRepos = (username) => {
     })
     .catch((err) => {
       console.error('Get Github Repos failed');
-      console.error(err);
+      //console.error(err);
       return {
         success: false,
         message: 'Fetching Github repo count failed',

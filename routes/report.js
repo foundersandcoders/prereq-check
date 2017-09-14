@@ -32,7 +32,6 @@ const displayReport = (req, res) => {
         //summaryObject.meetups
         ] = values;
       summaryObject.githubHandle = ghHandle;
-        console.log(summaryObject)
       res.render('report', summaryObject);
     });
 };
