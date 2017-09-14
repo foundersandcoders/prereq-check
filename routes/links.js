@@ -31,10 +31,12 @@ const links = (req, res) => {
       .then(getUserData)
       .then((userData) => {
         req.session.user = userData.login
+        console.log('links req.session ', req.session)
       });
     res.redirect('/links');
   }
   else {
+    console.log('USER in links file: ', req.session)
     res.render('scrape-form');
   }
 };

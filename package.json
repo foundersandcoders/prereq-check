@@ -21,6 +21,7 @@
     "env2": "^2.2.0",
     "express": "~4.15.2",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.5",
     "github-calendar": "^1.1.12",
     "google-spreadsheet": "^2.0.4",
     "hbs": "~4.0.1",

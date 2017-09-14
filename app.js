@@ -7,7 +7,8 @@ const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
 const router = require('./routes/index');
 const cookieSession = require('cookie-session');
-
+const session = require('express-session');
+// require('env2')('config.json');
 const app = express();
 
 // view engine setup
@@ -28,10 +29,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cookieSession({
-  name: 'session',
-  secret: process.env.SESSION_SECRET,
-  maxAge: 24 * 60 * 60 * 1000, // 24 hours
+// app.set('trust proxy', 1);
+// app.use(cookieSession({
+//   name: 'session',
+//   secret: process.env.SESSION_SECRET,
+//   maxAge: 24 * 60 * 60 * 1000, // 24 hours
+// }));
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 600000000
+  }
 }));
 
 app.use(router);
