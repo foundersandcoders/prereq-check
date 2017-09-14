@@ -4,7 +4,7 @@ const { getGithubPage } = require('../model/github-page');
 const { getW3Validator } = require('../model/w3-validator');
 const { getGithubRepos } = require('../model/github-repo-api');
 const { getGithubCommits } = require('../model/github-commits-api');
-//const getMeetupCount = require('../model/meetups');
+const getMeetupCount = require('../model/meetups');
 const hasPermission = require('./has-permission');
 
 const isEmpty = obj => Object.keys(obj).length === 0;
@@ -20,7 +20,8 @@ const displayReport = (req, res) => {
     getW3Validator(githubPage),
     getGithubRepos(ghHandle),
     getGithubCommits(ghHandle, githubPage),
-    getAuthoredKatas(cwHandle).then(appendKataCompletions)
+    getAuthoredKatas(cwHandle).then(appendKataCompletions),
+    getMeetupCount(ghHandle)
       .catch((err) => {
         console.error('Fetching Promise.all Kata completions');
       })])
@@ -32,9 +33,8 @@ const displayReport = (req, res) => {
         summaryObject.w3Validation,
         summaryObject.githubRepos,
         summaryObject.githubCommits,
-        summaryObject.codewarsKatas
-        //summaryObject.meetups
-        ] = values;
+        summaryObject.codewarsKatas,
+        summaryObject.meetups] = values;
       summaryObject.githubHandle = ghHandle;
       res.render('report', summaryObject);
     })

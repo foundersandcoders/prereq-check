@@ -1,7 +1,8 @@
-require('env2')('config.json');
+const adminUsers = require('../admins.json');
 
 module.exports = (req, res) => {
-  const adminUsers = process.env.ADMIN_USERS;
-  const isAdmin = adminUsers.indexOf(req.session.user) !== -1;
+  const isAdmin = adminUsers.find( (adminUser) => {
+    return adminUser.toLowerCase() === req.session.user.toLowerCase();
+  })
   return req.query.ghHandle === req.session.user || isAdmin;
 };
