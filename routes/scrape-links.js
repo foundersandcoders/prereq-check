@@ -39,7 +39,7 @@ const scrapeLinks = (req, res) => {
       console.error(err);
       const githubScrape = {
         success: false,
-        message:'Page not found',
+        message: 'Page not found',
       };
       res.render('validate-form', githubScrape);
     });

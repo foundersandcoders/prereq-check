@@ -6,7 +6,7 @@ const getGithubPage = (url) => {
     uri: url ? normalizeUrl(url) : '',
     resolveWithFullResponse: true,
   };
-  console.log(options.uri);
+
   return rp(options)
     .then((response) => {
       const githubObj = {};
@@ -21,13 +21,11 @@ const getGithubPage = (url) => {
       githubObj.statusCode = err.statusCode;
       if (err.statusCode === 404) {
         githubObj.message = 'Page not found';
-      } else if (!err.url){
+      } else if (!err.url) {
         githubObj.message = 'No page entered';
-      }
-      else {
+      } else {
         githubObj.message = 'Error retrieving page';
       }
-      console.log(githubObj);
       return githubObj;
     });
 };
