@@ -9,6 +9,7 @@ const cookieSession = require('cookie-session');
 
 const router = require('./routes/index');
 
+require('env2')('config.json');
 const app = express();
 
 // view engine setup
