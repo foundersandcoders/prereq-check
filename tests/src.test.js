@@ -1,6 +1,7 @@
 const test = require('tape');
 const request = require('supertest');
 const nock = require('nock');
+const getCookies = require('./get-cookies.helper');
 
 const app = require('../app');
 
@@ -80,7 +81,7 @@ test('Test /report', (t) => {
     .reply(200);
 
   nock('https://www.codewars.com/')
-    .get(`/api/v1/users/astroash/code-challenges/authored/`)
+    .get('/api/v1/users/astroash/code-challenges/authored/')
     .reply(200);
 
   nock('https://www.freecodecamp.org/')
@@ -91,13 +92,16 @@ test('Test /report', (t) => {
     .get('/astroash.github.io/commits')
     .reply(200);
 
-  request(app)
-    .get('/report?githubPage=astroash.github.io&fccHandle=astroash&cwHandle=astroash&ghHandle=astroash')
-    .expect(200)
-    .expect('Content-Type', /json/)
-    .end((err, res) => {
-      t.same(res.statusCode, 200, '/report with querystring returns 200');
-      t.error(err.Error, 'No error');
-      t.end();
-    });
+  getCookies((cookies) => {
+    request(app)
+      .get('/report?githubPage=astroash.github.io&fccHandle=astroash&cwHandle=astroash&ghHandle=astroash')
+      .set('Cookie', cookies)
+      .expect(200)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        t.same(res.statusCode, 200, '/report with querystring returns 200');
+        t.error(err.Error, 'No error');
+        t.end();
+      });
+  });
 });
