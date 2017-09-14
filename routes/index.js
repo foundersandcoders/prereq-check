@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const rp = require('request-promise-native');
+require('env2')('config.env');
 
 const report = require('./report');
 const scrapeLinks = require('./scrape-links');
@@ -9,7 +11,27 @@ const login = (req, res) => {
 };
 
 const scrapeForm = (req, res) => {
-  res.render('scrape-form');
+  if (req.query.code) {
+    const options = {
+      uri: 'https://github.com/login/oauth/access_token',
+      qs: {
+        client_id: process.env.CLIENT_ID,
+        client_secret: process.env.CLIENT_SECRET,
+        code: req.query.code,
+      },
+      headers: {
+        Accept: 'application/json',
+      },
+      json: true,
+    };
+    rp(options)
+      .then((response) => {
+        console.log(response);
+        res.redirect('/links');
+      });
+  } else {
+    res.render('scrape-form');
+  }
 };
 
 const validateForm = (req, res) => {

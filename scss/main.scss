@@ -17,7 +17,12 @@ html {
 }
 
 a {
-  text-decoration: none;
+  color: #0075A2;
+  text-decoration: underline;
+}
+
+li {
+  list-style: none;
 }
 
 /***********************************************
@@ -29,15 +34,12 @@ body {
   font: $main-font;
   background-color: $main-color;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
   font-size: $report-title-fontsize;
 }
-
-/***********************************************
-  main
-***********************************************/
 
 /***********************************************
   login page
@@ -75,20 +77,21 @@ h1 {
 
 .report-section__title {
   padding: 2.5vh 0;
+  font-weight: 700;
 }
 
 .report-section__prereq {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: inline;
 }
 
 .report-section__list {
-  list-style: none;
   text-align: left;
 }
 
 .report-section__list-item {
   padding: 2vh 0;
+  margin-left: 4vw;
 }
 
 .report-section__icon {
@@ -96,6 +99,84 @@ h1 {
   margin-right: 2vw;
 }
 
+.report-section__banner {
+  background-color: #ffffff;
+  margin: 0 -4vw;
+}
+
+/***********************************************
+  github section
+***********************************************/
+
+ .report-section__info-item {
+   margin: 2vh 0;
+ }
+
+ .report-section__info-title {
+   font-size: $report-subtitle-fontsize;
+ }
+
+ .report-section__info-description {
+   font-size: $report-description-fontsize;
+ }
+
+ .report-section__calendar {
+  max-width: 92vw;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+
+.report-section__arrows {
+  letter-spacing: 5px;
+  font-weight: bolder;
+  color: slategrey;
+}
+
+.calendar {
+  border: none !important;
+}
+
+.text-normal {
+  font-size: 1.2rem
+}
+/***********************************************
+  freecodecamp section
+***********************************************/
+
+.report-section__freecodecamp-score {
+  font-size: 5rem;
+  margin-top: 5vh;
+  font-weight: 600;
+}
+
 .report-section__fcc-subtitle {
+  margin-bottom: 1vh;
   font-style: italic;
+}
+
+/***********************************************
+  codewars section
+***********************************************/
+
+.report-section__kata {
+  width: 90vw;
+  margin-bottom: 3vh;
+  padding: 1vh 1vw;
+  background-color: rgb(231, 250, 251);
+  border: black solid 3px;
+  border-radius: 2px;
+}
+
+.report-section__authored-kata {
+  font-size: $report-kata-description-fontsize;
+  margin-top: 2vh;
+}
+
+.report-section__kata-item {
+  width: 10vh;
+  height: 50px;
+  border: 2px solid black;
+  background-color: rgb(231, 250, 251);
+  margin: 2vh;
+  display: inline;
 }
