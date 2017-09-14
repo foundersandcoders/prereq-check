@@ -7,7 +7,7 @@
     "devStart": "nodemon -e scss,js -x \"npm run build-css && node bin/www\"",
     "start": "node ./bin/www",
     "build-css": "node-sass --include-path scss scss/main.scss   public/main.css",
-    "postinstall": "npm rebuild node-sass && npm run build-css",
+    "postinstall": "npm run build-css",
     "coverage": "istanbul cover tape tests/*.js",
     "nyc": "nyc npm test && nyc report --reporter=html && nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
