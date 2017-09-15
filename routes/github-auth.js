@@ -28,13 +28,16 @@ const githubAuth = (req, res) => {
       json: true,
     };
     rp(options)
-      .then(getUserData)
+      .then((oauthResponse) => {
+        req.session.token = oauthResponse.access_token;
+        return getUserData(oauthResponse);
+      })
       .then((userData) => {
         req.session.user = userData.login;
         res.redirect('/links');
       })
       .catch(() => {
-        console.err('Couldn\'t log in with Github');
+        console.error('Couldn\'t log in with Github');
       });
   } else {
     // login unsuccessful

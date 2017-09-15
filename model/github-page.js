@@ -8,10 +8,8 @@ const getGithubPage = (url) => {
   };
 
   return rp(options)
-    .then((response) => {
-      const githubObj = {};
-      githubObj.success = true;
-      return githubObj;
+    .then(() => {
+      return { success: true };
     })
     .catch((err) => {
       console.error('Fetching GitHub page failed');

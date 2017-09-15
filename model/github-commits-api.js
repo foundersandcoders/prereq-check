@@ -7,15 +7,16 @@ const getRepoName = (url) => {
   return repo ? repo[1] : newUrl;
 };
 
-const getGithubCommits = (githubHandle, url) => {
+const getGithubCommits = (githubHandle, url, token) => {
   const repo = url ? getRepoName(url) : '';
   const options = {
     uri: `https://api.github.com/repos/${githubHandle}/${repo}/commits`,
     headers: {
-      'User-Agent': 'prereq-check',
+      'User-Agent': 'prereqCheck',
     },
     json: true, // Automatically parses the JSON string in the response
   };
+  options.uri += token ? `?access_token=${token}` : '';
   return rp(options)
     .then((apiRes) => {
       return {

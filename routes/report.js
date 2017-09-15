@@ -18,8 +18,8 @@ const displayReport = (req, res) => {
     getFreeCodeCamp(fccHandle),
     getGithubPage(githubPage),
     getW3Validator(githubPage),
-    getGithubRepos(ghHandle),
-    getGithubCommits(ghHandle, githubPage),
+    getGithubRepos(ghHandle, req.session.token),
+    getGithubCommits(ghHandle, githubPage, req.session.token),
     getAuthoredKatas(cwHandle).then(appendKataCompletions),
     getMeetupCount(ghHandle)
       .catch((err) => {
