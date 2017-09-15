@@ -4,6 +4,7 @@ config.env
 public/main.css
 config.json
 admin.json
+coverage.lcov
 
 # Logs
 logs
