@@ -1,10 +1,10 @@
 const GoogleSpreadsheet = require('google-spreadsheet');
 require('env2')('config.json');
 
-const getMeetupCount = githubHandle => {
+const getMeetupCount = (githubHandle) => {
   const doc = new GoogleSpreadsheet(process.env.SPREADSHEET_KEY);
 
-  const setAuth= new Promise((resolve, reject) => {
+  const setAuth = new Promise((resolve, reject) => {
     const credsJson = {
       client_email: process.env.CLIENT_EMAIL,
       private_key: process.env.PRIVATE_KEY,
@@ -15,17 +15,14 @@ const getMeetupCount = githubHandle => {
     });
   });
 
-  const getWorksheet = () => {
-    return new Promise((resolve, reject) => {
+  const getWorksheet = () => new Promise((resolve, reject) => {
       doc.getInfo((err, info) => {
         if (err) reject(Error('Couldnt get worksheet'));
         resolve(info.worksheets[0]);
       });
     });
-  };
 
-  const getAttendance = (sheet) => {
-    return new Promise((resolve, reject) => {
+  const getAttendance = (sheet) => new Promise((resolve, reject) => {
       // query google sheets api to get row where github handle matches 'githubHandle' argument
       // githubnameunique is the column name in google sheets
       sheet.getRows(
@@ -43,7 +40,6 @@ const getMeetupCount = githubHandle => {
         },
       );
     });
-  };
 
   return setAuth
     .then(getWorksheet)
