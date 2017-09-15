@@ -5,11 +5,6 @@ const getCookies = require('./get-cookies.helper');
 
 const app = require('../app');
 
-test('Tape works test', (t) => {
-  t.equal(1, 1, '1 should equal 1');
-  t.end();
-});
-
 test('Test home route', (t) => {
   request(app)
     .get('/')
@@ -104,4 +99,16 @@ test('Test /report', (t) => {
         t.end();
       });
   });
+});
+
+test('Page not found error route', (t) => {
+  request(app)
+    .get('/wigwammyzzz')
+    .expect(404)
+    .expect('Content-Type', /text\/html/)
+    .end((err, res) => {
+      t.same(res.statusCode, 404, 'Status code is 404');
+      t.ok(res.text.includes(res.statusCode), 'Rendered page contains status code');
+      t.end();
+    });
 });
