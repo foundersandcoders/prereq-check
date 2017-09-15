@@ -11,14 +11,14 @@ const app = require('../app');
 // respond with object { login: 'ghusername' }
 // grab cookie and set on request to restricted route
 
-const getCookies = (cb) => {
+const getCookies = (ghHandle, cb) => {
   nock('https://github.com/login/oauth/access_token')
     .get(/.*/)
     .reply(200, { access_token: 'token' });
 
   nock('https://api.github.com/user')
     .get(/.*/)
-    .reply(200, { login: 'astroash' });
+    .reply(200, { login: ghHandle });
 
   request(app)
     .get('/auth?code=3aa491426dc2f4130a6b')

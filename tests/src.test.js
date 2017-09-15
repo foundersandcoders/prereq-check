@@ -87,7 +87,7 @@ test('Test /report with querystring', (t) => {
     .get('/astroash.github.io/commits')
     .reply(200);
 
-  getCookies((cookies) => {
+  getCookies('astroash', (cookies) => {
     request(app)
       .get('/report?githubPage=astroash.github.io&fccHandle=astroash&cwHandle=astroash&ghHandle=astroash')
       .set('Cookie', cookies)
