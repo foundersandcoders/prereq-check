@@ -1,11 +1,12 @@
-const adminUsers = require('../admins.json');
+let adminUsers = require('../admins.json');
 
-module.exports = (req, res) => {
-  if (!req.session.user) {
+module.exports = (currentUser, query, adminsArr) => {
+  if (!currentUser) {
     return false;
   }
-  const isAdmin = adminUsers.find( (adminUser) => {
-    return adminUser.toLowerCase() === req.session.user.toLowerCase();
-  })
-  return req.query.ghHandle === req.session.user || isAdmin;
+  adminUsers = adminsArr || adminUsers;
+  const isAdmin = adminUsers.find((adminUser) => {
+    return adminUser.toLowerCase() === currentUser.toLowerCase();
+  });
+  return query.ghHandle === currentUser || isAdmin;
 };
