@@ -10,7 +10,7 @@ const getMeetupCount = (githubHandle) => {
       private_key: process.env.PRIVATE_KEY,
     };
     doc.useServiceAccountAuth(credsJson, (err) => {
-      if (err) return reject(Error('Couldnt set authentication'));
+      if (err) return reject(err);
       resolve();
     });
   });
@@ -24,7 +24,7 @@ const getMeetupCount = (githubHandle) => {
         query: `githubnameunique=${githubHandle}`,
       },
       (err, rows) => {
-        if (err) return reject(Error('Couldnt get rows'));
+        if (err) return reject(err);
         resolve({
           success: true,
           // countunique is the name of the column in google sheets

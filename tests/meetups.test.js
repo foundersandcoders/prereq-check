@@ -1,19 +1,15 @@
+const nock = require('nock');
 const tape = require('tape');
+const getMeetupCount = require('../model/meetups');
+const { responseData, responseHeaders } = require('./dummy-data/meetups-googlesheet-success');
 
-const hasPermission = require('../routes/has-permission');
-
-tape('hasPermission', (t) => {
-  t.ok(hasPermission('testuser', { ghHandle: 'testuser' }, ['admin', 'anotherAdmin']),
-    'Normal user has permission to view their own info');
-
-  t.notOk(hasPermission('testuser', { ghHandle: 'otheruser' }, ['admin', 'anotherAdmin']),
-    'Normal user doesn\'t have permission to view other users info');
-
-  t.ok(hasPermission('admin', { ghHandle: 'testuser' }, ['admin', 'anotherAdmin']),
-    'Admin user has permission to view other users');
-
-  t.ok(hasPermission('admin', { ghHandle: 'admin' }, ['admin', 'anotherAdmin']),
-    'Admin user has permission to view their own info');
-  t.end();
+tape('getMeetupCount: success case', (t) => {
+  nock('https://spreadsheets.google.com')
+    .get('/feeds/list/1_GpdOSpwivXZRZcMzJvz25K6u4j9B7SuWgvqeSwB6tk/o1az7e0/private/full?sq=githubnameunique=bartbucknill')
+    .reply(200, responseData, responseHeaders);
+  getMeetupCount('bartbucknill')
+    .then((actual) => {
+      t.deepEqual(actual, { success: true, count: '1', ghHandle: 'bartbucknill' }, 'should return correct object');
+      t.end();
+    });
 });
-
