@@ -15,35 +15,29 @@ const getMeetupCount = (githubHandle) => {
     });
   });
 
-  const getWorksheet = () => new Promise((resolve, reject) => {
-      doc.getInfo((err, info) => {
-        if (err) reject(Error('Couldnt get worksheet'));
-        resolve(info.worksheets[0]);
-      });
-    });
-
-  const getAttendance = (sheet) => new Promise((resolve, reject) => {
-      // query google sheets api to get row where github handle matches 'githubHandle' argument
-      // githubnameunique is the column name in google sheets
-      sheet.getRows(
-        {
-          query: `githubnameunique=${githubHandle}`,
-        },
-        (err, rows) => {
-          if (err) reject(Error('Couldnt get rows'));
-          resolve({
-            success: true,
-            // countunique is the name of the column in google sheets
-            count: rows[0] ? rows[0].countunique : 0,
-            ghHandle: githubHandle,
-          });
-        },
-      );
-    });
+  const getAttendance = () => new Promise((resolve, reject) => {
+    // query google sheets api to get row where github handle matches 'githubHandle' argument
+    // githubnameunique is the column name in google sheets
+    doc.getRows(
+      process.env.WORKSHEET_ID,
+      {
+        query: `githubnameunique=${githubHandle}`,
+      },
+      (err, rows) => {
+        if (err) reject(Error('Couldnt get rows'));
+        resolve({
+          success: true,
+          // countunique is the name of the column in google sheets
+          count: rows[0] ? rows[0].countunique : 0,
+          ghHandle: githubHandle,
+        });
+      },
+    );
+  });
 
   return setAuth
-    .then(getWorksheet)
     .then(getAttendance)
+    .then(console.log)
     .catch((err) => {
       console.error(err);
       return err;
