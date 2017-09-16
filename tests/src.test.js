@@ -87,6 +87,10 @@ test('Test /report with querystring', (t) => {
     .get('/astroash.github.io/commits')
     .reply(200);
 
+    nock('https://spreadsheets.google.com')
+    .get('/feeds/list/1_GpdOSpwivXZRZcMzJvz25K6u4j9B7SuWgvqeSwB6tk/o1az7e0/private/full?sq=githubnameunique=astroash')
+    .reply(404);
+
   getCookies('astroash', (cookies) => {
     request(app)
       .get('/report?githubPage=astroash.github.io&fccHandle=astroash&cwHandle=astroash&ghHandle=astroash')
