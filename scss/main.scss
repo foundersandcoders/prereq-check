@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'animation';
 
 /***********************************************
   reset
@@ -158,15 +159,6 @@ h1 {
   border-bottom: white solid 2px;
 }
 
-.report-section__summary-logo {
-  height: 16rem;
-  position: relative;
-  margin-top: 4rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 225px;
-}
-
 .report-section__title {
   padding: 2.5vh 0;
   font-weight: 700;
@@ -233,108 +225,6 @@ h1 {
 
 .report-section__error-message {
    color: $error-message-color;
- }
-
- /***********************************************
-   animation
- ***********************************************/
-
- .bulb-background {
-  background-image: url(/images/blank-bulb.png);
-  height: 16rem;
-  width: 100%;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 50%;
-  box-sizing: border-box;
- }
-
- .stem {
-   background-image: url(/images/stem.png);
-   animation: grow-stem 5s ease;
-   animation-fill-mode: forwards;
-   transform-origin: bottom;
-   width: 20px;
-   height: 93px;
-   left: 100px;
-   top: 86px;
-   position: absolute;
-   background-repeat: no-repeat;
-   background-size: contain;
-   background-position: 50%;
-   box-sizing: border-box;
- }
-
- .side-leaf {
-   background-image: url(/images/side-leaf.png);
-   animation: grow-side-leaf 5s ease;
-   animation-fill-mode: forwards;
-   transform-origin: 100% 100%;
-   width: 70px;
-   height: 60px;
-   top: 80px;
-   left: 41px;
-   position: absolute;
-   background-repeat: no-repeat;
-   background-size: contain;
-   background-position: 50%;
-   box-sizing: border-box;
- }
-
- .top-leaf {
-   background-image: url(/images/top-leaf.png);
-   animation: grow-top-leaf 5s ease;
-   animation-fill-mode: forwards;
-   transform-origin: bottom;
-   width: 50px;
-   height: 63px;
-   left: 91px;
-   top: 36px;
-   position: absolute;
-   background-repeat: no-repeat;
-   background-size: contain;
-   background-position: 50%;
-   box-sizing: border-box;
- }
-
- .side-stem {
-   background-image: url(/images/side-stem.png);
-   animation: grow-side-stem 5s ease;
-   animation-fill-mode: forwards;
-   transform-origin: 0% 100%;
-   width: 30px;
-   height: 30px;
-   top: 86px;
-   left: 108px;
-   position: absolute;
-   background-repeat: no-repeat;
-   background-size: contain;
-   background-position: 50%;
-   box-sizing: border-box;
- }
-
- @keyframes grow-stem {
-   0% { transform: scaleY(0); }
-   100% { transform: scaleY(1); }
- }
-
- @keyframes grow-side-leaf {
-   0% { transform: scale(0); opacity: 0; }
-   30% { transform: scale(0); opacity: 0; }
-   100% { transform: scale(1); opacity: 1; }
- }
-
- @keyframes grow-top-leaf {
-   0% { transform: scale(0) translate(-10px, 30px); opacity: 0; }
-   50% { transform: scale(0) translate(-10px, 30px); opacity: 0; }
-   100% { transform: scale(1) translate(0px, 0px); opacity: 1; }
- }
-
- @keyframes grow-side-stem {
-   0% { transform: scale(0); opacity: 0; }
-   60% { transform: scale(0); opacity: 0; }
-   100% { transform: scale(1); opacity: 1; }
  }
 
 /***********************************************
