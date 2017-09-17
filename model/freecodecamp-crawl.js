@@ -3,39 +3,19 @@ const rp = require('request-promise-native');
 const fccArrays = require('./freecodecamp-arrays');
 
 const htmlCssValidator = (htmlString) => {
-  for (let i = 0; i < fccArrays.htmlCss.length; i++) {
-    if (htmlString.indexOf(fccArrays.htmlCss[i]) === -1) {
-      return false;
-    }
-  }
-  return true;
+  return fccArrays.htmlCss.every(element => htmlString.indexOf(element) !== -1);
 };
 
 const basicJavaScriptValidator = (htmlString) => {
-  for (let i = 0; i < fccArrays.basicJavaScript.length; i++) {
-    if (htmlString.indexOf(fccArrays.basicJavaScript[i]) === -1) {
-      return false;
-    }
-  }
-  return true;
+  return fccArrays.basicJavaScript.every(element => htmlString.indexOf(element) !== -1);
 };
 
 const oOFunctionalProgrammingValidator = (htmlString) => {
-  for (let i = 0; i < fccArrays.oOFunctionalProgramming.length; i++) {
-    if (htmlString.indexOf(fccArrays.oOFunctionalProgramming[i]) === -1) {
-      return false;
-    }
-  }
-  return true;
+  return fccArrays.oOFunctionalProgramming.every(element => htmlString.indexOf(element) !== -1);
 };
 
 const basicScriptingValidator = (htmlString) => {
-  for (let i = 0; i < fccArrays.basicScripting.length; i++) {
-    if (htmlString.indexOf(fccArrays.basicScripting[i]) === -1) {
-      return false;
-    }
-  }
-  return true;
+  return fccArrays.basicScripting.every(element => htmlString.indexOf(element) !== -1);
 };
 
 const getFccScore = (htmlString) => {
@@ -73,7 +53,7 @@ const getFreeCodeCamp = (username) => {
       return freeCodeCampObj;
     });
 };
-getFreeCodeCamp('astroash');
+
 module.exports = {
   htmlCssValidator,
   basicJavaScriptValidator,

@@ -11,6 +11,7 @@ const getGithubPage = (url) => {
     .then((response) => {
       const githubObj = {};
       githubObj.success = true;
+      githubObj.url = options.uri;
       return githubObj;
     })
     .catch((err) => {
