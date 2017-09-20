@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'animation';
 
 /***********************************************
   reset
@@ -156,25 +157,6 @@ h1 {
 .report-section {
   min-height: 100vh;
   border-bottom: white solid 2px;
-}
-
-.report-section__summary-logo {
-  width: 60vw;
-  transition: all 1s;
-}
-
-@media only screen and (min-width: 600px) {
-  .report-section__summary-logo {
-    width: 50vw;
-    transition: all 1s;
-  }
-}
-
-@media only screen and (min-width: 769px) {
-  .report-section__summary-logo {
-    width: 18vw;
-    transition: all 1s;
-  }
 }
 
 .report-section__title {
