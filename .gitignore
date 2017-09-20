@@ -2,6 +2,7 @@
 config.env
 .DS_Store
 public/main.css
+config.json
 
 # Logs
 logs
