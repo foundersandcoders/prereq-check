@@ -39,7 +39,7 @@ const getMeetupCount = (githubHandle) => {
     .then(getAttendance)
     .catch((err) => {
       console.error('Error getting meetup data from google-sheet');
-      // console.error(err);
+      console.error(err);
       return { success: false, message: 'Unable to retrieve meetup data' };
     });
 };
