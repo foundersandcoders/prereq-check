@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'animation';
 
 /***********************************************
   reset
@@ -158,25 +159,6 @@ h1 {
   border-bottom: white solid 2px;
 }
 
-.report-section__summary-logo {
-  width: 60vw;
-  transition: all 1s;
-}
-
-@media only screen and (min-width: 600px) {
-  .report-section__summary-logo {
-    width: 50vw;
-    transition: all 1s;
-  }
-}
-
-@media only screen and (min-width: 769px) {
-  .report-section__summary-logo {
-    width: 18vw;
-    transition: all 1s;
-  }
-}
-
 .report-section__title {
   padding: 2.5vh 0;
   font-weight: 700;
@@ -249,6 +231,17 @@ h1 {
   github section
 ***********************************************/
 
+.report-section__website {
+    margin: 0 auto;
+    margin-top: 1em;
+    border: none;
+    background-color: white;
+    width: 90%;
+    max-width: 1600px;
+}
+.report-section__website-link {
+    display: block;
+}
  .report-section__info-item {
    margin: 2vh 0;
  }
@@ -269,6 +262,10 @@ h1 {
 }
 
 @media only screen and (min-width: 600px) {
+
+  .report-section__website {
+    width: 100%;
+  }
   .report-section__calendar {
     max-width: 80vw;
     transition: all 1s;
