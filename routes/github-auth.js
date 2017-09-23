@@ -1,33 +1,33 @@
 const rp = require('request-promise-native');
 require('env2')('config.json');
 
-let accessToken;
+let returnOptionsWithToken; // this will be a closure returning the options object including the access token needed for authenticated api calls
 
-const getUserData = () => {
-  const userOptions = {
-    uri: 'https://api.github.com/user',
+const isInTeam = teamsArray => teamsArray.some(team => team.name === process.env.AUTHORISED_TEAM);
+
+const setOptions = (accessToken) => {
+  const options = {
     headers: {
       authorization: `token ${accessToken}`,
       'User-Agent': 'prereqCheck',
     },
     json: true,
   };
-  return rp(userOptions);
+  returnOptionsWithToken = () => options;
 };
 
-const getUserTeams = () => {
-  const options = {
-    uri: 'https://api.github.com/user/teams',
-    headers: {
-      authorization: `token ${accessToken}`,
-      'User-Agent': 'prereqCheck',
-    },
-    json: true,
-  };
+const getUserData = () => {
+  const options = returnOptionsWithToken();
+  options.uri = 'https://api.github.com/user';
   return rp(options);
 };
 
-const isInTeam = teamsArray => teamsArray.some(team => team.name === process.env.AUTHORISED_TEAM);
+const getUserTeams = () => {
+  const options = returnOptionsWithToken();
+  options.uri = 'https://api.github.com/user/teams';
+  return rp(options);
+};
+
 
 const githubAuth = (req, res) => {
   if (req.query.code) {
@@ -46,7 +46,7 @@ const githubAuth = (req, res) => {
     rp(options)
       .then((oauthResponse) => {
         req.session.token = oauthResponse.access_token;
-        accessToken = oauthResponse.access_token;
+        setOptions(oauthResponse.access_token);
         return getUserData();
       })
       .catch((err) => {
