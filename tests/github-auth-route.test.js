@@ -12,6 +12,10 @@ tape('Test githubAuth: success case', (t) => {
     .get(/.*/)
     .reply(200, { login: 'astroash' });
 
+  nock('https://api.github.com/teams')
+    .get(/.*/)
+    .reply(200, [ { name: 'wrong-team'} ]);
+
   request(app)
     .get('/auth?code=3aa491426dc2f4130a6b')
     .end((err, res) => {

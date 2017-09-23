@@ -67,9 +67,6 @@ test('Test /report without querystring', (t) => {
 });
 
 test('Test /report with querystring', (t) => {
-  nock('https://api.github.com/users')
-    .get('/astroash')
-    .reply(200);
 
   nock('https://api.github.com/repos')
     .get('/astroash.github.io')
@@ -87,7 +84,7 @@ test('Test /report with querystring', (t) => {
     .get('/astroash.github.io/commits')
     .reply(200);
 
-    nock('https://spreadsheets.google.com')
+  nock('https://spreadsheets.google.com')
     .get('/feeds/list/1_GpdOSpwivXZRZcMzJvz25K6u4j9B7SuWgvqeSwB6tk/o1az7e0/private/full?sq=githubnameunique=astroash')
     .reply(404);
 

@@ -39,6 +39,7 @@ const displayReport = (req, res) => {
     })
     .catch((err) => {
       console.error('Danger, danger: Report Promise.all errored!');
+      console.error(err);
     });
 };
 

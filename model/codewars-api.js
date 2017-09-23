@@ -30,6 +30,7 @@ const getAuthoredKatas = (username) => {
     })
     .catch((err) => {
       console.error('Fetching authored katas failed');
+      // console.error(err);
       const codewarsObj = {};
       codewarsObj.success = false;
       codewarsObj.statusCode = err.statusCode;
@@ -43,6 +44,7 @@ const getAuthoredKatas = (username) => {
 };
 
 const appendKataCompletions = (katas) => {
+  if (!Array.isArray(katas)) { return katas; }
   const completionPromises = katas.map((kata) => {
     const options = {
       uri: `https://www.codewars.com/api/v1/code-challenges/${kata.id}`,

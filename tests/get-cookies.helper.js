@@ -9,6 +9,8 @@ const app = require('../app');
 // respond with { access_token: 'token'}
 // intercept outgoing call to:   https://api.github.com/user
 // respond with object { login: 'ghusername' }
+// intercept outgoing call to: https://api.github.com/teams
+// respond with array [ { name: 'teamName' } ]
 // grab cookie and set on request to restricted route
 
 const getCookies = (ghHandle, cb) => {
@@ -20,11 +22,15 @@ const getCookies = (ghHandle, cb) => {
     .get(/.*/)
     .reply(200, { login: ghHandle });
 
+  nock('https://api.github.com/teams')
+    .get(/.*/)
+    .reply(200, [{ name: 'wrong-team' }]);
+
   request(app)
     .get('/auth?code=3aa491426dc2f4130a6b')
     .end((err, res) => {
       if (err) {
-        console.log('error in getCookies: ', err); 
+        console.log('error in getCookies: ', err);
         return;
       }
       cb(res.headers['set-cookie']); //
