@@ -1,12 +1,6 @@
-let adminUsers = require('../admins.json');
-
-module.exports = (currentUser, query, adminsArr) => {
-  if (!currentUser) {
+module.exports = (session, query) => {
+  if (!session.user) {
     return false;
   }
-  adminUsers = adminsArr || adminUsers;
-  const isAdmin = adminUsers.find((adminUser) => {
-    return adminUser.toLowerCase() === currentUser.toLowerCase();
-  });
-  return query.ghHandle === currentUser || isAdmin;
+  return query.ghHandle === session.user || session.isInTeam;
 };

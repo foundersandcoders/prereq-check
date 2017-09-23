@@ -9,7 +9,7 @@ const hasPermission = require('./has-permission');
 
 const isEmpty = obj => Object.keys(obj).length === 0;
 const displayReport = (req, res) => {
-  if (isEmpty(req.query) || !hasPermission(req.session.user, req.query)) {
+  if (isEmpty(req.query) || !hasPermission(req.session, req.query)) {
     return res.redirect('/links');
   }
   const { githubPage, fccHandle, cwHandle, ghHandle } = req.query;
