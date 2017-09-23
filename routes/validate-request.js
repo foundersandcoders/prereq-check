@@ -1,5 +1,6 @@
 module.exports = (session, query) => {
-  if (!session.user) {
+  const isEmpty = Object.keys(query).length === 0;
+  if (isEmpty || !session.user) {
     return false;
   }
   return query.ghHandle === session.user || session.isInTeam;
