@@ -3,7 +3,7 @@
   position: fixed;
   bottom: 0;
   margin: 0 -4vw;
-  padding-top: 1vh;
+  padding-top: 1.5vh;
   background-color: $main-color;
   border-top: white solid 2px;
 }
@@ -13,11 +13,15 @@
 }
 
 .navbar__icon {
-  width: 18vw;
-  padding: 0 1vw;
+  width: 12vw;
+  margin: 0 3vw;
 }
 
 .navbar__link {
   text-decoration: none;
   display: block;
 }
+
+// @media only screen and (min-width: 600px) {
+//
+// }
