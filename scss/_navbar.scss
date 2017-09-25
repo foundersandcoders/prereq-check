@@ -1,0 +1,23 @@
+.navbar__nav {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin: 0 -4vw;
+  padding-top: 1vh;
+  background-color: $main-color;
+  border-top: white solid 2px;
+}
+
+.navbar__item {
+  display: inline-block;
+}
+
+.navbar__icon {
+  width: 18vw;
+  padding: 0 1vw;
+}
+
+.navbar__link {
+  text-decoration: none;
+  display: block;
+}
