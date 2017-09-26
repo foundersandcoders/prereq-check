@@ -8,8 +8,26 @@
   border-top: white solid 2px;
 }
 
+@media only screen and (min-width: 600px) {
+  .navbar__nav {
+    width: 10vw;
+    position: fixed;
+    right: 0;
+    margin: 0;
+    padding: 1vw;
+    background-color: $lowlight-color;
+    border-top: none;
+  }
+}
+
 .navbar__item {
   display: inline-block;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar__item {
+    display: block;
+  }
 }
 
 .navbar__icon {
@@ -17,11 +35,20 @@
   margin: 0 3vw;
 }
 
+@media only screen and (min-width: 600px) {
+  .navbar__icon {
+    width: 8vw;
+    margin: 2vh 0 1vh 0;
+  }
+}
+
 .navbar__link {
   text-decoration: none;
   display: block;
 }
 
-// @media only screen and (min-width: 600px) {
-//
-// }
+@media only screen and (min-width: 600px) {
+  .navbar__link {
+    margin-top: 3vh;
+  }
+}
