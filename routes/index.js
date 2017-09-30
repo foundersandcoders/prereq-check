@@ -3,7 +3,7 @@ const router = express.Router();
 
 const report = require('./report');
 const scrapeLinks = require('./scrape-links');
-const githubAuth = require('./github-auth');
+const { githubAuth } = require('./github-auth');
 
 const login = (req, res) => {
   res.render('login');

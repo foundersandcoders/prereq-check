@@ -1,30 +1,29 @@
 const rp = require('request-promise-native');
 require('env2')('config.json');
 
-let returnOptionsWithToken; // this will be a closure returning the options object including the access token needed for authenticated api calls
+const isInTeam = teamsArray => teamsArray.some(team => team.name === process.env.AUTHORISED_TEAM_NAME && team.id === JSON.parse(process.env.AUTHORISED_TEAM_ID));
 
-const isInTeam = teamsArray => teamsArray.some(team => team.name === process.env.AUTHORISED_TEAM);
-
-const setOptions = (accessToken) => {
+const getUserData = (token) => {
   const options = {
+    uri: 'https://api.github.com/user',
     headers: {
-      authorization: `token ${accessToken}`,
+      authorization: `token ${token}`,
       'User-Agent': 'prereqCheck',
     },
     json: true,
   };
-  returnOptionsWithToken = () => options;
-};
-
-const getUserData = () => {
-  const options = returnOptionsWithToken();
-  options.uri = 'https://api.github.com/user';
   return rp(options);
 };
 
-const getUserTeams = () => {
-  const options = returnOptionsWithToken();
-  options.uri = 'https://api.github.com/user/teams';
+const getUserTeams = (token) => {
+  const options = {
+    uri: 'https://api.github.com/user/teams',
+    headers: {
+      authorization: `token ${token}`,
+      'User-Agent': 'prereqCheck',
+    },
+    json: true,
+  };
   return rp(options);
 };
 
@@ -46,8 +45,7 @@ const githubAuth = (req, res) => {
     rp(options)
       .then((oauthResponse) => {
         req.session.token = oauthResponse.access_token;
-        setOptions(oauthResponse.access_token);
-        return getUserData();
+        return getUserData(req.session.token);
       })
       .catch((err) => {
         console.error('Couldn\'t log in with Github');
@@ -55,7 +53,7 @@ const githubAuth = (req, res) => {
       })
       .then((userData) => {
         req.session.user = userData.login;
-        return getUserTeams();
+        return getUserTeams(req.session.token);
       })
       .then((userTeams) => {
         req.session.isInTeam = isInTeam(userTeams);
@@ -71,4 +69,8 @@ const githubAuth = (req, res) => {
   }
 };
 
-module.exports = githubAuth;
+module.exports = {
+  isInTeam,
+  githubAuth,
+};
+
