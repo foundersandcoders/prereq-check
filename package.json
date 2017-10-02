@@ -12,7 +12,6 @@
     "nyc": "nyc npm test && nyc report --reporter=html && nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "dependencies": {
-    "async": "^2.5.0",
     "body-parser": "~1.17.1",
     "codecov": "^2.3.0",
     "cookie-parser": "~1.4.3",
@@ -21,7 +20,6 @@
     "env2": "^2.2.0",
     "express": "~4.15.2",
     "express-handlebars": "^3.0.0",
-    "express-session": "^1.15.5",
     "github-calendar": "^1.1.12",
     "google-spreadsheet": "^2.0.4",
     "hbs": "~4.0.1",
