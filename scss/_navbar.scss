@@ -4,24 +4,24 @@
   bottom: 0;
   margin: 0 -4vw;
   padding-top: 1.5vh;
+  padding-bottom: 0.5vh;
   background-color: $lowlight-color;
-  border-top: white solid 2px;
 }
 
 @media only screen and (min-width: 600px) {
   .navbar__nav {
     width: 10vw;
     position: fixed;
-    right: 0;
+    left: -0.5vw;
+    top: 0;
     margin: 0;
-    padding: 1vw;
-    background-color: $lowlight-color;
-    border-top: none;
+    background-color: $main-color;
   }
 }
 
 .navbar__item {
   display: inline-block;
+  font-size: 0.8rem;
 }
 
 @media only screen and (min-width: 600px) {
@@ -31,14 +31,14 @@
 }
 
 .navbar__icon {
-  width: 12vw;
+  width: 10vw;
   margin: 0 3vw;
 }
 
 @media only screen and (min-width: 600px) {
   .navbar__icon {
-    width: 8vw;
-    margin: 2vh 0 1vh 0;
+    width: 3vw;
+    margin: 1vh 1vw;
   }
 }
 
@@ -49,6 +49,6 @@
 
 @media only screen and (min-width: 600px) {
   .navbar__link {
-    margin-top: 3vh;
+    margin-top: 1vh;
   }
 }
