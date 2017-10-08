@@ -1,18 +1,28 @@
 <li class="report-section__list-item">
   {{#unless codewars.success}}
-    <p class="report-section__prereq">Codewars: {{codewars.message}}</p>
+    <a class="report-section__link" href="#codewars">
+      <p class="report-section__prereq">Codewars: {{codewars.message}}</p>
+    </a>
   {{/unless}}
   {{#if codewars.success}}
     {{#if codewars.achieved5Kyu}}
-    <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed"><p class="report-section__prereq">Codewars: 5 Kyu or better</p>
+    <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed">
+    <a class="report-section__link" href="#codewars">
+      <p class="report-section__prereq">Codewars: 5 Kyu or better</p>
+    </a>
   {{else}}
-    <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed"><p class="report-section__prereq">Codewars: 5 Kyu or better</p>
+    <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed">
+    <a class="report-section__link" href="#codewars">
+      <p class="report-section__prereq">Codewars: 5 Kyu or better</p>
+    </a>
     {{/if}}
   {{/if}}
 </li>
 <li class="report-section__list-item">
 {{#unless codewars.success}}
-  <p class="report-section__prereq">Codewars: {{codewars.message}}</p>
+  <a class="report-section__link" href="#codewars">
+    <p class="report-section__prereq">Codewars: {{codewars.message}}</p>
+  </a>
 {{/unless}}
 {{#if codewars.success}}
   {{#if codewars.hasAuthored}}
@@ -20,7 +30,9 @@
 {{else}}
   <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed">
   {{/if}}
-  <p class="report-section__prereq">Codewars: authored 1+ Kata</p>
+  <a class="report-section__link" href="#codewars">
+    <p class="report-section__prereq">Codewars: authored 1+ Kata</p>
+  </a>
 {{/if}}
 
 </li>

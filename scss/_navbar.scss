@@ -40,6 +40,10 @@
     width: 3vw;
     margin: 1vh 1vw;
   }
+  .navbar__icon:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+  }
 }
 
 .navbar__link {

@@ -77,7 +77,7 @@ h1 {
 
 @media only screen and (min-width: 769px) {
   .login__logo {
-    width: 28vw;
+    width: 25vw;
     transition: all 1s;
   }
 }
@@ -163,6 +163,15 @@ h1 {
 .report-section__title {
   padding: 2.5vh 0;
   font-weight: 700;
+}
+
+.report-section__link {
+  text-decoration: none;
+  color: black;
+}
+
+.report-section__link:hover {
+  text-decoration: underline;
 }
 
 .report-section__prereq {

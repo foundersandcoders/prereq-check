@@ -5,13 +5,21 @@
       {{>githubSummary}}
       <li class="report-section__list-item">
         {{#unless freeCodeCamp.success}}
-          <p class="report-section__prereq">freeCodeCamp: {{freeCodeCamp.message}}</p>
+          <a class="report-section__link" href="#fcc">
+            <p class="report-section__prereq">freeCodeCamp: {{freeCodeCamp.message}}</p>
+          </a>
         {{/unless}}
         {{#if freeCodeCamp.success}}
           {{#if freeCodeCamp.complete}}
-          <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed"><p class="report-section__prereq">freeCodeCamp: 4 sections</p>
+          <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed">
+          <a class="report-section__link" href="#fcc">
+            <p class="report-section__prereq">freeCodeCamp: 4 sections</p>
+          </a>
         {{else}}
-          <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed"><p class="report-section__prereq">freeCodeCamp: 4 sections</p>
+          <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed">
+          <a class="report-section__link" href="#fcc">
+            <p class="report-section__prereq">freeCodeCamp: 4 sections</p>
+          </a>
           {{/if}}
         {{/if}}
       </li>
