@@ -1,5 +1,10 @@
 <nav class="navbar__nav" role="navigation">
-  <ul class="navbar__list">
+  <div id="js-navbar" class="container" onclick="burgerAnimation(this)">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  <ul id="js-navbar__list" class="navbar__list navbar__list--visible">
     <li class="navbar__item">
       <a class="navbar__link" href="#summary">
         <img class="navbar__icon" src="/images/home.svg" alt="Home">
