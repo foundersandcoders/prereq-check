@@ -4,10 +4,11 @@ const { getGithubPage } = require('../model/github-page');
 const { getW3Validator } = require('../model/w3-validator');
 const { getGithubRepos } = require('../model/github-repo-api');
 const { getGithubCommits } = require('../model/github-commits-api');
+const getMeetupCount = require('../model/meetups');
+const isValidRequest = require('./validate-request');
 
-const isEmpty = obj => Object.keys(obj).length === 0;
 const displayReport = (req, res) => {
-  if(isEmpty(req.query)) {
+  if (!isValidRequest(req.session, req.query)) {
     return res.redirect('/links');
   }
   const { githubPage, fccHandle, cwHandle, ghHandle } = req.query;
@@ -16,9 +17,10 @@ const displayReport = (req, res) => {
     getFreeCodeCamp(fccHandle),
     getGithubPage(githubPage),
     getW3Validator(githubPage),
-    getGithubRepos(ghHandle),
-    getGithubCommits(ghHandle, githubPage),
-    getAuthoredKatas(cwHandle).then(appendKataCompletions)
+    getGithubRepos(ghHandle, req.session.token),
+    getGithubCommits(ghHandle, githubPage, req.session.token),
+    getAuthoredKatas(cwHandle).then(appendKataCompletions),
+    getMeetupCount(ghHandle)
       .catch((err) => {
         console.error('Fetching Promise.all Kata completions');
       })])
@@ -30,12 +32,14 @@ const displayReport = (req, res) => {
         summaryObject.w3Validation,
         summaryObject.githubRepos,
         summaryObject.githubCommits,
-        summaryObject.codewarsKatas] = values;
+        summaryObject.codewarsKatas,
+        summaryObject.meetups] = values;
       summaryObject.githubHandle = ghHandle;
       res.render('report', summaryObject);
     })
     .catch((err) => {
       console.error('Danger, danger: Report Promise.all errored!');
+      console.error(err);
     });
 };
 
