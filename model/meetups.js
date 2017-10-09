@@ -31,7 +31,7 @@ const getMeetupCount = (githubHandle) => {
           count: rows[0] ? rows[0].countunique : 0,
           ghHandle: githubHandle,
         });
-      },
+      }
     );
   });
 
