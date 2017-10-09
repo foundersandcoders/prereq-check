@@ -54,6 +54,7 @@ tape('FCC Crawl: getFreeCodeCamp valid username', (t) => {
         oOFunctionalProgramming: true,
         basicScripting: true,
         complete: true,
+        handle: 'astroash'
       }, 'getFreeCodeCamp returns an obect for a valid username');
       t.end();
     });

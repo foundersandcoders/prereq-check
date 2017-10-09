@@ -3,6 +3,9 @@ config.env
 .DS_Store
 public/main.css
 config.json
+admin.json
+coverage.lcov
+key.txt
 
 # Logs
 logs

@@ -4,7 +4,7 @@
     {{>githubSummary}}
   </ul>
   <iframe class="report-section__website" width="320px" height="480px" src="{{githubPage.url}}"></iframe>
-  <a href="{{githubPage.url}}" class="report-section__website-link">Go to site</a>
+  <a target="_blank" href="{{githubPage.url}}" class="report-section__website-link">Go to site</a>
   <ul>
      {{#if githubCommits.success}}
     <li class="report-section__info-item">
@@ -32,7 +32,7 @@
     {{#if githubRepos.success}}
     <li class="report-section__info-item">
       <h3 class="report-section__info-title">{{githubRepos.repos}} repos</h3>
-      <p class="report-section__info-description">on this account</p>
+      <a target="_blank" href="https://github.com/{{githubHandle}}"><p class="report-section__info-description">on this account</p></a>
     </li>
     {{else}}
     <li class="report-section__info-item">

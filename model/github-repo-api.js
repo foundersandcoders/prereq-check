@@ -1,13 +1,14 @@
 const rp = require('request-promise-native');
 
-const getGithubRepos = (username) => {
+const getGithubRepos = (username, token) => {
   const options = {
     uri: `https://api.github.com/users/${username}`,
     headers: {
-      'User-Agent': 'prereq-check',
+      'User-Agent': 'prereqCheck',
     },
     json: true, // Automatically parses the JSON string in the response
   };
+  options.uri += token ? `?access_token=${token}` : '';
   return rp(options)
     .then((apiRes) => {
       return {
