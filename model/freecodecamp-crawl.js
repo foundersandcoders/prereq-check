@@ -32,6 +32,7 @@ const getFreeCodeCamp = (username) => {
           basicJavaScript: fccSectionValidator(htmlString, basicJavaScript),
           oOFunctionalProgramming: fccSectionValidator(htmlString, oOFunctionalProgramming),
           basicScripting: fccSectionValidator(htmlString, basicScripting),
+          handle: username,
         };
         freeCodeCampObj.complete = freeCodeCampObj.htmlCss && freeCodeCampObj.basicJavaScript
           && freeCodeCampObj.oOFunctionalProgramming && freeCodeCampObj.basicScripting;
