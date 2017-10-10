@@ -1,25 +1,25 @@
 /* Animated lightbulb on report page */
 
-.report-section__animation-container {
+.logo-animation__container {
   position: relative;
   margin: 4rem auto 0 auto;
   height: 16rem;
   width: 225px;
 }
 
-.report-section__animation {
+.logo-animation {
   position: absolute;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.report-section__animation--lightbulb {
+.logo-animation__lightbulb {
  background-image: url(/images/blank-bulb.png);
  height: 16rem;
  width: 100%;
 }
 
-.report-section__animation--stem {
+.logo-animation__stem {
   background-image: url(/images/stem.png);
   animation: grow-stem 5s ease;
   animation-fill-mode: forwards;
@@ -31,7 +31,7 @@
   background-position: 50%;
 }
 
-.report-section__animation--side-leaf {
+.logo-animation__side-leaf {
   background-image: url(/images/side-leaf.png);
   animation: grow-side-leaf 5s ease;
   animation-fill-mode: forwards;
@@ -43,7 +43,7 @@
   background-position: 50%;
 }
 
-.report-section__animation--top-leaf {
+.logo-animation__top-leaf {
   background-image: url(/images/top-leaf.png);
   animation: grow-top-leaf 5s ease;
   animation-fill-mode: forwards;
@@ -55,7 +55,7 @@
   background-position: 50%;
 }
 
-.report-section__animation--side-stem {
+.logo-animation__side-stem {
   background-image: url(/images/side-stem.png);
   animation: grow-side-stem 5s ease;
   animation-fill-mode: forwards;

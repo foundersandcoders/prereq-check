@@ -1,8 +1,12 @@
 <li class="report-section__list-item">
   {{#if githubPage.success}}
   <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed">
-  <p class="report-section__prereq">Website on GitHub Pages</p>
+  <a class="report-section__link" href="#github">
+    <p class="report-section__prereq">Website on GitHub Pages</p>
+  </a>
   {{else}}
-  <p class="report-section__prereq">GitHub Page: {{githubPage.message}}</p>
+  <a class="report-section__link" href="#github">
+    <p class="report-section__prereq">GitHub Page: {{githubPage.message}}</p>
+  </a>
   {{/if}}
 </li>
