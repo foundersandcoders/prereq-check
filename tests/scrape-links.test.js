@@ -5,7 +5,7 @@ const nock = require('nock');
 const app = require('../app');
 
 test('Test /scrape-links endpoint with invalid URL', (t) => {
-  nock('http://faccer.github.io')
+  nock('https://faccer.github.io')
     .get('/')
     .reply(404, {
       status: 404,
@@ -24,7 +24,7 @@ test('Test /scrape-links endpoint with invalid URL', (t) => {
 });
 
 test('Test /scrape-links endpoint with valid URL', (t) => {
-  nock('http://validuser.github.io')
+  nock('https://validuser.github.io')
     .get('/')
     .reply(200, 'github.com/usernamegh freecodecamp.org/usernamefcc codewars.com/users/usernamecw');
 
@@ -34,7 +34,7 @@ test('Test /scrape-links endpoint with valid URL', (t) => {
     .expect('Content-Type', /json/)
     .end((err, res) => {
       t.same(res.statusCode, 200, 'Status code is 200');
-      t.ok(res.text.includes('value="http://validuser.github.io"'), 'Html form populates with Github page url value');
+      t.ok(res.text.includes('value="https://validuser.github.io"'), 'Html form populates with Github page url value');
       t.ok(res.text.includes('value="usernamefcc"'), 'Html form populates with freeCodeCamp username value');
       t.ok(res.text.includes('value="usernamecw"'), 'Html form populates with Codewars username value');
       t.ok(res.text.includes('value="usernamegh"'), 'Html form populates with Github username value');

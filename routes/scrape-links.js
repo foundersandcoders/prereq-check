@@ -1,5 +1,7 @@
 const rp = require('request-promise-native');
 const normalizeUrl = require('normalize-url');
+const prependHttps = require('prepend-http');
+const humanizeUrl = require('humanize-url');
 
 const getGithubLink = (htmlString) => {
   const regEx = /github.com\/([\w-]*)/;
@@ -19,8 +21,15 @@ const getCodewarsLink = (htmlString) => {
   return cwHandle ? cwHandle[1] : null;
 };
 
+const formatUrl = (url) => {
+  if (url.includes('github')) {
+    return prependHttps(humanizeUrl(url), { https: true });
+  }
+  return normalizeUrl(url);
+};
+
 const scrapeLinks = (req, res) => {
-  const url = req.query.githubPage ? normalizeUrl(req.query.githubPage) : '';
+  const url = req.query.githubPage ? formatUrl(req.query.githubPage) : '';
   return rp(url)
     .then((htmlString) => {
       const githubScrape = {
