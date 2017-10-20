@@ -6,7 +6,7 @@ const scrapeLinks = require('./scrape-links');
 const { githubAuth } = require('./github-auth');
 
 const login = (req, res) => {
-  res.render('login');
+  res.render('login', { clientId: process.env.CLIENT_ID });
 };
 
 const links = (req, res) => {
