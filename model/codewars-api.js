@@ -30,7 +30,7 @@ const getAuthoredKatas = (username) => {
     })
     .catch((err) => {
       console.error('Fetching authored katas failed');
-      // console.error(err);
+      console.error(err);
       const codewarsObj = {};
       codewarsObj.success = false;
       codewarsObj.statusCode = err.statusCode;
@@ -56,7 +56,7 @@ const appendKataCompletions = (katas) => {
       })
       .catch((err) => {
         console.error('Fetching codewars kata completions');
-        //console.error(err);
+        console.error(err);
         return null;
       });
   });
@@ -86,7 +86,7 @@ const getCodewars = (username) => {
     })
     .catch((err) => {
       console.error('Fetching codewars info failed');
-      //console.error(err);
+      console.error(err);
       const codewarsObj = {};
       codewarsObj.success = false;
       codewarsObj.statusCode = err.statusCode;

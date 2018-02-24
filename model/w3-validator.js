@@ -29,7 +29,7 @@ const getW3Validator = (url) => {
     })
     .catch((err) => {
       console.error('Fetching W3 Validator info failed');
-      // console.error(err);
+      console.error(err);
       return {
         success: false,
         message: 'Error retrieving data from W3 Validator',

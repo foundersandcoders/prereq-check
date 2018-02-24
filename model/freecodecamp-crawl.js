@@ -41,7 +41,7 @@ const getFreeCodeCamp = (username) => {
     })
     .catch((err) => {
       console.error('Fetching FreeCodeCamp crawl failed');
-      // console.error(err);
+      console.error(err);
       const freeCodeCampObj = {};
       freeCodeCampObj.success = false;
       freeCodeCampObj.message = 'User not found';

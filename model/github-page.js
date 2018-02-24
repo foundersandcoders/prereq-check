@@ -16,7 +16,7 @@ const getGithubPage = (url) => {
     })
     .catch((err) => {
       console.error('Fetching GitHub page failed');
-      // console.error(err);
+      console.error(err);
       const githubObj = {};
       githubObj.success = false;
       githubObj.statusCode = err.statusCode;

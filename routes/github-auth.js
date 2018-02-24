@@ -49,7 +49,7 @@ const githubAuth = (req, res) => {
       })
       .catch((err) => {
         console.error('Couldn\'t log in with Github');
-        // console.error(err);
+        console.error(err);
       })
       .then((userData) => {
         req.session.user = userData.login;
@@ -61,7 +61,7 @@ const githubAuth = (req, res) => {
       })
       .catch((err) => {
         console.error('Error retrieving user team membership');
-        // console.error(err);
+        console.error(err);
       });
   } else {
     // login unsuccessful
