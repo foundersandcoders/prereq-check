@@ -45,7 +45,7 @@ const scrapeLinks = (req, res) => {
     })
     .catch((err) => {
       console.error('Fetching Github Pages URL failed');
-      // console.error(err);
+      console.error(err);
       const githubScrape = {
         success: false,
         message: 'Page not found',

@@ -18,7 +18,7 @@ const getGithubRepos = (username, token) => {
     })
     .catch((err) => {
       console.error('Get Github Repos failed');
-      // console.error(err);
+      console.error(err);
       return {
         success: false,
         message: 'Fetching Github repo count failed',

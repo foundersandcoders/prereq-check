@@ -26,7 +26,7 @@ const getGithubCommits = (githubHandle, url, token) => {
     })
     .catch((err) => {
       console.error('Get Github commit count failed');
-      // console.error(err);
+      console.error(err);
       return {
         success: false,
         message: 'Fetching Github commit count failed',
