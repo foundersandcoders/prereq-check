@@ -47,6 +47,13 @@ To set up locally, first clone this repo:
 
 Use `npm run devStart` to start the dev server. Or to run tests: `npm test`.
 
+### Github apps
+Authentication occurs through github oauth. This requires a github 'app' to be registered. Once github has completed the oauth flow, it 'calls back' prereq-check on a url specified in the app; if you are developing locally we want this url to point to localhost, but when deployed on heroku we want this url to point to the heroku app.
+For this reason we have two github oauth apps. The `CLIENT_ID` and `CLIENT_SECRET` are environment variables, and they need to be the id and secret for the correct github oauth  app for local development or heroku depending on where the app is running.
+To accomplish this:
+- variables `CLIENT_ID` and `CLIENT_SECRET` with the correct values have been created on heroku;
+- to run this locally you need to have `CLIENT_ID` and `CLIENT_SECRET` with the correct values for running the local app configured in your `config.json`. 
+
 ## How & Things We Learned
 
 ### Stack
