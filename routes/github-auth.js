@@ -57,6 +57,13 @@ const githubAuth = (req, res) => {
       })
       .then((userTeams) => {
         req.session.isInTeam = isInTeam(userTeams);
+        console.log(`
+          User ${req.session.user} succesfully logged in.
+          \n ${req.session.user} isInTeam: ${req.session.isInTeam}.
+          \n User teams github response: ${JSON.stringify(userTeams)}
+          \n process.env.AUTHORISED_TEAM_NAME: ${process.env.AUTHORISED_TEAM_NAME}
+          \n JSON.parse(process.env.AUTHORISED_TEAM_ID): ${JSON.parse(process.env.AUTHORISED_TEAM_ID)}
+        `);
         res.redirect('/links');
       })
       .catch((err) => {
