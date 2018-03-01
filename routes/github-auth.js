@@ -1,7 +1,7 @@
 const rp = require('request-promise-native');
 require('env2')('config.json');
 
-const isInTeam = teamsArray => teamsArray.some(team => team.name === process.env.AUTHORISED_TEAM_NAME && team.id === JSON.parse(process.env.AUTHORISED_TEAM_ID));
+const isInTeam = (teamMembersArray, user) => teamMembersArray.some(member => member.login === user);
 
 const getUserData = (token) => {
   const options = {
@@ -17,12 +17,14 @@ const getUserData = (token) => {
 
 const getUserTeams = (token) => {
   const options = {
-    uri: 'https://api.github.com/user/teams',
+    uri: `https://api.github.com/teams/${process.env.AUTHORISED_TEAM_ID}/members`,
     headers: {
       authorization: `token ${token}`,
       'User-Agent': 'prereqCheck',
     },
     json: true,
+    simple: false,
+    resolveWithFullResponse: true,
   };
   return rp(options);
 };
@@ -55,15 +57,17 @@ const githubAuth = (req, res) => {
         req.session.user = userData.login;
         return getUserTeams(req.session.token);
       })
-      .then((userTeams) => {
-        req.session.isInTeam = isInTeam(userTeams);
+      .then((response) => {
+        if (response.statusCode === 200) {
+          req.session.isInTeam = isInTeam(response.body, req.session.user);
+        } else {
+          req.session.isInTeam = false;
+        }
         console.log(`
-          User ${req.session.user} succesfully logged in.
-          \n ${req.session.user} isInTeam: ${req.session.isInTeam}.
-          \n User teams github response: ${JSON.stringify(userTeams)}
-          \n process.env.AUTHORISED_TEAM_NAME: ${process.env.AUTHORISED_TEAM_NAME}
-          \n JSON.parse(process.env.AUTHORISED_TEAM_ID): ${JSON.parse(process.env.AUTHORISED_TEAM_ID)}
-        `);
+-          User ${req.session.user} succesfully logged in.
+-          \n ${req.session.user} isInTeam: ${req.session.isInTeam}.
+-          \n Get team members github response: ${response}
+-        `);
         res.redirect('/links');
       })
       .catch((err) => {
