@@ -4,34 +4,25 @@ const request = require('supertest');
 const app = require('../app');
 const { isInTeam } = require('../routes/github-auth');
 
-const notInTeamData = [
+const teamMembersArray = [
   {
-    name: 'test-team-1',
-    id: 9898,
+    login: 'lucy-in-the-sky',
   },
   {
-    name: 'test-team-2',
-    id: 878783,
-  },
-];
-const isInTeamData = [
-  {
-    name: 'test-team-1',
-    id: 9898,
-  },
-  {
-    name: process.env.AUTHORISED_TEAM_NAME,
-    id: JSON.parse(process.env.AUTHORISED_TEAM_ID),
+    login: 'lucy-lu',
   },
 ];
 
+const isInTeamUser = 'lucy-lu';
+const notInTeamUser = 'lucy';
+
 tape('Test isInTeam pure function', (t) => {
-  t.equal(isInTeam(isInTeamData), true, 'If user is in the team should return true');
-  t.equal(isInTeam(notInTeamData), false, 'If user is not in the team should return false');
+  t.equal(isInTeam(teamMembersArray, isInTeamUser), true, 'If user is in the team should return true');
+  t.equal(isInTeam(teamMembersArray, notInTeamUser), false, 'If user is not in the team should return false');
   t.end();
 });
 
-tape('Test githubAuth: success case', (t) => {
+tape('Test githubAuth: success case for non-team member', (t) => {
   nock('https://github.com/login/oauth/access_token')
     .get(/.*/)
     .reply(200, { access_token: 'token' });
@@ -42,7 +33,7 @@ tape('Test githubAuth: success case', (t) => {
 
   nock('https://api.github.com/teams')
     .get(/.*/)
-    .reply(200, [{ name: 'wrong-team', id: 0000, }]);
+    .reply(400);
 
   request(app)
     .get('/auth?code=3aa491426dc2f4130a6b')

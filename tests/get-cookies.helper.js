@@ -9,11 +9,11 @@ const app = require('../app');
 // respond with { access_token: 'token'}
 // intercept outgoing call to:   https://api.github.com/user
 // respond with object { login: 'ghusername' }
-// intercept outgoing call to: https://api.github.com/teams
-// respond with array [ { name: 'teamName' } ]
+// intercept outgoing call to: https://api.github.com/teams/*
+// respond with respond with 200 and array of team members containing the ghHandle arg (to grant this user team member privileges) if isInTeam === true, else respond with 400
 // grab cookie and set on request to restricted route
 
-const getCookies = (ghHandle, cb) => {
+const getCookies = (ghHandle, isInTeam, cb) => {
   nock('https://github.com/login/oauth/access_token')
     .get(/.*/)
     .reply(200, { access_token: 'token' });
@@ -24,13 +24,25 @@ const getCookies = (ghHandle, cb) => {
 
   nock('https://api.github.com/teams')
     .get(/.*/)
-    .reply(200, [{ name: 'wrong-team' }]);
+    .reply(() => {
+      if (isInTeam) {
+        return [
+          200,
+          [
+            {
+              login: ghHandle,
+            },
+          ],
+        ];
+      }
+      return [400];
+    });
 
   request(app)
     .get('/auth?code=3aa491426dc2f4130a6b')
     .end((err, res) => {
       if (err) {
-        console.log('error in getCookies: ', err);
+        console.error('error in getCookies: ', err);
         return;
       }
       cb(res.headers['set-cookie']); //

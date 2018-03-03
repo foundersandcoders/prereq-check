@@ -15,7 +15,7 @@ const getUserData = (token) => {
   return rp(options);
 };
 
-const getUserTeams = (token) => {
+const getAdminTeamMembers = (token) => {
   const options = {
     uri: `https://api.github.com/teams/${process.env.AUTHORISED_TEAM_ID}/members`,
     headers: {
@@ -55,19 +55,15 @@ const githubAuth = (req, res) => {
       })
       .then((userData) => {
         req.session.user = userData.login;
-        return getUserTeams(req.session.token);
+        return getAdminTeamMembers(req.session.token);
       })
       .then((response) => {
         if (response.statusCode === 200) {
+          // if user is able to retrieve team they are probably a member, but check anyway
           req.session.isInTeam = isInTeam(response.body, req.session.user);
         } else {
           req.session.isInTeam = false;
         }
-        console.log(`
--          User ${req.session.user} succesfully logged in.
--          \n ${req.session.user} isInTeam: ${req.session.isInTeam}.
--          \n Get team members github response: ${response}
--        `);
         res.redirect('/links');
       })
       .catch((err) => {

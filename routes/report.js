@@ -9,11 +9,6 @@ const isValidRequest = require('./validate-request');
 
 const displayReport = (req, res) => {
   if (!isValidRequest(req.session, req.query)) {
-    console.log(`
-      Redirecting session user ${req.session.user} because isValidRequest is falsy. 
-      \nRequest github handle: ${req.query.ghHandle}
-      \nRequest isInTeam: ${req.session.isInTeam}
-      `);
     return res.redirect('/links');
   }
   const { githubPage, fccHandle, cwHandle, ghHandle } = req.query;
