@@ -6,6 +6,7 @@ config.json
 admin.json
 coverage.lcov
 key.txt
+logs.txt
 
 # Logs
 logs
