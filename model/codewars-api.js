@@ -24,18 +24,19 @@ const getAuthoredKatas = (username) => {
     json: true, // Automatically parses the JSON string in the response
   };
   return rp(options)
-    .then(apiRes =>
-      apiRes.data.reduce((ourKataArray, responseKataArray) => {
+    .then((apiRes) => {
+      return apiRes.data.reduce((ourKataArray, responseKataArray) => {
         const data = {
           success: true,
           id: responseKataArray.id,
           name: responseKataArray.name,
-          link: `https://www.codewars.com/kata/${responseKataArray.id}`,
+          link: 'https://www.codewars.com/kata/' + responseKataArray.id,
           rank: Math.abs(responseKataArray.rank),
           beta: responseKataArray.rank === null,
         };
         return [...ourKataArray, data];
-      }, []))
+      }, []);
+    })
     .catch((err) => {
       console.error('Fetching authored katas failed');
       console.error(err);
@@ -52,24 +53,28 @@ const getAuthoredKatas = (username) => {
 };
 
 const appendKataCompletions = (katas) => {
-  if (!Array.isArray(katas)) {
-    return katas;
-  }
+  if (!Array.isArray(katas)) { return katas; }
   const completionPromises = katas.map((kata) => {
     const options = {
       uri: `https://www.codewars.com/api/v1/code-challenges/${kata.id}`,
       json: true, // Automatically parses the JSON string in the response
     };
     return rp(options)
-      .then(kataDetail => kataDetail.totalCompleted)
+      .then((kataDetail) => {
+        return kataDetail.totalCompleted;
+      })
       .catch((err) => {
         console.error('Fetching codewars kata completions');
         console.error(err);
         return null;
       });
   });
-  return Promise.all(completionPromises).then(completionsArray =>
-    katas.map((kata, index) => Object.assign({}, kata, { completions: completionsArray[index] })));
+  return Promise.all(completionPromises)
+    .then((completionsArray) => {
+      return katas.map((kata, index) => {
+        return Object.assign({}, kata, { completions: completionsArray[index] });
+      });
+    });
 };
 
 const getCodewars = (username) => {
