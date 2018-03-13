@@ -5,18 +5,7 @@ const getKyu = (body) => {
   return Math.abs(codewarsRank);
 };
 
-const hasAuthored = (username) => {
-  const options = {
-    uri: `https://www.codewars.com/api/v1/users/${username}/code-challenges/authored/`,
-    json: true,
-  };
-  return rp(options)
-    .then(apiRes => apiRes.data.length >= 1)
-    .catch((err) => {
-      console.error('Fetching codewars katas failed');
-      console.error(err);
-    });
-};
+const hasAuthored = (kataArray) => {return kataArray.length >= 1};
 
 const getAuthoredKatas = (username) => {
   const options = {
@@ -83,14 +72,14 @@ const getCodewars = (username) => {
     json: true, // Automatically parses the JSON string in the response
   };
   options.uri += username;
-  return Promise.all([rp(options), hasAuthored(username)])
-    .then(([apiRes, hasAuthoredRes]) => {
+  return rp(options)
+    .then((apiRes) => {
       const codewarsObj = {};
       codewarsObj.success = true;
       codewarsObj.kyu = getKyu(apiRes);
       codewarsObj.achieved5Kyu = getKyu(apiRes) <= 5;
       codewarsObj.honor = apiRes.honor;
-      codewarsObj.hasAuthored = hasAuthoredRes;
+      // codewarsObj.hasAuthored = hasAuthoredRes;
       return codewarsObj;
     })
     .catch((err) => {
