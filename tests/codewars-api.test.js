@@ -2,6 +2,7 @@ const tape = require("tape");
 const nock = require('nock');
 const path = require('path');
 const codewarsSuccessData = require("./dummy-data/codewars-response-success.json");
+const kataOverview = require('./dummy-data/authored-kata-overview.json');
 
 const {
   getKyu,
@@ -18,28 +19,11 @@ tape('Codewars API: getKyu', (t) => {
 });
 
 tape('Codewars API: hasAuthored', (t) => {
-  const noKata = {
-    "codeChallenges": {
-      "totalAuthored": 0
-    }
-  };
-  t.ok(
-    hasAuthored(codewarsSuccessData.username) instanceof Promise,
-    'hasAuthored should return a promise',
-  );
-  nock('https://www.codewars.com/')
-    .get('/api/v1/users/testuser/code-challenges/authored/')
-    .replyWithFile(200, path.join(__dirname, 'dummy-data', 'authored-kata-overview.json'));
-  hasAuthored('testuser').then((res) => {
-    t.ok(res, 'hasAuthored returns true if user has authored 1 kata');
-  });
-  nock('https://www.codewars.com/')
-    .get('/api/v1/users/testuser/code-challenges/authored/')
-    .replyWithFile(200, path.join(__dirname, 'dummy-data', 'authored-kata-none.json'));
-  hasAuthored('testuser').then((res) => {
-    t.notOk(res, 'hasAuthored returns false if user has authored 0 kata');
-    t.end();
-  });
+  const kataArray = [kataOverview.data];
+  const noKata = [];
+  t.ok(hasAuthored(kataArray), 'hasAuthored returns true if user has authored 1 kata');
+  t.notOk(hasAuthored(noKata), 'hasAuthored returns false if user has authored 0 kata');
+  t.end();
 });
 
 tape('Codewars API: getAuthoredKatas', (t) => {
@@ -103,7 +87,6 @@ tape('Codewars API: getCodewars valid username', (t) => {
     success: true,
     kyu: 5,
     achieved5Kyu: true,
-    hasAuthored: true,
     honor: 352,
   };
   nock('https://www.codewars.com/')
