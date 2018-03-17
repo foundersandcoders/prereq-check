@@ -12,6 +12,9 @@ the selection panel.
 
 Selection panel members can see the same information, but for any applicant.
 
+## Contributing
+See the [contributing guide](https://github.com/ameliejyc/prereq-check/blob/master/contributing.md).
+
 ### User Stories
 #### As a selection panel member I can:
 - [x] See whether the applicant has attained 5 Kyu.
@@ -22,9 +25,9 @@ Selection panel members can see the same information, but for any applicant.
 - [x] See extra information about an applicant's Codewars profile.
 - [x] See an applicants points score on freecodecamp.
 - [x] See more detail about an applicants github page and github usage.
-- [ ] Login with my GitHub account to access the app.
-- [ ] See info about an applicants meetup attendance.
-- [ ] Navigate between all areas of prerequisite information easily.
+- [x] Login with my GitHub account to access the app.
+- [x] See info about an applicants meetup attendance.
+- [x] Navigate between all areas of prerequisite information easily.
 - [ ] Logout from the app.
 
 #### As an applicant I can:
@@ -36,23 +39,10 @@ Selection panel members can see the same information, but for any applicant.
 - [x] See extra information about my Codewars profile.
 - [x] See my 'points score' from my freecodecamp account.
 - [x] See more detail about my github page and usage.
-- [ ] Login with my GitHub account to access the app.
-- [ ] See info about my meetup attendance.
-- [ ] Navigate around all areas of my information easily.
+- [x] Login with my GitHub account to access the app.
+- [x] See info about my meetup attendance.
+- [x] Navigate around all areas of my information easily.
 - [ ] Logout from the app.
-
-## How to set up Locally
-To set up locally, first clone this repo:  
-```git clone https://github.com/ameliejyc/prereq-check.git```
-
-Use `npm run devStart` to start the dev server. Or to run tests: `npm test`.
-
-### Github apps
-Authentication occurs through github oauth. This requires a github 'app' to be registered. Once github has completed the oauth flow, it 'calls back' prereq-check on a url specified in the app; if you are developing locally we want this url to point to localhost, but when deployed on heroku we want this url to point to the heroku app.
-For this reason we have two github oauth apps. The `CLIENT_ID` and `CLIENT_SECRET` are environment variables, and they need to be the id and secret for the correct github oauth  app for local development or heroku depending on where the app is running.
-To accomplish this:
-- variables `CLIENT_ID` and `CLIENT_SECRET` with the correct values have been created on heroku;
-- to run this locally you need to have `CLIENT_ID` and `CLIENT_SECRET` with the correct values for running the local app configured in your `config.json`. 
 
 ## How & Things We Learned
 
