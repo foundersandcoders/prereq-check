@@ -33,10 +33,9 @@ li {
 
 body {
   margin: 5vh 4vw;
-  font: $main-font;
+  font-family: $main-font;
   background-color: $main-color;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
   transition: all 1s;
 }
 
