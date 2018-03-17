@@ -5,9 +5,7 @@ const getKyu = (body) => {
   return Math.abs(codewarsRank);
 };
 
-const hasAuthored = (body) => {
-  return body.codeChallenges.totalAuthored >= 1;
-};
+const hasAuthored = (kataArray) => {return kataArray.length >= 1};
 
 const getAuthoredKatas = (username) => {
   const options = {
@@ -80,7 +78,6 @@ const getCodewars = (username) => {
       codewarsObj.success = true;
       codewarsObj.kyu = getKyu(apiRes);
       codewarsObj.achieved5Kyu = getKyu(apiRes) <= 5;
-      codewarsObj.hasAuthored = hasAuthored(apiRes);
       codewarsObj.honor = apiRes.honor;
       return codewarsObj;
     })

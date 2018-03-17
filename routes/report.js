@@ -1,4 +1,4 @@
-const { getCodewars, getAuthoredKatas, appendKataCompletions } = require("../model/codewars-api");
+const { getCodewars, getAuthoredKatas, appendKataCompletions, hasAuthored } = require("../model/codewars-api");
 const { getFreeCodeCamp } = require("../model/freecodecamp-crawl");
 const { getGithubPage } = require('../model/github-page');
 const { getW3Validator } = require('../model/w3-validator');
@@ -34,6 +34,7 @@ const displayReport = (req, res) => {
         summaryObject.githubCommits,
         summaryObject.codewarsKatas,
         summaryObject.meetups] = values;
+      summaryObject.codewars.hasAuthored = hasAuthored(summaryObject.codewarsKatas);
       summaryObject.githubHandle = ghHandle;
       res.render('report', summaryObject);
     })
