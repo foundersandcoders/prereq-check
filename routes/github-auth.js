@@ -52,6 +52,7 @@ const githubAuth = (req, res) => {
       .catch((err) => {
         console.error('Couldn\'t log in with Github');
         console.error(err);
+        throw new Error('Couldn\'t log in with Github')
       })
       .then((userData) => {
         req.session.user = userData.login;
@@ -67,8 +68,14 @@ const githubAuth = (req, res) => {
         res.redirect('/links');
       })
       .catch((err) => {
-        console.error('Error retrieving user team membership');
-        console.error(err);
+        if (err.message === 'Couldn\'t log in with Github') {
+          res.render('error', { message: err.message });
+        } else {
+          console.error('Error retrieving user team membership');
+          console.error(err);
+          req.session.isInTeam = false;
+          res.redirect('/links');
+        }
       });
   } else {
     // login unsuccessful
@@ -80,4 +87,3 @@ module.exports = {
   isInTeam,
   githubAuth,
 };
-
