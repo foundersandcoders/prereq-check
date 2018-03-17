@@ -1,6 +1,9 @@
 # prereqCheck [![Build Status](https://travis-ci.org/ameliejyc/prereq-check.svg?branch=master)](https://travis-ci.org/ameliejyc/prereq-check) [![codecov](https://codecov.io/gh/ameliejyc/prereq-check/branch/master/graph/badge.svg)](https://codecov.io/gh/ameliejyc/prereq-check)
 A prerequisite checker for FAC applications :heavy_check_mark:
 
+## Authors / Maintainers
+@matthewdking @ameliejyc @bartbucknill @dangerdak @astroash
+
 ## Why
 The selection committee needs to be able to easily see how applicants have done with their prerequisites. Applicants also need to see how they are doing as they work through them. This should be as transparent as possible so that applicants know what they're being judged on.
 
@@ -12,6 +15,9 @@ the selection panel.
 
 Selection panel members can see the same information, but for any applicant.
 
+## Contributing
+See the [contributing guide](https://github.com/ameliejyc/prereq-check/blob/master/contributing.md).
+
 ### User Stories
 #### As a selection panel member I can:
 - [x] See whether the applicant has attained 5 Kyu.
@@ -22,9 +28,9 @@ Selection panel members can see the same information, but for any applicant.
 - [x] See extra information about an applicant's Codewars profile.
 - [x] See an applicants points score on freecodecamp.
 - [x] See more detail about an applicants github page and github usage.
-- [ ] Login with my GitHub account to access the app.
-- [ ] See info about an applicants meetup attendance.
-- [ ] Navigate between all areas of prerequisite information easily.
+- [x] Login with my GitHub account to access the app.
+- [x] See info about an applicants meetup attendance.
+- [x] Navigate between all areas of prerequisite information easily.
 - [ ] Logout from the app.
 
 #### As an applicant I can:
@@ -36,16 +42,10 @@ Selection panel members can see the same information, but for any applicant.
 - [x] See extra information about my Codewars profile.
 - [x] See my 'points score' from my freecodecamp account.
 - [x] See more detail about my github page and usage.
-- [ ] Login with my GitHub account to access the app.
-- [ ] See info about my meetup attendance.
-- [ ] Navigate around all areas of my information easily.
+- [x] Login with my GitHub account to access the app.
+- [x] See info about my meetup attendance.
+- [x] Navigate around all areas of my information easily.
 - [ ] Logout from the app.
-
-## How to set up Locally
-To set up locally, first clone this repo:  
-```git clone https://github.com/ameliejyc/prereq-check.git```
-
-Use `npm run devStart` to start the dev server. Or to run tests: `npm test`.
 
 ## How & Things We Learned
 
