@@ -1,6 +1,9 @@
 # prereqCheck [![Build Status](https://travis-ci.org/ameliejyc/prereq-check.svg?branch=master)](https://travis-ci.org/ameliejyc/prereq-check) [![codecov](https://codecov.io/gh/ameliejyc/prereq-check/branch/master/graph/badge.svg)](https://codecov.io/gh/ameliejyc/prereq-check)
 A prerequisite checker for FAC applications :heavy_check_mark:
 
+## Authors / Maintainers
+@matthewdking @ameliejyc @bartbucknill @dangerdak @astroash
+
 ## Why
 The selection committee needs to be able to easily see how applicants have done with their prerequisites. Applicants also need to see how they are doing as they work through them. This should be as transparent as possible so that applicants know what they're being judged on.
 

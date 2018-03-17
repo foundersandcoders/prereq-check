@@ -1,5 +1,14 @@
 # Contributing Guide for Developers
 
+## Getting Started
+Check the existing issues:
+- priority 1 is highest priority, 5 is lowest
+- issues labelled `starter` are good for beginners
+- if you want to work on an issue, it is normally best to first discuss with the maintainers (as simple as @ing them in a comment). Make sure to assign yourself to the issue and add the `in progress` label.
+
+## Authors / Maintainers
+@matthewdking @ameliejyc @bartbucknill @dangerdak @astroash
+
 ## How to set up Locally
 To set up locally, first clone this repo:  
 ```git clone https://github.com/ameliejyc/prereq-check.git```
