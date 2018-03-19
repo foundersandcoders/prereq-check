@@ -7,12 +7,12 @@
   {{#if codewars.success}}
     {{#if codewars.achieved5Kyu}}
     <img class="report-section__icon" src="/images/check-mark.svg" alt="Completed">
-    <a class="report-section__link" href="#codewars">
+    <a class="report-section__link" href="https://www.codewars.com/users/{{codewars.username}}">
       <p class="report-section__prereq">Codewars: 5 Kyu or better</p>
     </a>
   {{else}}
     <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed">
-    <a class="report-section__link" href="#codewars">
+    <a class="report-section__link" href="https://www.codewars.com/users/{{codewars.username}}">
       <p class="report-section__prereq">Codewars: 5 Kyu or better</p>
     </a>
     {{/if}}
@@ -30,7 +30,7 @@
 {{else}}
   <img class="report-section__icon" src="/images/x-mark.svg" alt="Not completed">
   {{/if}}
-  <a class="report-section__link" href="#codewars">
+  <a class="report-section__link" href="https://www.codewars.com/users/{{codewars.username}}/authored">
     <p class="report-section__prereq">Codewars: authored 1+ Kata</p>
   </a>
 {{/if}}

@@ -79,6 +79,7 @@ const getCodewars = (username) => {
       codewarsObj.kyu = getKyu(apiRes);
       codewarsObj.achieved5Kyu = getKyu(apiRes) <= 5;
       codewarsObj.honor = apiRes.honor;
+      codewarsObj.username = username;
       return codewarsObj;
     })
     .catch((err) => {
