@@ -88,6 +88,7 @@ tape('Codewars API: getCodewars valid username', (t) => {
     kyu: 5,
     achieved5Kyu: true,
     honor: 352,
+    username,
   };
   nock('https://www.codewars.com/')
     .get(`/api/v1/users/${username}`)

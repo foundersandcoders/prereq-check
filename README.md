@@ -16,7 +16,7 @@ the selection panel.
 Selection panel members can see the same information, but for any applicant.
 
 ## Contributing
-See the [contributing guide](https://github.com/ameliejyc/prereq-check/blob/master/contributing.md).
+See the [contributing guide](https://github.com/ameliejyc/prereq-check/blob/master/CONTRIBUTING.md).
 
 ### User Stories
 #### As a selection panel member I can:
