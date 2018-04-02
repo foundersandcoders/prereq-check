@@ -19,7 +19,7 @@ const getAuthoredKatas = (username) => {
           success: true,
           id: responseKataArray.id,
           name: responseKataArray.name,
-          link: `https://www.codewars.com/kata/${responseKataArray.i}`,
+          link: `https://www.codewars.com/kata/${responseKataArray.id}`,
           rank: Math.abs(responseKataArray.rank),
           beta: responseKataArray.rank === null,
         };
