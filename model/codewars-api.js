@@ -19,7 +19,7 @@ const getAuthoredKatas = (username) => {
           success: true,
           id: responseKataArray.id,
           name: responseKataArray.name,
-          link: 'https://www.codewars.com/kata/' + responseKataArray.id,
+          link: `https://www.codewars.com/kata/${responseKataArray.id}`,
           rank: Math.abs(responseKataArray.rank),
           beta: responseKataArray.rank === null,
         };
@@ -29,9 +29,10 @@ const getAuthoredKatas = (username) => {
     .catch((err) => {
       console.error('Fetching authored katas failed');
       console.error(err);
-      const codewarsObj = {};
-      codewarsObj.success = false;
-      codewarsObj.statusCode = err.statusCode;
+      const codewarsObj = {
+        success: false,
+        statusCode: err.statusCode
+      };
       if (err.statusCode === 404) {
         codewarsObj.message = 'User not found';
       } else {
@@ -68,26 +69,26 @@ const appendKataCompletions = (katas) => {
 
 const getCodewars = (username) => {
   const options = {
-    uri: 'https://www.codewars.com/api/v1/users/',
+    uri: `https://www.codewars.com/api/v1/users/${username}`,
     json: true, // Automatically parses the JSON string in the response
   };
-  options.uri += username;
   return rp(options)
     .then((apiRes) => {
-      const codewarsObj = {};
-      codewarsObj.success = true;
-      codewarsObj.kyu = getKyu(apiRes);
-      codewarsObj.achieved5Kyu = getKyu(apiRes) <= 5;
-      codewarsObj.honor = apiRes.honor;
-      codewarsObj.username = username;
-      return codewarsObj;
+      return {
+        success: true,
+        kyu: getKyu(apiRes),
+        achieved5Kyu: getKyu(apiRes) <= 5,
+        honor: apiRes.honor,
+        username,
+      };
     })
     .catch((err) => {
       console.error('Fetching codewars info failed');
       console.error(err);
-      const codewarsObj = {};
-      codewarsObj.success = false;
-      codewarsObj.statusCode = err.statusCode;
+      const codewarsObj = {
+        success: false,
+        statusCode: err.statusCode,
+      };
       if (err.statusCode === 404) {
         codewarsObj.message = 'User not found';
       } else {
