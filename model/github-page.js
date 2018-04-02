@@ -8,18 +8,19 @@ const getGithubPage = (url) => {
   };
 
   return rp(options)
-    .then((response) => {
-      const githubObj = {};
-      githubObj.success = true;
-      githubObj.url = options.uri;
-      return githubObj;
+    .then(() => {
+      return {
+        success: true,
+        url: options.uri,
+      };
     })
     .catch((err) => {
       console.error('Fetching GitHub page failed');
       console.error(err);
-      const githubObj = {};
-      githubObj.success = false;
-      githubObj.statusCode = err.statusCode;
+      const githubObj = {
+        success: false,
+        statusCode: err.statusCode,
+      };
       if (err.statusCode === 404) {
         githubObj.message = 'Page not found';
       } else if (!err.url) {
