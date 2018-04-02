@@ -10,11 +10,13 @@
 
 @media only screen and (min-width: 600px) {
   .navbar__nav {
+    display: flex;
+    align-items: center;
     width: 10vw;
     position: fixed;
     left: -0.5vw;
     top: 0;
-    margin: 10rem 0 0;
+    margin: 0 2rem;
     background-color: $main-color;
   }
 }
@@ -31,7 +33,7 @@
 }
 
 .navbar__icon {
-  width: 10vw;
+  width: 8vw;
   margin: 0 3vw;
 }
 
