@@ -1,4 +1,4 @@
-# prereqCheck [![Build Status](https://travis-ci.org/ameliejyc/prereq-check.svg?branch=master)](https://travis-ci.org/ameliejyc/prereq-check) [![codecov](https://codecov.io/gh/ameliejyc/prereq-check/branch/master/graph/badge.svg)](https://codecov.io/gh/ameliejyc/prereq-check)
+# prereqCheck [![Build Status](https://travis-ci.org/foundersandcoders/prereq-check.svg?branch=master)](https://travis-ci.org/foundersandcoders/prereq-check) [![codecov](https://codecov.io/gh/ameliejyc/prereq-check/branch/master/graph/badge.svg)](https://codecov.io/gh/ameliejyc/prereq-check)
 A prerequisite checker for FAC applications :heavy_check_mark:
 
 ## Authors / Maintainers
