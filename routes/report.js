@@ -1,5 +1,7 @@
-const { getCodewars, getAuthoredKatas, appendKataCompletions, hasAuthored } = require("../model/codewars-api");
-const { getFreeCodeCamp } = require("../model/freecodecamp-crawl");
+const {
+  getCodewars, getAuthoredKatas, appendKataCompletions, hasAuthored,
+} = require('../model/codewars-api');
+const { getFreeCodeCamp } = require('../model/freecodecamp-crawl');
 const { getGithubPage } = require('../model/github-page');
 const { getW3Validator } = require('../model/w3-validator');
 const { getGithubRepos } = require('../model/github-repo-api');
@@ -11,7 +13,9 @@ const displayReport = (req, res) => {
   if (!isValidRequest(req.session, req.query)) {
     return res.redirect('/links');
   }
-  const { githubPage, fccHandle, cwHandle, ghHandle } = req.query;
+  const {
+    githubPage, fccHandle, cwHandle, ghHandle,
+  } = req.query;
   Promise.all([
     getCodewars(cwHandle),
     getFreeCodeCamp(fccHandle),

@@ -30,6 +30,7 @@
     "pg": "^7.3.0",
     "pg-promise": "^6.5.1",
     "prepend-http": "^2.0.0",
+    "puppeteer": "^1.6.1",
     "request": "^2.81.0",
     "request-promise-native": "^1.0.4",
     "serve-favicon": "~2.4.2"
