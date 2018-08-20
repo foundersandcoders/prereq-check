@@ -1,75 +1,86 @@
 const tape = require('tape');
-const nock = require('nock');
 
 const {
-  htmlCss,
-  basicJavaScript,
-  oOFunctionalProgramming,
-  basicScripting,
+  html, css, responsive, flexbox, javascript, es6, basicDataStructures, basicAlgorithmScripting,
 } = require('../model/freecodecamp-arrays');
-const { fccSectionValidator, getFreeCodeCamp, getFccScore } = require('../model/freecodecamp-crawl');
+const { fccSectionValidator, createFreeCodeCampObject, getFccScore } = require('../model/freecodecamp-crawl');
 const fccCompleteHtmlString = require('./dummy-data/freecodecamp-html-success');
 const fccIncompleteHtmlString = require('./dummy-data/freecodecamp-html-fail');
 
 tape('Get FCC Score', (t) => {
   const actual = getFccScore(fccCompleteHtmlString);
-  t.equal(actual, '289', 'Function should return the FCC score from page scrape');
+  t.equal(actual, '293', 'Function should return the FCC score from page scrape');
   t.end();
 });
 
 tape('FCC Validation on HTML Page Crawls', (t) => {
-  let actual = fccSectionValidator(fccCompleteHtmlString, htmlCss);
-  t.ok(actual, 'Returns true when HTML/CSS section is done on dummy success data');
-  actual = fccSectionValidator(fccIncompleteHtmlString, htmlCss);
-  t.notok(actual, 'Returns false when HTML/CSS section is done on dummy fail data');
+  let actual = fccSectionValidator(fccCompleteHtmlString, html);
+  t.ok(actual, 'Returns true when html section is done on dummy success data');
+  actual = fccSectionValidator(fccIncompleteHtmlString, html);
+  t.notok(actual, 'Returns false when html section is done on dummy fail data');
 
-  actual = fccSectionValidator(fccCompleteHtmlString, basicJavaScript);
-  t.ok(actual, 'Returns true when Basic JavaScript section is done on dummy success data');
-  actual = fccSectionValidator(fccIncompleteHtmlString, basicJavaScript);
-  t.notok(actual, 'Returns false when Basic JavaScript section is done on dummy fail data');
+  actual = fccSectionValidator(fccCompleteHtmlString, css);
+  t.ok(actual, 'Returns true when CSS section is done on dummy success data');
+  actual = fccSectionValidator(fccIncompleteHtmlString, css);
+  t.notok(actual, 'Returns false when CSS section is done on dummy fail data');
 
-  actual = fccSectionValidator(fccCompleteHtmlString, oOFunctionalProgramming);
-  t.ok(actual, 'Returns true when Object Oriented & Functional Programming section is done on dummy success data');
-  actual = fccSectionValidator(fccIncompleteHtmlString, oOFunctionalProgramming);
-  t.notok(actual, 'Returns false when Object Oriented & Functional Programming section is done on dummy fail data');
+  actual = fccSectionValidator(fccCompleteHtmlString, responsive);
+  t.ok(actual, 'Returns true when responsive section is done on dummy success data');
+  actual = fccSectionValidator(fccIncompleteHtmlString, responsive);
+  t.notok(actual, 'Returns false when responsive section is done on dummy fail data');
 
-  actual = fccSectionValidator(fccCompleteHtmlString, basicScripting);
+  actual = fccSectionValidator(fccCompleteHtmlString, flexbox);
+  t.ok(actual, 'Returns true when flexbox section is done on dummy success data');
+  actual = fccSectionValidator(fccIncompleteHtmlString, flexbox);
+  t.notok(actual, 'Returns false when flexbox section is done on dummy fail data');
+
+  actual = fccSectionValidator(fccCompleteHtmlString, javascript);
+  t.ok(actual, 'Returns true when javascript section is done on dummy success data');
+  actual = fccSectionValidator(fccIncompleteHtmlString, javascript);
+  t.notok(actual, 'Returns false when javascript section is done on dummy fail data');
+
+  actual = fccSectionValidator(fccCompleteHtmlString, es6);
+  t.ok(actual, 'Returns true when es6 section is done on dummy success data');
+  actual = fccSectionValidator(fccIncompleteHtmlString, es6);
+  t.notok(actual, 'Returns false when es6 section is done on dummy fail data');
+
+  actual = fccSectionValidator(fccCompleteHtmlString, basicAlgorithmScripting);
   t.ok(actual, 'Returns true when Basic Algorithm Scripting section is done on dummy success data');
-  actual = fccSectionValidator(fccIncompleteHtmlString, basicScripting);
+  actual = fccSectionValidator(fccIncompleteHtmlString, basicAlgorithmScripting);
   t.notok(actual, 'Returns false when Basic Algorithm Scripting section is done on dummy fail data');
+
+  actual = fccSectionValidator(fccCompleteHtmlString, basicDataStructures);
+  t.ok(actual, 'Returns true when Basic Data Structures section is done on dummy success data');
+  actual = fccSectionValidator(fccIncompleteHtmlString, basicDataStructures);
+  t.notok(actual, 'Returns false when Basic Data Structures section is done on dummy fail data');
   t.end();
 });
 
 tape('FCC Crawl: getFreeCodeCamp valid username', (t) => {
-  nock('https://www.freecodecamp.org/')
-    .get('/astroash')
-    .reply(200, fccCompleteHtmlString);
-  getFreeCodeCamp('astroash')
-    .then((actual) => {
-      t.deepEqual(actual, {
-        success: true,
-        score: '289',
-        htmlCss: true,
-        basicJavaScript: true,
-        oOFunctionalProgramming: true,
-        basicScripting: true,
-        complete: true,
-        handle: 'astroash'
-      }, 'getFreeCodeCamp returns an obect for a valid username');
-      t.end();
-    });
+  const actual = createFreeCodeCampObject(fccCompleteHtmlString, 'astroash');
+  t.deepEqual(actual, {
+    success: true,
+    complete: true,
+    score: '293',
+    html: true,
+    css: true,
+    responsive: true,
+    flexbox: true,
+    javascript: true,
+    es6: true,
+    basicDataStructures: true,
+    basicAlgorithmScripting: true,
+    handle: 'astroash',
+  }, 'getFreeCodeCamp returns an obect for a valid username');
+  t.end();
 });
 
 tape('FCC Crawl: getFreeCodeCamp invalid username', (t) => {
-  nock('https://www.freecodecamp.org/')
-    .get('/astroashaaa')
-    .reply(200, fccIncompleteHtmlString);
-  getFreeCodeCamp('astroash')
-    .then((actual) => {
-      t.deepEqual(actual, {
-        success: false,
-        message: 'User not found',
-      }, 'getFreeCodeCamp returns an obect for a invalid username');
-      t.end();
-    });
+  const actual = createFreeCodeCampObject(fccIncompleteHtmlString, 'matthewdking');
+  t.deepEqual(actual, {
+    success: false,
+    message: 'User not found',
+  }, 'getFreeCodeCamp returns an obect for a invalid username');
+  t.end();
 });
+

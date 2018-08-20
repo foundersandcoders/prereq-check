@@ -1,6 +1,8 @@
 language: node_js
 node_js:
-  - "node"
+  - 8
+addons:
+  chrome: stable
 notifications:
   email: false
 before_install:
