@@ -1,0 +1,942 @@
+{
+    "bd7123c8c441eddfaeb5bdef": {
+        "title": "Say Hello to HTML Elements",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf0887a": {
+        "title": "Headline with the h2 Element",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08801": {
+        "title": "Inform with the Paragraph Element",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08833": {
+        "title": "Fill in the Blank with Placeholder Text",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08802": {
+        "title": "Uncomment HTML",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08804": {
+        "title": "Comment out HTML",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fed1348bd9aedf08833": {
+        "title": "Delete HTML Elements",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aecf08801": {
+        "title": "Introduction to HTML5 Elements",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08812": {
+        "title": "Add Images to Your Website",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08816": {
+        "title": "Link to External Pages with Anchor Elements",
+        "section": "basic-html-and-html5"
+    },
+    "bad88fee1348bd9aedf08816": {
+        "title": "Link to Internal Sections of a Page with Anchor Elements",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aede08817": {
+        "title": "Nest an Anchor Element within a Paragraph",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08817": {
+        "title": "Make Dead Links Using the Hash Symbol",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08820": {
+        "title": "Turn an Image into a Link",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08827": {
+        "title": "Create a Bulleted Unordered List",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08828": {
+        "title": "Create an Ordered List",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08829": {
+        "title": "Create a Text Field",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08830": {
+        "title": "Add Placeholder Text to a Text Field",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aede08830": {
+        "title": "Create a Form Element",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedd08830": {
+        "title": "Add a Submit Button to a Form",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedc08830": {
+        "title": "Use HTML5 to Require a Field",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08834": {
+        "title": "Create a Set of Radio Buttons",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08835": {
+        "title": "Create a Set of Checkboxes",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedd08835": {
+        "title": "Check Radio Buttons and Checkboxes by Default",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aede08835": {
+        "title": "Nest Many Elements within a Single div Element",
+        "section": "basic-html-and-html5"
+    },
+    "587d78aa367417b2b2512aed": {
+        "title": "Declare the Doctype of an HTML Document",
+        "section": "basic-html-and-html5"
+    },
+    "587d78aa367417b2b2512aec": {
+        "title": "Define the Head and Body of an HTML Document",
+        "section": "basic-html-and-html5"
+    },
+    "bad87fee1348bd9aedf08803": {
+        "title": "Change the Color of Text",
+        "section": "basic-css"
+    },
+    "bd7123c9c441eddfaeb4bdef": {
+        "title": "Comment Your JavaScript Code",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08805": {
+        "title": "Use CSS Selectors to Style Elements",
+        "section": "basic-css"
+    },
+    "bd7123c9c443eddfaeb5bdef": {
+        "title": "Declare JavaScript Variables",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aecf08806": {
+        "title": "Use a CSS Class to Style an Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244a8": {
+        "title": "Storing Values with the Assignment Operator",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aefe08806": {
+        "title": "Style Multiple Elements with a CSS Class",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244a9": {
+        "title": "Initializing Variables with the Assignment Operator",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08806": {
+        "title": "Change the Font Size of an Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244aa": {
+        "title": "Understanding Uninitialized Variables",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aede08807": {
+        "title": "Set the Font Family of an Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244ab": {
+        "title": "Understanding Case Sensitivity in Variables",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08807": {
+        "title": "Import a Google Font",
+        "section": "basic-css"
+    },
+    "cf1111c1c11feddfaeb3bdef": {
+        "title": "Add Two Numbers with JavaScript",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08808": {
+        "title": "Specify How Fonts Should Degrade",
+        "section": "basic-css"
+    },
+    "cf1111c1c11feddfaeb4bdef": {
+        "title": "Subtract One Number from Another with JavaScript",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9acdf08812": {
+        "title": "Size Your Images",
+        "section": "basic-css"
+    },
+    "cf1231c1c11feddfaeb5bdef": {
+        "title": "Multiply Two Numbers with JavaScript",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9bedf08813": {
+        "title": "Add Borders Around Your Elements",
+        "section": "basic-css"
+    },
+    "cf1111c1c11feddfaeb6bdef": {
+        "title": "Divide One Number by Another with JavaScript",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244ac": {
+        "title": "Increment a Number with JavaScript",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244ad": {
+        "title": "Decrement a Number with JavaScript",
+        "section": "basic-javascript"
+    },
+    "bad87fed1348bd9aede07836": {
+        "title": "Give a Background Color to a div Element",
+        "section": "basic-css"
+    },
+    "cf1391c1c11feddfaeb4bdef": {
+        "title": "Create Decimal Numbers with JavaScript",
+        "section": "basic-javascript"
+    },
+    "bad87eee1348bd9aede07836": {
+        "title": "Set the id of an Element",
+        "section": "basic-css"
+    },
+    "bd7993c9c69feddfaeb7bdef": {
+        "title": "Multiply Two Decimals with JavaScript",
+        "section": "basic-javascript"
+    },
+    "bad87dee1348bd9aede07836": {
+        "title": "Use an id Attribute to Style an Element",
+        "section": "basic-css"
+    },
+    "bd7993c9ca9feddfaeb7bdef": {
+        "title": "Divide One Decimal by Another with JavaScript",
+        "section": "basic-javascript"
+    },
+    "bad88fee1348bd9aedf08825": {
+        "title": "Adjust the Padding of an Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244ae": {
+        "title": "Finding a Remainder in JavaScript",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08822": {
+        "title": "Adjust the Margin of an Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244af": {
+        "title": "Compound Assignment With Augmented Addition",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08823": {
+        "title": "Add a Negative Margin to an Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244b0": {
+        "title": "Compound Assignment With Augmented Subtraction",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08824": {
+        "title": "Add Different Padding to Each Side of an Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244b1": {
+        "title": "Compound Assignment With Augmented Multiplication",
+        "section": "basic-javascript"
+    },
+    "bad87fee1248bd9aedf08824": {
+        "title": "Add Different Margins to Each Side of an Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244b2": {
+        "title": "Compound Assignment With Augmented Division",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08826": {
+        "title": "Use Clockwise Notation to Specify the Padding of an Element",
+        "section": "basic-css"
+    },
+    "bd7123c9c444eddfaeb5bdef": {
+        "title": "Declare String Variables",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9afdf08726": {
+        "title": "Use Clockwise Notation to Specify the Margin of an Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244b5": {
+        "title": "Escaping Literal Quotes in Strings",
+        "section": "basic-javascript"
+    },
+    "58c383d33e2e3259241f3076": {
+        "title": "Use Attribute Selectors to Style Elements",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244b4": {
+        "title": "Quoting Strings with Single Quotes",
+        "section": "basic-javascript"
+    },
+    "bad82fee1322bd9aedf08721": {
+        "title": "Understand Absolute versus Relative Units",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244b6": {
+        "title": "Escape Sequences in Strings",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08736": {
+        "title": "Style the HTML Body Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244b7": {
+        "title": "Concatenating Strings with Plus Operator",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08746": {
+        "title": "Inherit Styles from the Body Element",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244b8": {
+        "title": "Concatenating Strings with the Plus Equals Operator",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08756": {
+        "title": "Prioritize One Style Over Another",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244b9": {
+        "title": "Constructing Strings with Variables",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf04756": {
+        "title": "Override Styles in Subsequent CSS",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244ed": {
+        "title": "Appending Variables to Strings",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd8aedf06756": {
+        "title": "Override Class Declarations by Styling ID Attributes",
+        "section": "basic-css"
+    },
+    "bd7123c9c448eddfaeb5bdef": {
+        "title": "Find the Length of a String",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf06756": {
+        "title": "Override Class Declarations with Inline Styles",
+        "section": "basic-css"
+    },
+    "bd7123c9c549eddfaeb5bdef": {
+        "title": "Use Bracket Notation to Find the First Character in a String",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf07756": {
+        "title": "Override All Other Styles by using Important",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244ba": {
+        "title": "Understand String Immutability",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08726": {
+        "title": "Use Hex Code for Specific Colors",
+        "section": "basic-css"
+    },
+    "bd7123c9c450eddfaeb5bdef": {
+        "title": "Use Bracket Notation to Find the Nth Character in a String",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08721": {
+        "title": "Use Hex Code to Mix Colors",
+        "section": "basic-css"
+    },
+    "bd7123c9c451eddfaeb5bdef": {
+        "title": "Use Bracket Notation to Find the Last Character in a String",
+        "section": "basic-javascript"
+    },
+    "bad87fee1348bd9aedf08719": {
+        "title": "Use Abbreviated Hex Code",
+        "section": "basic-css"
+    },
+    "bad87fee1348bd9aede08718": {
+        "title": "Use RGB values to Color Elements",
+        "section": "basic-css"
+    },
+    "56533eb9ac21ba0edf2244bb": {
+        "title": "Word Blanks",
+        "section": "basic-javascript"
+    },
+    "bad82fee1348bd9aedf08721": {
+        "title": "Use RGB to Mix Colors",
+        "section": "basic-css"
+    },
+    "bd7993c9c69feddfaeb8bdef": {
+        "title": "Store Multiple Values in one Variable using JavaScript Arrays",
+        "section": "basic-javascript"
+    },
+    "5a9d725e424fe3d0e10cad10": {
+        "title": "Use CSS Variables to change several elements at once",
+        "section": "basic-css"
+    },
+    "cf1111c1c11feddfaeb7bdef": {
+        "title": "Nest one Array within Another Array",
+        "section": "basic-javascript"
+    },
+    "5a9d726c424fe3d0e10cad11": {
+        "title": "Create a custom CSS Variable",
+        "section": "basic-css"
+    },
+    "56bbb991ad1ed5201cd392ca": {
+        "title": "Access Array Data with Indexes",
+        "section": "basic-javascript"
+    },
+    "5a9d727a424fe3d0e10cad12": {
+        "title": "Use a custom CSS Variable",
+        "section": "basic-css"
+    },
+    "cf1111c1c11feddfaeb8bdef": {
+        "title": "Modify Array Data With Indexes",
+        "section": "basic-javascript"
+    },
+    "5a9d7286424fe3d0e10cad13": {
+        "title": "Attach a Fallback value to a CSS Variable",
+        "section": "basic-css"
+    },
+    "5a9d7295424fe3d0e10cad14": {
+        "title": "Cascading CSS variables",
+        "section": "basic-css"
+    },
+    "56bbb991ad1ed5201cd392cb": {
+        "title": "Manipulate Arrays With push()",
+        "section": "basic-javascript"
+    },
+    "5a9d72a1424fe3d0e10cad15": {
+        "title": "Change a variable for a specific area",
+        "section": "basic-css"
+    },
+    "56bbb991ad1ed5201cd392cc": {
+        "title": "Manipulate Arrays With pop()",
+        "section": "basic-javascript"
+    },
+    "5a9d72ad424fe3d0e10cad16": {
+        "title": "Use a media query to change a variable",
+        "section": "basic-css"
+    },
+    "56bbb991ad1ed5201cd392cd": {
+        "title": "Manipulate Arrays With shift()",
+        "section": "basic-javascript"
+    },
+    "56bbb991ad1ed5201cd392ce": {
+        "title": "Manipulate Arrays With unshift()",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244bc": {
+        "title": "Shopping List",
+        "section": "basic-javascript"
+    },
+    "56bbb991ad1ed5201cd392cf": {
+        "title": "Write Reusable JavaScript with Functions",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244bd": {
+        "title": "Passing Values to Functions with Arguments",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244be": {
+        "title": "Global Scope and Functions",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244bf": {
+        "title": "Local Scope and Functions",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244c0": {
+        "title": "Global vs. Local Scope in Functions",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244c2": {
+        "title": "Return a Value from a Function with Return",
+        "section": "basic-javascript"
+    },
+    "598e8944f009e646fc236146": {
+        "title": "Understanding Undefined Value returned from a Function",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244c3": {
+        "title": "Assignment with a Returned Value",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244c6": {
+        "title": "Stand in Line",
+        "section": "basic-javascript"
+    },
+    "bd7123c9c441eddfaeb5bdef": {
+        "title": "Understanding Boolean Values",
+        "section": "basic-javascript"
+    },
+    "cf1111c1c12feddfaeb3bdef": {
+        "title": "Use Conditional Logic with If Statements",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244d0": {
+        "title": "Comparison with the Equality Operator",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244d1": {
+        "title": "Comparison with the Strict Equality Operator",
+        "section": "basic-javascript"
+    },
+    "599a789b454f2bbd91a3ff4d": {
+        "title": "Practice comparing different values",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244d2": {
+        "title": "Comparison with the Inequality Operator",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244d3": {
+        "title": "Comparison with the Strict Inequality Operator",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244d4": {
+        "title": "Comparison with the Greater Than Operator",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244d5": {
+        "title": "Comparison with the Greater Than Or Equal To Operator",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244d6": {
+        "title": "Comparison with the Less Than Operator",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244d7": {
+        "title": "Comparison with the Less Than Or Equal To Operator",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244d8": {
+        "title": "Comparisons with the Logical And Operator",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244d9": {
+        "title": "Comparisons with the Logical Or Operator",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244da": {
+        "title": "Introducing Else Statements",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244db": {
+        "title": "Introducing Else If Statements",
+        "section": "basic-javascript"
+    },
+    "5690307fddb111c6084545d7": {
+        "title": "Logical Order in If Else Statements",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244dc": {
+        "title": "Chaining If Else Statements",
+        "section": "basic-javascript"
+    },
+    "5664820f61c48e80c9fa476c": {
+        "title": "Golf Code",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244dd": {
+        "title": "Selecting from Many Options with Switch Statements",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244de": {
+        "title": "Adding a Default Option in Switch Statements",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244df": {
+        "title": "Multiple Identical Options in Switch Statements",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244e0": {
+        "title": "Replacing If Else Chains with Switch",
+        "section": "basic-javascript"
+    },
+    "5679ceb97cbaa8c51670a16b": {
+        "title": "Returning Boolean Values from Functions",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244c4": {
+        "title": "Return Early Pattern for Functions",
+        "section": "basic-javascript"
+    },
+    "565bbe00e9cc8ac0725390f4": {
+        "title": "Counting Cards",
+        "section": "basic-javascript"
+    },
+    "56bbb991ad1ed5201cd392d0": {
+        "title": "Build JavaScript Objects",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244c7": {
+        "title": "Accessing Object Properties with Dot Notation",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244c8": {
+        "title": "Accessing Object Properties with Bracket Notation",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244c9": {
+        "title": "Accessing Object Properties with Variables",
+        "section": "basic-javascript"
+    },
+    "56bbb991ad1ed5201cd392d1": {
+        "title": "Updating Object Properties",
+        "section": "basic-javascript"
+    },
+    "56bbb991ad1ed5201cd392d2": {
+        "title": "Add New Properties to a JavaScript Object",
+        "section": "basic-javascript"
+    },
+    "56bbb991ad1ed5201cd392d3": {
+        "title": "Delete Properties from a JavaScript Object",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244ca": {
+        "title": "Using Objects for Lookups",
+        "section": "basic-javascript"
+    },
+    "567af2437cbaa8c51670a16c": {
+        "title": "Testing Objects for Properties",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244cb": {
+        "title": "Manipulating Complex Objects",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244cc": {
+        "title": "Accessing Nested Objects",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244cd": {
+        "title": "Accessing Nested Arrays",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244cf": {
+        "title": "Record Collection",
+        "section": "basic-javascript"
+    },
+    "cf1111c1c11feddfaeb1bdef": {
+        "title": "Iterate with JavaScript While Loops",
+        "section": "basic-javascript"
+    },
+    "cf1111c1c11feddfaeb5bdef": {
+        "title": "Iterate with JavaScript For Loops",
+        "section": "basic-javascript"
+    },
+    "56104e9e514f539506016a5c": {
+        "title": "Iterate Odd Numbers With a For Loop",
+        "section": "basic-javascript"
+    },
+    "56105e7b514f539506016a5e": {
+        "title": "Count Backwards With a For Loop",
+        "section": "basic-javascript"
+    },
+    "5675e877dbd60be8ad28edc6": {
+        "title": "Iterate Through an Array with a For Loop",
+        "section": "basic-javascript"
+    },
+    "56533eb9ac21ba0edf2244e1": {
+        "title": "Nesting For Loops",
+        "section": "basic-javascript"
+    },
+    "5a2efd662fb457916e1fe604": {
+        "title": "Iterate with JavaScript Do...While Loops",
+        "section": "basic-javascript"
+    },
+    "5688e62ea601b2482ff8422b": {
+        "title": "Profile Lookup",
+        "section": "basic-javascript"
+    },
+    "cf1111c1c11feddfaeb9bdef": {
+        "title": "Generate Random Fractions with JavaScript",
+        "section": "basic-javascript"
+    },
+    "cf1111c1c12feddfaeb1bdef": {
+        "title": "Generate Random Whole Numbers with JavaScript",
+        "section": "basic-javascript"
+    },
+    "cf1111c1c12feddfaeb2bdef": {
+        "title": "Generate Random Whole Numbers within a Range",
+        "section": "basic-javascript"
+    },
+    "587d7b7e367417b2b2512b23": {
+        "title": "Use the parseInt Function",
+        "section": "basic-javascript"
+    },
+    "587d7b7e367417b2b2512b22": {
+        "title": "Use the parseInt Function with a Radix",
+        "section": "basic-javascript"
+    },
+    "587d7b7e367417b2b2512b24": {
+        "title": "Use the Conditional (Ternary) Operator",
+        "section": "basic-javascript"
+    },
+    "587d7b7e367417b2b2512b21": {
+        "title": "Use Multiple Conditional (Ternary) Operators",
+        "section": "basic-javascript"
+    },
+    "587d7b87367417b2b2512b3f": {
+        "title": "Explore Differences Between the var and let Keywords",
+        "section": "es6"
+    },
+    "587d7b87367417b2b2512b40": {
+        "title": "Compare Scopes of the var and let Keywords",
+        "section": "es6"
+    },
+    "587d7b87367417b2b2512b42": {
+        "title": "Mutate an Array Declared with const",
+        "section": "es6"
+    },
+    "598f48a36c8c40764b4e52b3": {
+        "title": "Prevent Object Mutation",
+        "section": "es6"
+    },
+    "587d7b87367417b2b2512b43": {
+        "title": "Use Arrow Functions to Write Concise Anonymous Functions",
+        "section": "es6"
+    },
+    "587d7b88367417b2b2512b44": {
+        "title": "Write Arrow Functions with Parameters",
+        "section": "es6"
+    },
+    "587d7b88367417b2b2512b45": {
+        "title": "Write Higher Order Arrow Functions",
+        "section": "es6"
+    },
+    "587d7b88367417b2b2512b46": {
+        "title": "Set Default Parameters for Your Functions",
+        "section": "es6"
+    },
+    "587d7b88367417b2b2512b47": {
+        "title": "Use the Rest Operator with Function Parameters",
+        "section": "es6"
+    },
+    "587d7b89367417b2b2512b49": {
+        "title": "Use Destructuring Assignment to Assign Variables from Objects",
+        "section": "es6"
+    },
+    "587d7b89367417b2b2512b4a": {
+        "title": "Use Destructuring Assignment to Assign Variables from Nested Objects",
+        "section": "es6"
+    },
+    "587d7b89367417b2b2512b4b": {
+        "title": "Use Destructuring Assignment to Assign Variables from Arrays",
+        "section": "es6"
+    },
+    "587d7b8a367417b2b2512b4c": {
+        "title": "Use Destructuring Assignment with the Rest Operator to Reassign Array Elements",
+        "section": "es6"
+    },
+    "587d7b8a367417b2b2512b4e": {
+        "title": "Create Strings using Template Literals",
+        "section": "es6"
+    },
+    "587d7b8a367417b2b2512b4f": {
+        "title": "Write Concise Object Literal Declarations Using Simple Fields",
+        "section": "es6"
+    },
+    "587d7b8b367417b2b2512b50": {
+        "title": "Write Concise Declarative Functions with ES6",
+        "section": "es6"
+    },
+    "587d7b8b367417b2b2512b53": {
+        "title": "Use class Syntax to Define a Constructor Function",
+        "section": "es6"
+    },
+    "587d7b8c367417b2b2512b54": {
+        "title": "Use getters and setters to Control Access to an Object",
+        "section": "es6"
+    },
+    "587d7b8c367417b2b2512b55": {
+        "title": "Understand the Differences Between import and require",
+        "section": "es6"
+    },
+    "587d7b8c367417b2b2512b56": {
+        "title": "Use export to Reuse a Code Block",
+        "section": "es6"
+    },
+    "587d7b8c367417b2b2512b57": {
+        "title": "Use * to Import Everything from a File",
+        "section": "es6"
+    },
+    "587d7b8c367417b2b2512b58": {
+        "title": "Create an Export Fallback with export default",
+        "section": "es6"
+    },
+    "587d7b8d367417b2b2512b59": {
+        "title": "Import a Default Export",
+        "section": "es6"
+    },
+    "587d78b0367417b2b2512b08": {
+        "title": "Create a Media Query",
+        "section": "responsive-web-design-principles"
+    },
+    "587d78b1367417b2b2512b09": {
+        "title": "Make an Image Responsive",
+        "section": "responsive-web-design-principles"
+    },
+    "587d78b1367417b2b2512b0a": {
+        "title": "Use a Retina Image for Higher Resolution Displays",
+        "section": "responsive-web-design-principles"
+    },
+    "587d78b1367417b2b2512b0c": {
+        "title": "Make Typography Responsive",
+        "section": "responsive-web-design-principles"
+    },
+    "587d7b7e367417b2b2512b20": {
+        "title": "Use an Array to Store a Collection of Data",
+        "section": "basic-data-structures"
+    },
+    "587d78ab367417b2b2512af1": {
+        "title": "Add Flex Superpowers to the Tweet Embed",
+        "section": "css-flexbox"
+    },
+    "587d78b2367417b2b2512b0e": {
+        "title": "Add Items to an Array with push() and unshift()",
+        "section": "basic-data-structures"
+    },
+    "587d78b2367417b2b2512b0f": {
+        "title": "Remove Items from an Array with pop() and shift()",
+        "section": "basic-data-structures"
+    },
+    "587d78b2367417b2b2512b10": {
+        "title": "Remove Items Using splice()",
+        "section": "basic-data-structures"
+    },
+    "587d78b3367417b2b2512b11": {
+        "title": "Add Items Using splice()",
+        "section": "basic-data-structures"
+    },
+    "587d7b7a367417b2b2512b12": {
+        "title": "Copy Array Items Using slice()",
+        "section": "basic-data-structures"
+    },
+    "587d7b7b367417b2b2512b13": {
+        "title": "Copy an Array with the Spread Operator",
+        "section": "basic-data-structures"
+    },
+    "587d7b7b367417b2b2512b17": {
+        "title": "Combine Arrays with the Spread Operator",
+        "section": "basic-data-structures"
+    },
+    "587d7b7b367417b2b2512b14": {
+        "title": "Check For The Presence of an Element With indexOf()",
+        "section": "basic-data-structures"
+    },
+    "587d7b7c367417b2b2512b19": {
+        "title": "Modify an Object Nested Within an Object",
+        "section": "basic-data-structures"
+    },
+    "587d78ae367417b2b2512afe": {
+        "title": "Use the flex Shorthand Property",
+        "section": "css-flexbox"
+    },
+    "587d7b7c367417b2b2512b1a": {
+        "title": "Access Property Names with Bracket Notation",
+        "section": "basic-data-structures"
+    },
+    "587d78ae367417b2b2512aff": {
+        "title": "Use the order Property to Rearrange Items",
+        "section": "css-flexbox"
+    },
+    "587d7b7c367417b2b2512b1b": {
+        "title": "Use the delete Keyword to Remove Object Properties",
+        "section": "basic-data-structures"
+    },
+    "587d7b7d367417b2b2512b1c": {
+        "title": "Check if an Object has a Property",
+        "section": "basic-data-structures"
+    },
+    "587d7b7d367417b2b2512b1d": {
+        "title": " Iterate Through the Keys of an Object with a for...in Statement",
+        "section": "basic-data-structures"
+    },
+    "587d7b7d367417b2b2512b1e": {
+        "title": "Generate an Array of All Object Keys with Object.keys()",
+        "section": "basic-data-structures"
+    },
+    "587d7b7d367417b2b2512b1f": {
+        "title": "Modify an Array Stored in an Object",
+        "section": "basic-data-structures"
+    },
+    "56533eb9ac21ba0edf2244b3": {
+        "title": "Convert Celsius to Fahrenheit",
+        "section": "basic-algorithm-scripting"
+    },
+    "a202eed8fc186c8434cb6d61": {
+        "title": "Reverse a String",
+        "section": "basic-algorithm-scripting"
+    },
+    "a302f7aae1aa3152a5b413bc": {
+        "title": "Factorialize a Number",
+        "section": "basic-algorithm-scripting"
+    },
+    "a26cbbe9ad8655a977e1ceb5": {
+        "title": "Find the Longest Word in a String",
+        "section": "basic-algorithm-scripting"
+    },
+    "a789b3483989747d63b0e427": {
+        "title": "Return Largest Numbers in Arrays",
+        "section": "basic-algorithm-scripting"
+    },
+    "acda2fb1324d9b0fa741e6b5": {
+        "title": "Confirm the Ending",
+        "section": "basic-algorithm-scripting"
+    },
+    "afcc8d540bea9ea2669306b6": {
+        "title": "Repeat a String Repeat a String",
+        "section": "basic-algorithm-scripting"
+    },
+    "ac6993d51946422351508a41": {
+        "title": "Truncate a String",
+        "section": "basic-algorithm-scripting"
+    },
+    "a6e40f1041b06c996f7b2406": {
+        "title": "Finders Keepers",
+        "section": "basic-algorithm-scripting"
+    },
+    "a77dbc43c33f39daa4429b4f": {
+        "title": "Boo who",
+        "section": "basic-algorithm-scripting"
+    },
+    "ab6137d4e35944e21037b769": {
+        "title": "Title Case a Sentence",
+        "section": "basic-algorithm-scripting"
+    },
+    "579e2a2c335b9d72dd32e05c": {
+        "title": "Slice and Splice",
+        "section": "basic-algorithm-scripting"
+    },
+    "adf08ec01beb4f99fc7a68f2": {
+        "title": "Falsy Bouncer",
+        "section": "basic-algorithm-scripting"
+    },
+    "a24c1a4622e3c05097f71d67": {
+        "title": "Where do I Belong",
+        "section": "basic-algorithm-scripting"
+    },
+    "af2170cad53daa0770fabdea": {
+        "title": "Mutations",
+        "section": "basic-algorithm-scripting"
+    },
+    "a9bd25c716030ec90084d8a1": {
+        "title": "Chunky Monkey",
+        "section": "basic-algorithm-scripting"
+    }
+}

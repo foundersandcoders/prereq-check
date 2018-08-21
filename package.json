@@ -24,6 +24,7 @@
     "google-spreadsheet": "^2.0.4",
     "hbs": "~4.0.1",
     "humanize-url": "^1.0.1",
+    "lodash": "^4.17.10",
     "morgan": "~1.8.1",
     "node-sass": "^4.5.3",
     "normalize-url": "^1.9.1",
